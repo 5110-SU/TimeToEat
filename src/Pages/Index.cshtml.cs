@@ -9,8 +9,8 @@ using ContosoCrafts.WebSite.Services;
 namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary>
-    /// Hong Yang
     /// Duc Vo
+    /// Hong Yang
     /// </summary>
     public class IndexModel : PageModel
     {
