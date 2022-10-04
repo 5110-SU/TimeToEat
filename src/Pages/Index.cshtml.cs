@@ -8,6 +8,7 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Pages
 {
+    // Hong Yang \\ 
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
