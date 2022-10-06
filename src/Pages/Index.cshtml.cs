@@ -11,6 +11,7 @@ namespace ContosoCrafts.WebSite.Pages
     /// <summary>
     /// Duc Vo
     /// Hong Yang
+    /// Sizhe Liu
     /// </summary>
     public class IndexModel : PageModel
     {
