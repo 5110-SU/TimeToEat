@@ -1,6 +1,6 @@
 
-# **Time to Eat** <br> Product Vision
- 
+# **Time to Eat** 
+Restaurant finder app using ASP.NET, C#, HTML, and C <br><br>
 **FOR** anyone including foodies and travelers <br>
 **WHO** is looking for a place to eat, especially during odd hours i.e. after 9pm and before 6am <br>
 **TIME TO EAT** is a a website/mobile app <br>
