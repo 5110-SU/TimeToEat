@@ -8,7 +8,9 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Pages
 {
-    // Hong Yang \\ 
+    /// <summary> 
+    /// Sizhe Liu
+    /// <summary> 
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
