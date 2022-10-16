@@ -1,0 +1,19 @@
+﻿@using ContosoCrafts.WebSite.Models
+@using ContosoCrafts.WebSite.Services
+@using Microsoft.AspNetCore.Components.Web
+@inject JsonFileRestaurantService RestaurantService
+
+<div class="container">
+    <button type="button" class="btn btn-primary mb-3">CREATE</button>
+    <ul class="list-group">
+        @foreach (var restaurant in RestaurantService.GetRestaurants())
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <h5>@restaurant.Title</h5>
+                <button type="button" class="btn btn-primary" asp-page="Read" asp-route-id="@restaurant.Id">DETAIL</button>
+            </li>
+        }
+    </ul>
+</div>
+   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
