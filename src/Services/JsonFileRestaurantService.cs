@@ -50,5 +50,23 @@ namespace ContosoCrafts.WebSite.Services
                     });
             }
         }
+
+        /// <summary>
+        /// Serialize and Save restaurants data to JSON file storage
+        /// </summary>
+        private void SaveRestaurants(IEnumerable<RestaurantModel> restaurants)
+        {
+            using (var outputStream = File.Create(JsonFileName))
+            {
+                JsonSerializer.Serialize<IEnumerable<RestaurantModel>>(
+                    new Utf8JsonWriter(outputStream, new JsonWriterOptions
+                    {
+                        SkipValidation = true,
+                        Indented = true
+                    }),
+                    restaurants
+                );
+            }
+        }
     }
 }
