@@ -68,5 +68,29 @@ namespace ContosoCrafts.WebSite.Services
                 );
             }
         }
+
+        /// <summary>
+        /// Create a new restaurant using default values
+        /// After create the user can update to set values
+        /// </summary>
+        /// <returns>Newly created restaurant instance</returns>
+        public RestaurantModel CreateRestaurant()
+        {
+            var data = new RestaurantModel()
+            {
+                Id = System.Guid.NewGuid().ToString(), // Generate a new ID
+                Title = "Enter Restaurant Name",
+                Description = "Enter Restaurant Description",
+                Url = "Enter Restaurant Website URL",
+                Image = "Restaurant Photo URL",
+            };
+
+            // Get the current set, and append the new record to it 
+            var dataSet = GetRestaurants();
+            dataSet = dataSet.Append(data);
+
+            SaveRestaurants(dataSet);
+            return data;
+        }
     }
 }
