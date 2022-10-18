@@ -10,8 +10,8 @@
         {
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <h5>@product.Title</h5>
-                <button type="button" class="btn btn-primary" asp-page="Read" asp-route-id="@product.Id">DETAIL</button>
-                @* /// onclick function to route to the detail page with resta id in URL Comment goes here *@
+                <a class="btn btn-primary" href="/Restaurants/Read/@product.Id" role="button">DETAIL</a>
+                @* /// onclick function to route to the detail page with restaraunt id in URL Comment goes here *@
             </li>
         }
     </ul>
