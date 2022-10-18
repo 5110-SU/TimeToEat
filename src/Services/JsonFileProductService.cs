@@ -36,6 +36,15 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
+        /// Specific method name that call GetAllData method
+        /// </summary>
+        /// <returns>List of all Products in file data storage</returns>
+        public IEnumerable<ProductModel> GetProducts()
+        {
+            return GetAllData();
+        }
+
+        /// <summary>
         /// Add Rating
         /// 
         /// Take in the product ID and the rating
