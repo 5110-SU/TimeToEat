@@ -19,6 +19,7 @@ namespace ContosoCrafts.WebSite.Controllers
         public JsonFileProductService ProductService { get; }
 
         [HttpGet]
+        [Route("Restaurants")]
         public IEnumerable<ProductModel> Get()
         {
             return ProductService.GetAllData();

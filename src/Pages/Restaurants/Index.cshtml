@@ -1,0 +1,10 @@
+﻿@page
+@using ContosoCrafts.WebSite.Components
+@model IndexModel
+@{
+    ViewData["Title"] = "Restaurants Index page";
+}
+
+@(await Html.RenderComponentAsync<RestaurantList>(RenderMode.ServerPrerendered))
+
+<script src="_framework/blazor.server.js"></script>
