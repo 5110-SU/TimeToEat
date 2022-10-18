@@ -5,6 +5,15 @@
     ViewData["Title"] = "Home page";
 }
 
-@(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
+<body class="index">
+    <div class="index-item">
+        <p id="home-title1">Feeling Hungry</p>
+        <p id="home-title2">Let's See Whats Open'</p>
+        <a href="/Home">
+            <img class="" />
+            <img class="" />
+        </a>
+    </div>
+</body>
 
 <script src ="_framework/blazor.server.js"> </script>
