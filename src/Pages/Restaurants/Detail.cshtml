@@ -1,4 +1,18 @@
-﻿@page
-@model ContosoCrafts.WebSite.Pages.Restaurants.DetailModel
+﻿@page "/Restaurants/{id}"
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.ReadModel
+
 @{
+    ViewData["Title"] = "Read page";
 }
+
+<h1>Read</h1>
+
+<div class="content">
+    <h5 class="title" id="productTitle">@Model.Product.Title</h5>
+
+    <img class="card-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
+
+    <p class="card-text">@Model.Product.Description</p>
+</div>
