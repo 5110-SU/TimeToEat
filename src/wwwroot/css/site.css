@@ -119,6 +119,18 @@ html {
   position: relative;
   min-height: 100%;
 }
+body.index {
+    margin-bottom: 50px;
+    background: url(../data/Seattlebg.png) no-repeat center center fixed;
+    height: 100%;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+}
 
 body {
   /* Margin bottom by footer height */
@@ -155,10 +167,10 @@ ul {
 
 #home-title1 {
     font-family: 'Yellowtail', cursive;
-    font-size: 38px;
-    color: #3b3434;
+    font-size: 50px;
+    color: #FFFFFF;
     position: absolute;
-    top: 45%;
+    top: 40%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -168,8 +180,8 @@ ul {
 
 #home-title2 {
     font-family: 'Yellowtail', cursive;
-    font-size: 60px;
-    color: #3b3434;
+    font-size: 70px;
+    color: #FFFFFF;
     position: absolute;
     top: 49%;
     left: 0;
