@@ -152,6 +152,33 @@ ul {
     background: -moz-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
     background: linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
 }
+
+#home-title1 {
+    font-family: 'Yellowtail', cursive;
+    font-size: 38px;
+    color: #3b3434;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+}
+
+#home-title2 {
+    font-family: 'Yellowtail', cursive;
+    font-size: 60px;
+    color: #3b3434;
+    position: absolute;
+    top: 49%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+}
+
 #logo-image {
     width: 65px;
     height: 65px;
