@@ -2,9 +2,8 @@
 @using ContosoCrafts.WebSite.Services
 @using Microsoft.AspNetCore.Components.Web
 @inject JsonFileProductService ProductService
-
 <div class="container">
-    <button type="button" class="btn btn-primary mb-3">CREATE</button>
+    <a class="btn btn-primary mb-3" href="/Restaurants/Create/@newID" role="button">CREATE</a>
     <ul class="list-group">
         @foreach (var product in ProductService.GetProducts())
         {
@@ -15,5 +14,7 @@
         }
     </ul>
 </div>
-   
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@code {
+    public string newID = Guid.NewGuid().ToString();
+}
