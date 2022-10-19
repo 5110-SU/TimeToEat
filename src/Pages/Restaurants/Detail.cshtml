@@ -1,0 +1,31 @@
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+@model ReadModel
+@{
+    ViewData["Title"] = "Restaurant Detail";
+}
+<div class="container">
+    <h3>Restaurant Detail</h3>
+    <div>
+        <div class="content">
+            @if (Model.Product != null)
+            {
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="@Model.Product.Image" class="img-fluid" />
+                    </div>
+                    <div class="col-md-8">
+                        <h3>@Model.Product.Title</h3>
+                        <p>@Model.Product.Description</p>
+                        <a href="@Model.Product.Url" target="_blank" class="btn btn-primary">Visit Website</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <h3>Not Found</h3>
+            }
+        </div>
+    </div>
+</div>
