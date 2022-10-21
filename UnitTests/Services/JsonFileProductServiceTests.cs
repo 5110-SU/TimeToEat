@@ -114,7 +114,7 @@ namespace UnitTests.Pages.Product.AddRating
         {
             // assign
 
-            // Get the First data item
+            // Get the object state before changes applied
             string testID = "Vietnamese";
             ProductModel data = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
 
@@ -133,5 +133,60 @@ namespace UnitTests.Pages.Product.AddRating
         }
         #endregion AddRating
 
+        #region UpdateData
+        [Test]
+        public void UpdateData_Invalid_ProductID_Should_Return_Null()
+        {
+            // assign
+            ProductModel data = new ProductModel()
+            {
+                Id = "does not exist",
+                Title = "Enter Title",
+                Description = "Enter Description",
+                Url = "Enter URL",
+                Image = "",
+            };
+
+            // act
+            ProductModel result = TestHelper.ProductService.UpdateData(data);
+
+            // assert
+            Assert.AreEqual(null, result);
+        }
+
+        [Test]
+        public void UpdateData_Valid_ProductID_Should_Return_ProductModelObject()
+        {
+            // assign
+            ProductModel data = new ProductModel()
+            {
+                Id = "Steak House",
+                Title = "Enter Title",
+                Description = "Enter Description",
+                Url = "Enter URL",
+                Image = "",
+            };
+
+            // remember old object state for database reset
+            ProductModel oldState = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Steak House"));
+
+            // act
+            ProductModel result = TestHelper.ProductService.UpdateData(data);
+
+            // assert
+            Assert.AreEqual(data.Title, result.Title);
+            Assert.AreEqual(data.Description, result.Description);
+            Assert.AreEqual(data.Url, result.Url);
+            Assert.AreEqual(data.Image, result.Image);
+            Assert.AreEqual(data.Quantity, result.Quantity);
+            Assert.AreEqual(data.Price, result.Price);
+            Assert.AreEqual(data.CommentList, result.CommentList);
+
+            // reset
+            ProductModel toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Steak House"));
+            toReset = oldState;
+        }
+
+        #endregion UpdateData
     }
 }
