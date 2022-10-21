@@ -1,29 +1,15 @@
 ﻿@page "{id}"
-@using ContosoCrafts.WebSite.Services
-@inject JsonFileProductService ProductService
+@using ContosoCrafts.WebSite.Components
 @model CreateModel
 @{
-    ViewData["Title"] = "Create page";
+    ViewData["Title"] = Model.Product == null ? "Create Page" : "Update Page";
 }
 <div class="container">
-    <h2>Create Restaurant</h2>
-    <form>
-        <div class="form-group">
-            <label for="restaurant-name">Name</label>
-            <input type="text" class="form-control" id="restaurant-name" placeholder="Enter restaurant Name">
-        </div>
-        <div class="form-group">
-            <label for="restaurant-photo-url">Photo URL</label>
-            <input type="text" class="form-control" id="restaurant-photo-url" placeholder="Enter restaurant image url">
-        </div>
-        <div class="form-group">
-            <label for="restaurant-website-url">Website URL</label>
-            <input type="text" class="form-control" id="restaurant-website-url" placeholder="Enter restaurant website url">
-        </div>
-        <div class="form-group">
-            <label for="restaurant-description">Description</label>
-            <input type="text" class="form-control" id="restaurant-description" placeholder="Enter restaurant description">
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button>
-    </form>
+    <h2>@(Model.Product == null ? "Create" : "Update") Restaurant</h2>
+    @(await Html.RenderComponentAsync<RestaurantForm>(
+        RenderMode.ServerPrerendered, 
+        new { Product = Model.Product, }
+    ))
 </div>
+
+<script src="_framework/blazor.server.js"></script>
