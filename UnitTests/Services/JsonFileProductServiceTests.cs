@@ -186,7 +186,32 @@ namespace UnitTests.Pages.Product.AddRating
             ProductModel toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Steak House"));
             toReset = oldState;
         }
-
         #endregion UpdateData
+
+        #region DeleteData
+        [Test]
+        public void DeleteData_Valid_ProductID_Should_Return_ProductModelObject()
+        {
+            // assigned
+            var oldState = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Steak House"));
+
+            // act
+            var result = TestHelper.ProductService.DeleteData("Steak House");
+
+            // assert
+            Assert.AreEqual(oldState.Title, result.Title);
+            Assert.AreEqual(oldState.Description, result.Description);
+            Assert.AreEqual(oldState.Url, result.Url);
+            Assert.AreEqual(oldState.Image, result.Image);
+            Assert.AreEqual(oldState.Quantity, result.Quantity);
+            Assert.AreEqual(oldState.Price, result.Price);
+            Assert.AreEqual(oldState.CommentList, result.CommentList);
+
+            // reset
+            var newCreateData = TestHelper.ProductService.CreateData();
+            var newData = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(newCreateData.Id));
+            newData = oldState;
+        }
+        #endregion DeleteData
     }
 }
