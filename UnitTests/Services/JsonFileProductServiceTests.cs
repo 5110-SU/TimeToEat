@@ -160,7 +160,7 @@ namespace UnitTests.Pages.Product.AddRating
             // assign
             ProductModel data = new ProductModel()
             {
-                Id = "Steak House",
+                Id = "Vietnamese",
                 Title = "Enter Title",
                 Description = "Enter Description",
                 Url = "Enter URL",
@@ -168,7 +168,7 @@ namespace UnitTests.Pages.Product.AddRating
             };
 
             // remember old object state for database reset
-            ProductModel oldState = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Steak House"));
+            ProductModel oldState = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Vietnamese"));
 
             // act
             ProductModel result = TestHelper.ProductService.UpdateData(data);
