@@ -202,13 +202,7 @@ namespace UnitTests.Pages.Product.AddRating
             var result = TestHelper.ProductService.DeleteData("Steak House");
 
             // assert
-            Assert.AreEqual(oldState.Title, result.Title);
-            Assert.AreEqual(oldState.Description, result.Description);
-            Assert.AreEqual(oldState.Url, result.Url);
-            Assert.AreEqual(oldState.Image, result.Image);
-            Assert.AreEqual(oldState.Quantity, result.Quantity);
-            Assert.AreEqual(oldState.Price, result.Price);
-            Assert.AreEqual(oldState.CommentList, result.CommentList);
+            Assert.AreEqual(oldState.ToString(), result.ToString());
 
             // reset
             var newCreateData = TestHelper.ProductService.CreateData();
