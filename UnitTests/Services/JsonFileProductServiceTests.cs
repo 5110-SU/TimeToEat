@@ -6,6 +6,9 @@ using NUnit.Framework;
 
 using ContosoCrafts.WebSite.Models;
 using NUnit.Framework.Internal;
+using System.Collections.Generic;
+using System.Reflection.Metadata;
+using System;
 
 namespace UnitTests.Pages.Product.AddRating
 {
@@ -213,5 +216,25 @@ namespace UnitTests.Pages.Product.AddRating
             newData = oldState;
         }
         #endregion DeleteData
+
+        #region GetProducts
+        [Test]
+        public void GetProducts_Should_Return_ListOfProduct()
+        {
+            // assigned
+            var listOfProducts = TestHelper.ProductService.GetProducts();
+            var listOfProductsArray = listOfProducts.ToArray();
+
+            // act
+            var result = TestHelper.ProductService.GetProducts();
+            var resultArray = result.ToArray();
+
+            // assert
+            for (int i = 0; i < listOfProductsArray.Length; i++)
+            {
+                Assert.AreEqual(listOfProductsArray[i].ToString(), resultArray[i].ToString());
+            }
+        }
+        #endregion GetProducts
     }
 }
