@@ -45,6 +45,19 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
+        /// Insert a new product into the data storage
+        /// </summary>
+        public ProductModel CreateProduct(ProductModel product)
+        {
+            product.Id = System.Guid.NewGuid().ToString();
+            var products = GetAllData();
+            products = products.Append(product);
+            SaveData(products);
+            return product;
+        }    
+
+
+        /// <summary>
         /// Add Rating
         /// 
         /// Take in the product ID and the rating
