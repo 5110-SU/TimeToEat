@@ -29,7 +29,7 @@ namespace UnitTests.Pages.Create
             // Arrange
 
             // Act
-            pageModel.OnGet("");
+            pageModel.OnGet();
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
