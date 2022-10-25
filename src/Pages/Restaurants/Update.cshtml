@@ -1,0 +1,15 @@
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Components
+@model UpdateModel
+@{
+    ViewData["Title"] = "Update Page";
+}
+<div class="container">
+  <h2> Update Restaurant </h2>
+    @(await Html.RenderComponentAsync<RestaurantForm>(
+        RenderMode.ServerPrerendered, 
+        new { Product = Model.Product}
+    ))
+</div>
+
+<script src="_framework/blazor.server.js"></script>
