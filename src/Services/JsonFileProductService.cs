@@ -132,7 +132,6 @@ namespace ContosoCrafts.WebSite.Services
         {
             var products = GetAllData();
             var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
-            System.Console.WriteLine("Product Data: " + data);
             if (productData == null)
             {
                 return null;
