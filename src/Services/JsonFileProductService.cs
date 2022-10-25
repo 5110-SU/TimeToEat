@@ -54,7 +54,17 @@ namespace ContosoCrafts.WebSite.Services
             products = products.Append(product);
             SaveData(products);
             return product;
-        }    
+        }
+
+        /// <summary>
+        /// Retrive a single product in the data storage
+        /// </summary>
+        /// <param name="id">The id of the product to retrive</param>
+        /// <returns>The product with the given id or null if not found</returns>
+        public ProductModel GetProduct(string id)
+        {
+            return GetAllData().FirstOrDefault(m => m.Id.Equals(id));
+        }
 
 
         /// <summary>
@@ -122,6 +132,7 @@ namespace ContosoCrafts.WebSite.Services
         {
             var products = GetAllData();
             var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
+            System.Console.WriteLine("Product Data: " + data);
             if (productData == null)
             {
                 return null;
