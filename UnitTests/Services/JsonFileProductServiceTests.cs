@@ -67,7 +67,7 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(countOriginal + 1, dataNewList.Ratings.Length);
             Assert.AreEqual(5, dataNewList.Ratings.Last());
 
-            // reset
+            // Reset
             var toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
             var ratings = toReset.Ratings.ToList();
             ratings.RemoveAt(toReset.Ratings.Length - 1);
@@ -77,60 +77,60 @@ namespace UnitTests.Pages.Product.AddRating
         [Test]
         public void AddRating_InValid_Product_InvalidID_Should_Return_False()
         {
-            // assign
+            // Arrange
 
-            // act
+            // Act
             bool result = TestHelper.ProductService.AddRating("sdasdasd", 2);
 
-            // assert
+            // Assert
             Assert.AreEqual(false, result);
         }
 
         [Test]
         public void AddRating_InValid_Product_Rating_Low_Should_Return_False()
         {
-            // assign
+            // Arrange
 
-            // act
+            // Act
             ProductModel data = TestHelper.ProductService.GetAllData().First();
             bool result = TestHelper.ProductService.AddRating(data.Id, -8);
 
-            // assert
+            // Assert
             Assert.AreEqual(false, result);
         }
 
         [Test]
         public void AddRating_InValid_Product_Rating_High_Should_Return_False()
         {
-            // assign
+            // Arrange
 
-            // act
+            // Act
             ProductModel data = TestHelper.ProductService.GetAllData().First();
             bool result = TestHelper.ProductService.AddRating(data.Id, 8);
 
-            // assert
+            // Assert
             Assert.AreEqual(false, result);
         }
 
         [Test]
         public void AddRating_Valid_Product_Empty_Rating_Should_Return_True()
         {
-            // assign
+            // Arrange
 
             // Get the object state before changes applied
             string testID = "Vietnamese";
             ProductModel data = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
 
-            // act
+            // Act
             bool result = TestHelper.ProductService.AddRating(testID, 5);
             ProductModel dataNewList = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
 
-            // assert
+            // Assert
             Assert.AreEqual(true, result);
             Assert.AreEqual(1, dataNewList.Ratings.Length);
             Assert.AreEqual(5, dataNewList.Ratings.Last());
 
-            // reset
+            // Reset
             ProductModel toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
             toReset.Ratings = null;
         }
@@ -140,7 +140,7 @@ namespace UnitTests.Pages.Product.AddRating
         [Test]
         public void UpdateData_Invalid_ProductID_Should_Return_Null()
         {
-            // assign
+            // Arrange
             ProductModel data = new ProductModel()
             {
                 Id = "does not exist",
@@ -150,17 +150,17 @@ namespace UnitTests.Pages.Product.AddRating
                 Image = "",
             };
 
-            // act
+            // Act
             ProductModel result = TestHelper.ProductService.UpdateData(data);
 
-            // assert
+            // Assert
             Assert.AreEqual(null, result);
         }
 
         [Test]
         public void UpdateData_Valid_ProductID_Should_Return_ProductModelObject()
         {
-            // assign
+            // Arrange
             ProductModel data = new ProductModel()
             {
                 Id = "Vietnamese",
@@ -173,10 +173,10 @@ namespace UnitTests.Pages.Product.AddRating
             // remember old object state for database reset
             ProductModel oldState = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Vietnamese"));
 
-            // act
+            // Act
             ProductModel result = TestHelper.ProductService.UpdateData(data);
 
-            // assert
+            // Assert
             Assert.AreEqual(data.Title, result.Title);
             Assert.AreEqual(data.Description, result.Description);
             Assert.AreEqual(data.Url, result.Url);
@@ -185,7 +185,7 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(data.Price, result.Price);
             Assert.AreEqual(data.CommentList, result.CommentList);
 
-            // reset
+            // Reset
             ProductModel toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Steak House"));
             toReset = oldState;
         }
@@ -195,16 +195,16 @@ namespace UnitTests.Pages.Product.AddRating
         [Test]
         public void DeleteData_Valid_ProductID_Should_Return_ProductModelObject()
         {
-            // assigned
+            // Arrangeed
             var oldState = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Steak House"));
 
-            // act
+            // Act
             var result = TestHelper.ProductService.DeleteData("Steak House");
 
-            // assert
+            // Assert
             Assert.AreEqual(oldState.ToString(), result.ToString());
 
-            // reset
+            // Reset
             var newCreateData = TestHelper.ProductService.CreateData();
             var newData = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(newCreateData.Id));
             newData = oldState;
@@ -215,20 +215,65 @@ namespace UnitTests.Pages.Product.AddRating
         [Test]
         public void GetProducts_Should_Return_ListOfProduct()
         {
-            // assigned
+            // Arrange
             var listOfProducts = TestHelper.ProductService.GetProducts();
             var listOfProductsArray = listOfProducts.ToArray();
 
-            // act
+            // Act
             var result = TestHelper.ProductService.GetProducts();
             var resultArray = result.ToArray();
 
-            // assert
+            // Assert
             for (int i = 0; i < listOfProductsArray.Length; i++)
             {
                 Assert.AreEqual(listOfProductsArray[i].ToString(), resultArray[i].ToString());
             }
         }
         #endregion GetProducts
+
+        #region GetProduct
+        [Test]
+        public void GetProduct_Invalid_ProductID_Should_Return_Null()
+        {
+            // Arrange
+            var ramdomId = System.Guid.NewGuid().ToString();
+            // Act
+            var result = TestHelper.ProductService.GetProduct(ramdomId);
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+        [Test]
+        public void GetProduct_Valid_ProductID_Should_Return_ProductModelObject()
+        {
+            // Arrange
+            var Id = TestHelper.ProductService.GetAllData().First().Id;
+
+            // Act
+            var result = TestHelper.ProductService.GetProduct(Id).Id;
+
+            // Assert
+            Assert.AreEqual(Id, result);
+        }
+        #endregion GetProduct
+
+        #region CreateProduct
+        [Test]
+        public void CreateProduct_Save_ProductModelObject_Should_Return_True()
+        {
+            // Arrange
+            var data = new ProductModel();
+
+            // Act
+            var newData = TestHelper.ProductService.CreateProduct(data);
+            var result = newData.Id != null;
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        #endregion CreateProduct
+
     }
 }
