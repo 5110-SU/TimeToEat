@@ -62,6 +62,9 @@ namespace UnitTests.Pages.Create
             pageModel.ModelState.AddModelError("title-err", "title required");
 
 
+            // act
+            pageModel.OnPost();
+
             // Assert
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
         }
