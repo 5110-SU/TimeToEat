@@ -106,7 +106,7 @@ namespace UnitTests.Pages.Create
 
             // assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(defDescription, TestHelper.ProductService.GetProduct(data.Id).Url);
+            Assert.AreEqual(defDescription, TestHelper.ProductService.GetProduct(data.Id).Description);
 
             // reset
             TestHelper.ProductService.DeleteData(data.Id);
