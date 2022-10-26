@@ -49,7 +49,7 @@ namespace UnitTests.Pages.Create
         }
 
         [Test]
-        public void OnPost_Null_Image_Return_Create_Page()
+        public void OnPost_Null_Image_Should_Return_Create_Page()
         {
             // assign
             var defImg = "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-instagram-post-advertisement-design-template-5e3dde31601916fac13b611b18066f52_screen.jpg?ts=1622274831";
