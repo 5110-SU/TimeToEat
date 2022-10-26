@@ -48,7 +48,7 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
             ProductModel product = ProductService.UpdateData(Product);
 
             if (product == null) {
-                return RedirectToPage("./NotFound");
+                return RedirectToPage("./Index");
             }
             
             // Redirect user to the Updated restaurant detail page
