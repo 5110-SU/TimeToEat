@@ -75,7 +75,7 @@ namespace UnitTests.Pages.Create
         }
 
         [Test]
-        public void OnPost_Null_Url_Return_Create_Page()
+        public void OnPost_Null_Url_Should_Return_Create_Page()
         {
             // assign
             var defurl = "https://time-to-eat.azurewebsites.net";
