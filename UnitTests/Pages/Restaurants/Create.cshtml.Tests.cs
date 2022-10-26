@@ -35,6 +35,20 @@ namespace UnitTests.Pages.Create
 
         #region OnPost
         [Test]
+        public void OnPost_Invalid_Input_Should_Return_Create_Page()
+        {
+            // arrange
+            pageModel.Product = new ProductModel();
+            pageModel.ModelState.AddModelError("forcing an error", "forcing an error");
+
+            // act
+            pageModel.OnPost();
+
+            // assert
+            Assert.AreEqual(pageModel.ModelState.IsValid, false);
+        }
+
+        [Test]
         public void OnPost_Null_Image_Return_Create_Page()
         {
             // assign
