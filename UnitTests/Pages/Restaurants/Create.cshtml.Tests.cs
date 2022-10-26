@@ -1,11 +1,7 @@
 ﻿using ContosoCrafts.WebSite.Pages.Restaurants;
+using ContosoCrafts.WebSite.Models;
 using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitTests.Pages.Create
 {
@@ -25,35 +21,51 @@ namespace UnitTests.Pages.Create
 
         #region OnGet
         [Test]
-        public void OnGet_Valid_Should_Return_Create_Page()
+        public void OnGet_Valid_Should_Create_Empty_Product_Model()
         {
             // Arrange
-
             // Act
             pageModel.OnGet();
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(null, pageModel.Product.Id);
         }
         #endregion OnGet
 
         #region OnPost
-        [Test]
-        public void OnPost_Valid_Image_Return_Create_Page()
+         [Test]
+        public void OnPost_Invalid_Should_Produce_Invalid_Model_State()
         {
-            // assign
-            var defImg = "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-instagram-post-advertisement-design-template-5e3dde31601916fac13b611b18066f52_screen.jpg?ts=1622274831";
+            // Arrange
+            pageModel.Product = new ProductModel();
 
-            // act
+            // Force an invalid error state
+            pageModel.ModelState.AddModelError("title-err", "title empty");
+
+            // Act
+            pageModel.OnPost();
+
+            // Assert
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+        }
+
+
+        [Test]
+        public void OnPost_Valid_Empty_Product_Should_Redirect_To_Detail_Page()
+        {
+            // Arrange
+            pageModel.Product = new ProductModel();
+
+            // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
 
-            // assert
+            // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-
-            // reset
-
-
+            Assert.AreEqual(true, pageModel.Product.Id != null);
+            Assert.AreEqual(true, result.PageName.Contains("Detail"));
         }
+
         #endregion OnPost
     }
 }
