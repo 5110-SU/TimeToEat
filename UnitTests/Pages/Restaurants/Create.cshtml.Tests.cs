@@ -34,38 +34,31 @@ namespace UnitTests.Pages.Create
         #endregion OnGet
 
         #region OnPost
-         [Test]
-        public void OnPost_Invalid_Should_Produce_Invalid_Model_State()
-        {
-            // Arrange
-            pageModel.Product = new ProductModel();
-
-            // Force an invalid error state
-            pageModel.ModelState.AddModelError("title-err", "title empty");
-
-            // Act
-            pageModel.OnPost();
-
-            // Assert
-            Assert.AreEqual(false, pageModel.ModelState.IsValid);
-        }
-
-
         [Test]
-        public void OnPost_Valid_Empty_Product_Should_Redirect_To_Detail_Page()
+        public void OnPost_Null_Image_Return_Create_Page()
         {
-            // Arrange
-            pageModel.Product = new ProductModel();
+            // assign
+            var defImg = "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-instagram-post-advertisement-design-template-5e3dde31601916fac13b611b18066f52_screen.jpg?ts=1622274831";
+            var data = new ProductModel()
+            {
+                Id = "fortest",
+                Title = "Enter Title",
+                Description = "Enter Description",
+                Url = "Enter URL",
+                Image = null,
+            };
+            pageModel.Product = data;
 
-            // Act
+            // act
             var result = pageModel.OnPost() as RedirectToPageResult;
 
-            // Assert
+            // assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(true, pageModel.Product.Id != null);
-            Assert.AreEqual(true, result.PageName.Contains("Detail"));
-        }
+            Assert.AreEqual(defImg, TestHelper.ProductService.GetProduct(data.Id).Image);
 
+            // reset
+            TestHelper.ProductService.DeleteData(data.Id);
+        }
         #endregion OnPost
     }
 }
