@@ -22,15 +22,16 @@ namespace UnitTests.Pages.Create
 
         #region OnGet
         [Test]
-        public void OnGet_Valid_Should_Return_Create_Page()
+        public void OnGet_Valid_Should_Return_Products()
         {
             // Arrange
 
             // Act
-            pageModel.OnGet("");
+            pageModel.OnGet("German");
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual("Rhein Haus", pageModel.Product.Title);
         }
         #endregion OnGet
 
