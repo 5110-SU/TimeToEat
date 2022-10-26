@@ -51,7 +51,7 @@ namespace UnitTests.Pages.Create
         [Test]
         public void OnPost_Null_Image_Should_Return_Create_Page()
         {
-            // assign
+            // arrange
             var defImg = "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-instagram-post-advertisement-design-template-5e3dde31601916fac13b611b18066f52_screen.jpg?ts=1622274831";
             var data = new ProductModel()
             {
@@ -77,7 +77,7 @@ namespace UnitTests.Pages.Create
         [Test]
         public void OnPost_Null_Url_Should_Return_Create_Page()
         {
-            // assign
+            // arrange
             var defurl = "https://time-to-eat.azurewebsites.net";
             var data = new ProductModel()
             {
@@ -103,7 +103,7 @@ namespace UnitTests.Pages.Create
         [Test]
         public void OnPost_Null_Description_Should_Return_Create_Page()
         {
-            // assign
+            // arrange
             var defDescription = "Seattle is a food lover’s dream! There are lots of great options so we’ve highlighted some of the best and most unique places to eat in Seattle, Washington.";
             var data = new ProductModel()
             {
