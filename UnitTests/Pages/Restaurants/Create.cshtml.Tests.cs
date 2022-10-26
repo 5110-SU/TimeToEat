@@ -101,7 +101,7 @@ namespace UnitTests.Pages.Create
         }
 
         [Test]
-        public void OnPost_Null_Description_Return_Create_Page()
+        public void OnPost_Null_Description_Should_Return_Create_Page()
         {
             // assign
             var defDescription = "Seattle is a food lover’s dream! There are lots of great options so we’ve highlighted some of the best and most unique places to eat in Seattle, Washington.";
