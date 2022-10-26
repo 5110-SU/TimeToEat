@@ -59,6 +59,33 @@ namespace UnitTests.Pages.Create
             // reset
             TestHelper.ProductService.DeleteData(data.Id);
         }
+
+        [Test]
+        public void OnPost_Null_Url_Return_Create_Page()
+        {
+            // assign
+            var defurl = "https://time-to-eat.azurewebsites.net";
+            var data = new ProductModel()
+            {
+                Id = "fortest",
+                Title = "Enter Title",
+                Description = "Enter Description",
+                Url = null,
+                Image = "",
+            };
+            pageModel.Product = data;
+
+            // act
+            var result = pageModel.OnPost() as RedirectToPageResult;
+
+            // assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(defurl, TestHelper.ProductService.GetProduct(data.Id).Url);
+
+            // reset
+            TestHelper.ProductService.DeleteData(data.Id);
+        }
+
         #endregion OnPost
     }
 }
