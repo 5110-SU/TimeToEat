@@ -86,6 +86,31 @@ namespace UnitTests.Pages.Create
             TestHelper.ProductService.DeleteData(data.Id);
         }
 
+        [Test]
+        public void OnPost_Null_Description_Return_Create_Page()
+        {
+            // assign
+            var defDescription = "Seattle is a food lover’s dream! There are lots of great options so we’ve highlighted some of the best and most unique places to eat in Seattle, Washington.";
+            var data = new ProductModel()
+            {
+                Id = "fortest",
+                Title = "Enter Title",
+                Description = null,
+                Url = "Enter URL",
+                Image = "",
+            };
+            pageModel.Product = data;
+
+            // act
+            var result = pageModel.OnPost() as RedirectToPageResult;
+
+            // assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(defDescription, TestHelper.ProductService.GetProduct(data.Id).Url);
+
+            // reset
+            TestHelper.ProductService.DeleteData(data.Id);
+        }
         #endregion OnPost
     }
 }
