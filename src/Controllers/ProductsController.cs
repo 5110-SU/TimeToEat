@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 using ContosoCrafts.WebSite.Models;
@@ -7,8 +7,8 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Controllers
 {
+    [Route("api/restaurants")]
     [ApiController]
-    [Route("[controller]")]
     public class ProductsController : ControllerBase
     {
         public ProductsController(JsonFileProductService productService)
@@ -19,7 +19,6 @@ namespace ContosoCrafts.WebSite.Controllers
         public JsonFileProductService ProductService { get; }
 
         [HttpGet]
-        [Route("Restaurants")]
         public IEnumerable<ProductModel> Get()
         {
             return ProductService.GetAllData();
