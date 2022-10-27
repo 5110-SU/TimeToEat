@@ -4,12 +4,19 @@ using System.Linq;
 
 namespace UnitTests.Pages.Restaurants
 {
+    /// <summary>
+    /// Unit tests for the ReadModel class.
+    /// </summary>
     public class DetailTests
     {
         #region TestSetup
 
+        // Read Model Page instance to test
         public static ReadModel pageModel;
 
+        /// <summary>
+        /// SetUp ReadModel for the tests
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -21,6 +28,10 @@ namespace UnitTests.Pages.Restaurants
         #endregion TestSetup
 
         #region OnGet
+
+        /// <summary>
+        /// Test the Valid OnGet Http request method with random product id
+        /// </summary>
         [Test]
         public void OnGet_Valid_With_New_Product_ID_Should_Retrieve_Null()
         {
@@ -35,6 +46,9 @@ namespace UnitTests.Pages.Restaurants
             Assert.AreEqual(null, pageModel.Product);
         }
 
+        /// <summary>
+        /// Test the OnGet Http request method with existing product id
+        /// </summary>
         [Test]
         public void OnGet_Valid_With_Existing_Product_ID_Should_Retrieve_Expected_Product()
         {
