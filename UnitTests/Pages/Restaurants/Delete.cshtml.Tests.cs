@@ -89,6 +89,23 @@ namespace UnitTests.Pages.Restaurants
             Assert.AreEqual(true, result.PageName.Contains("Index"));
         }
 
+
+        [Test]
+        public void OnPost_Invalid_Should_Return_Same_Page()
+        {
+            // Arrange
+            pageModel.Product = new ProductModel();
+            // force an invalid error state
+            pageModel.ModelState.AddModelError("delete-err", "under-cache");
+
+
+            // Act
+            pageModel.OnPost();
+
+            // Assert
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+        }
+
         #endregion OnPost
     }
 }
