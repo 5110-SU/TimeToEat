@@ -152,17 +152,21 @@ ul {
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
     font-family: 'Nunito', sans-serif;
+    color:#fff !important;
 }
 /*Backgrounds*/
 .bg-navbar {
-    background: #495F9F
+    background: -webkit-linear-gradient(130deg, #fff 60%, #1b6ec2);
+    background: -o-linear-gradient(130deg, #fff 60%, #1b6ec2);
+    background: -moz-linear-gradient(130deg, #fff 60%, #1b6ec2);
+    background: linear-gradient(130deg, #fff 60%, #1b6ec2);
 }
 
 .bg-footer {
-    background: -webkit-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: -o-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: -moz-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
+    background: -webkit-linear-gradient(110deg, #0f4274, #fff 60%);
+    background: -o-linear-gradient(110deg, #0f4274, #fff 60%);
+    background: -moz-linear-gradient(110deg, #0f4274, #fff 60%);
+    background: linear-gradient(110deg, #0f4274, #fff 60%);
 }
 
 #home-title1 {
@@ -194,4 +198,99 @@ ul {
 #logo-image {
     width: 65px;
     height: 65px;
+}
+
+
+/*----  Open Page Card  ----*/
+
+#cards_wrapper {
+    text-align: center;
+    padding-top: 10px; 
+    padding-bottom: 20px;
+}
+#cards_wrapper a{
+    text-decoration: none;
+    outline: none;
+}
+#cards_wrapper .card-flyer {
+    border-radius: 5px;
+}
+#cards_wrapper .card-flyer .image-box {
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+    border-radius: 5px;
+}
+#cards_wrapper .card-flyer .image-box img {
+    opacity: 0.8;
+    -webkit-transition:all .7s ease; 
+    -moz-transition:all .7s ease; 
+    -o-transition:all .7s ease;
+    -ms-transition:all .7s ease; 
+    width: 100%;
+    height: 200px;
+}
+#cards_wrapper .card-flyer:hover .image-box img {
+    opacity: 1;
+    -webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -ms-transform:scale(1.1);
+    -o-transform:scale(1.1);
+    transform:scale(1.1);
+}
+#cards_wrapper .card-flyer .text-box {
+    text-align: center;
+}
+#cards_wrapper .card-flyer .text-box .text-container {
+    padding: 30px 18px;
+}
+#cards_wrapper .card-flyer {
+    background: #FFFFFF;
+    margin-top: 50px;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+}
+#cards_wrapper .card-flyer:hover {
+    background: #fff;
+    box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    margin-top: 50px;
+}
+#cards_wrapper .card-flyer .text-box p {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 0px; 
+    letter-spacing: 1px;
+    color: #000000;
+    min-height: 100px;
+}
+#cards_wrapper .card-flyer .text-box h6 {
+    margin-top: 0px;
+    margin-bottom: 4px; 
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0f4274;
+}
+
+#cards_wrapper .card-flyer .text-box i {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    color: #0f4274;
+    transition: all 0.2s ease-in;
+}
+
+#cards_wrapper .card-flyer .text-box i:hover {
+    transform: scale(1.2);
+    color: #e9a8a6;
+    transition: all 0.2s ease-in;
 }
