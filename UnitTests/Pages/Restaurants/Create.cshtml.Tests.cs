@@ -5,6 +5,9 @@ using NUnit.Framework;
 
 namespace UnitTests.Pages.Create
 {
+    /// <summary>
+    /// Unit tests for CreateModel class 
+    /// </summary>
     public class CreateTests
     {
         #region TestSetup
