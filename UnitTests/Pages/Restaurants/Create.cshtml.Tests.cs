@@ -11,6 +11,8 @@ namespace UnitTests.Pages.Create
     public class CreateTests
     {
         #region TestSetup
+
+        // Create Model Page instance to test
         public static CreateModel pageModel;
         [SetUp]
         public void TestInitialize()
