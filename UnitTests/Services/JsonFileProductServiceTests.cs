@@ -62,16 +62,16 @@ namespace UnitTests.Pages.Product.AddRating
             var result = TestHelper.ProductService.AddRating(data.Id, 5);
             var dataNewList = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
 
-            // Assert
-            Assert.AreEqual(true, result);
-            Assert.AreEqual(countOriginal + 1, dataNewList.Ratings.Length);
-            Assert.AreEqual(5, dataNewList.Ratings.Last());
-
             // Reset
             var toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
             var ratings = toReset.Ratings.ToList();
             ratings.RemoveAt(toReset.Ratings.Length - 1);
             toReset.Ratings = ratings.ToArray();
+
+            // Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(countOriginal + 1, dataNewList.Ratings.Length);
+            Assert.AreEqual(5, dataNewList.Ratings.Last());
         }
 
         [Test]
