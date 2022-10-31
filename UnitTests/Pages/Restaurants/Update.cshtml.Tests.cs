@@ -67,6 +67,9 @@ namespace UnitTests.Pages.Create
             Assert.AreEqual(true, result.PageName.Contains("Detail"));
         }
 
+        /// <summary>
+        /// Tests OnPost method returns to update page with invalid data 
+        /// </summary>
         [Test]
         public void OnPost_Invalid_Should_Return_Same_Page()
         {
@@ -76,8 +79,7 @@ namespace UnitTests.Pages.Create
             // Force an invalid error state
             pageModel.ModelState.AddModelError("title-err", "title required");
 
-
-            // act
+            // Act
             pageModel.OnPost();
 
             // Assert
