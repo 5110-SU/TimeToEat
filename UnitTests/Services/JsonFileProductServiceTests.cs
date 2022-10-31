@@ -310,6 +310,10 @@ namespace UnitTests.Pages.Product.AddRating
         #endregion GetProduct
 
         #region CreateProduct
+
+        /// <summary>
+        /// Tests CreateProduct
+        /// </summary>
         [Test]
         public void CreateProduct_Save_ProductModelObject_Should_Return_True()
         {
