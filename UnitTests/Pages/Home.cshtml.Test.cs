@@ -10,11 +10,16 @@ using ContosoCrafts.WebSite.Pages;
 
 namespace UnitTests.Pages.Home
 {
+    // Unit Testing class for home page
+    // - Testing Methods:
+    //      - OnGet()
     public class HomeTests
     {
         #region TestSetup
 
         public static HomeModel pageModel;
+
+        // Setting up the environment/model 
         [SetUp]
         public void TestInitialize()
         {
@@ -26,6 +31,8 @@ namespace UnitTests.Pages.Home
         #endregion TestSetup
 
         #region OnGet
+        // ModelState.IsValid should return true after OnGet is called 
+        // with valid 
         [Test]
         public void OnGet_Valid_Should_Return_Home_Page()
         {
