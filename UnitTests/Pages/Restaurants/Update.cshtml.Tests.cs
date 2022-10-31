@@ -86,6 +86,9 @@ namespace UnitTests.Pages.Create
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
         }
 
+        /// <summary>
+        /// Tests OnPost method redirects to index page with invalid data
+        /// </summary>
         [Test]
         public void OnPost_Invalid_Should_Return_Redirect_Index_Page()
         {
