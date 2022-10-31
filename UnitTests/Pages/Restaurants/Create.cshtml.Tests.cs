@@ -64,7 +64,7 @@ namespace UnitTests.Pages.Create
         }
 
         /// <summary>
-        /// Tests OnPost method creates 
+        /// Tests OnPost method returns to create page when an image is null 
         /// </summary>
         [Test]
         public void OnPost_Null_Image_Should_Return_Create_Page()
