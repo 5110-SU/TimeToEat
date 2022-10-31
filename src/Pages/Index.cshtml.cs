@@ -38,6 +38,9 @@ namespace ContosoCrafts.WebSite.Pages
         /// </summary>
         public IEnumerable<ProductModel> Products { get; private set; }
 
+        /// <summary>
+        /// OnGet method retrieves Products via calling ProductService.GetAllData()
+        /// </summary>
         public void OnGet()
         {
             Products = ProductService.GetAllData();
