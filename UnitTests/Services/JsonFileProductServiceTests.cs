@@ -89,6 +89,9 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(5, dataNewList.Ratings.Last());
         }
 
+        /// <summary>
+        /// Test AddRating with invalid product ID
+        /// </summary>
         [Test]
         public void AddRating_InValid_Product_InvalidID_Should_Return_False()
         {
