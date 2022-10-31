@@ -5,6 +5,9 @@ using ContosoCrafts.WebSite.Models;
 
 namespace ContosoCrafts.WebSite.Pages.Restaurants
 {
+    /// <summary>
+    /// Update page
+    /// </summary>
     public class UpdateModel : PageModel
     {
         // Data middletier
