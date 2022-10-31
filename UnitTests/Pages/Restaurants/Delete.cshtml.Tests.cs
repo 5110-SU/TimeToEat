@@ -18,6 +18,7 @@ namespace UnitTests.Pages.Restaurants
 
         /// <summary>
         /// Setup the test environment for the delete page model
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
