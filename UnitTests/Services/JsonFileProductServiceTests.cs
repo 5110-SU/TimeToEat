@@ -275,6 +275,7 @@ namespace UnitTests.Pages.Product.AddRating
                 Assert.AreEqual(listOfProductsArray[i].ToString(), resultArray[i].ToString());
             }
         }
+
         #endregion GetProducts
 
         #region GetProduct
