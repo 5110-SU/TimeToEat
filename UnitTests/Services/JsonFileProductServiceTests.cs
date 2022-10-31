@@ -187,6 +187,9 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(null, result);
         }
 
+        /// <summary>
+        /// Tests UpdateData with valid product ID
+        /// </summary>
         [Test]
         public void UpdateData_Valid_ProductID_Should_Return_ProductModelObject()
         {
