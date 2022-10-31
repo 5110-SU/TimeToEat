@@ -90,7 +90,9 @@ namespace UnitTests.Pages.Restaurants
             Assert.AreEqual(true, result.PageName.Contains("Index"));
         }
 
-
+        /// <summary>
+        /// Test invalid pageModel condition
+        /// </summary>
         [Test]
         public void OnPost_Invalid_Should_Return_Same_Page()
         {
@@ -98,7 +100,6 @@ namespace UnitTests.Pages.Restaurants
             pageModel.Product = new ProductModel();
             // force an invalid error state
             pageModel.ModelState.AddModelError("delete-err", "under-cache");
-
 
             // Act
             pageModel.OnPost();
