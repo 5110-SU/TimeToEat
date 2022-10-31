@@ -275,6 +275,10 @@ namespace UnitTests.Pages.Product.AddRating
         #endregion GetProducts
 
         #region GetProduct
+
+        /// <summary>
+        /// Tests GetProduct with invalid product ID
+        /// </summary>
         [Test]
         public void GetProduct_Invalid_ProductID_Should_Return_Null()
         {
