@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace UnitTests.Pages.Create
 {
+    /// <summary>
+    /// Unit tests for the UpdateModel class 
+    /// </summary>
     public class UpdateTests
     {
         #region TestSetup
