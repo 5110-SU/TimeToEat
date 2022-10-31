@@ -136,6 +136,9 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Test AddRating with empty rating and valid product ID
+        /// </summary>
         [Test]
         public void AddRating_Valid_Product_Empty_Rating_Should_Return_True()
         {
