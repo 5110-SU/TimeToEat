@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace UnitTests.Pages.Restaurants
 {
+    /// <summary>
+    /// Unit tests for the IndexModel class
+    /// </summary>
     public class IndexTests
     {
         #region TestSetup
