@@ -30,7 +30,7 @@ namespace UnitTests.Pages.Create
 
         #region OnGet
         /// <summary>
-        /// Test the Valid OnGet request method 
+        /// Tests OnGet method creates an empty product model with valid input 
         /// </summary>
         [Test]
         public void OnGet_Valid_Should_Create_Empty_Product_Model()
