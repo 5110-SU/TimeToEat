@@ -13,7 +13,13 @@ namespace UnitTests.Pages.Create
     public class UpdateTests
     {
         #region TestSetup
+
+        // Update Model Page instance to test
         public static UpdateModel pageModel;
+
+        /// <summary>
+        /// SetUp UpdateModel for the tests 
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
