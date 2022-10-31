@@ -237,6 +237,7 @@ namespace UnitTests.Pages.Product.AddRating
         {
             // Arrange
             var ramdomId = System.Guid.NewGuid().ToString();
+
             // Act
             var result = TestHelper.ProductService.GetProduct(ramdomId);
 
