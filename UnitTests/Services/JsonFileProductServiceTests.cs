@@ -227,6 +227,10 @@ namespace UnitTests.Pages.Product.AddRating
         #endregion UpdateData
 
         #region DeleteData
+
+        /// <summary>
+        /// Tests DeleteData with valid product ID
+        /// </summary>
         [Test]
         public void DeleteData_Valid_ProductID_Should_Return_ProductModelObject()
         {
