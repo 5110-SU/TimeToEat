@@ -28,7 +28,11 @@ namespace ContosoCrafts.WebSite.Pages
             ProductService = productService;
         }
 
+        /// <summary>
+        /// Get method returns Product Service
+        /// </summary>
         public JsonFileProductService ProductService { get; }
+
         public IEnumerable<ProductModel> Products { get; private set; }
 
         public void OnGet()
