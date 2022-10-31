@@ -311,6 +311,7 @@ namespace UnitTests.Pages.Product.AddRating
             // Assert
             Assert.AreEqual(Id, result);
         }
+
         #endregion GetProduct
 
         #region CreateProduct
