@@ -16,9 +16,12 @@ namespace UnitTests.Pages.Index
     public class IndexTests
     {
         #region TestSetup
-
+        // Index model page instance to test 
         public static IndexModel pageModel;
 
+        /// <summary>
+        /// SetUp IndexModel for unit tests 
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
