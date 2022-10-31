@@ -14,6 +14,10 @@ namespace UnitTests.Pages.Create
 
         // Create Model Page instance to test
         public static CreateModel pageModel;
+
+        /// <summary>
+        /// SetUp CreateModel for the tests
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -25,6 +29,9 @@ namespace UnitTests.Pages.Create
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// Test the Valid OnGet request method 
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Create_Empty_Product_Model()
         {
