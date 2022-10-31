@@ -16,6 +16,11 @@ namespace ContosoCrafts.WebSite.Pages
         // Logger for Index.cshtml.cs
         private readonly ILogger<IndexModel> _logger;
 
+        /// <summary>
+        /// Request for IndexModel logger 
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="productService"></param>
         public IndexModel(ILogger<IndexModel> logger,
             JsonFileProductService productService)
         {
