@@ -225,6 +225,7 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(data.Price, result.Price);
             Assert.AreEqual(data.CommentList, result.CommentList);
         }
+
         #endregion UpdateData
 
         #region DeleteData
