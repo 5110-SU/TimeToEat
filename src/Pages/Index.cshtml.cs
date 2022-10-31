@@ -33,6 +33,9 @@ namespace ContosoCrafts.WebSite.Pages
         /// </summary>
         public JsonFileProductService ProductService { get; }
 
+        /// <summary>
+        /// Get method returns Products while setting to private
+        /// </summary>
         public IEnumerable<ProductModel> Products { get; private set; }
 
         public void OnGet()
