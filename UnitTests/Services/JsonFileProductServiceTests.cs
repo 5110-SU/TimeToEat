@@ -12,10 +12,16 @@ using System;
 
 namespace UnitTests.Pages.Product.AddRating
 {
+    /// <summary>
+    /// Unit tests for JsonFileProductService
+    /// </summary>
     public class JsonFileProductServiceTests
     {
         #region TestSetup
 
+        /// <summary>
+        /// Set up the test environment
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
