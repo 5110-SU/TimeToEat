@@ -45,6 +45,9 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Test AddRating with invalid product ID
+        /// </summary>
         [Test]
         public void AddRating_InValid_Product_Empty_Should_Return_False()
         {
