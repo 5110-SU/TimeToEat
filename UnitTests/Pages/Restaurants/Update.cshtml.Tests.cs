@@ -31,6 +31,9 @@ namespace UnitTests.Pages.Create
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// Tests the Valid OnGet method with product id 
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Return_Products()
         {
