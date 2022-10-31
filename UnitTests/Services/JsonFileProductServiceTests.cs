@@ -162,6 +162,7 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(1, dataNewList.Ratings.Length);
             Assert.AreEqual(5, dataNewList.Ratings.Last());
         }
+
         #endregion AddRating
 
         #region UpdateData
