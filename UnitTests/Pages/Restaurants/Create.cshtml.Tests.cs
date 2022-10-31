@@ -92,6 +92,9 @@ namespace UnitTests.Pages.Create
             TestHelper.ProductService.DeleteData(data.Id);
         }
 
+        /// <summary>
+        /// Tests OnPost method will return create page if URL is null 
+        /// </summary>
         [Test]
         public void OnPost_Null_Url_Should_Return_Create_Page()
         {
