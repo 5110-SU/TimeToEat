@@ -292,6 +292,9 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(null, result);
         }
 
+        /// <summary>
+        /// Tests GetProduct with valid product ID
+        /// </summary>
         [Test]
         public void GetProduct_Valid_ProductID_Should_Return_ProductModelObject()
         {
