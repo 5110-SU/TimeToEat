@@ -28,6 +28,9 @@ namespace UnitTests.Pages.Restaurants
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// Tests OnGet method should retrieve all products
+        /// </summary>
         [Test]
         public void OnGet_Should_Retrieve_All_Products()
         {
