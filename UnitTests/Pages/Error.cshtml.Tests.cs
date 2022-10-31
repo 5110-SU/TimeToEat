@@ -11,7 +11,7 @@ using ContosoCrafts.WebSite.Pages;
 namespace UnitTests.Pages.Error
 {
     /// <summary>
-    /// Error page 
+    /// Unit tests for ErrorModel class
     /// </summary>
     public class ErrorTests
     {
