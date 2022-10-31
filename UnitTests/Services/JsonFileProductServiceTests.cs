@@ -201,13 +201,13 @@ namespace UnitTests.Pages.Product.AddRating
             // Act
             var result = TestHelper.ProductService.DeleteData("Steak House");
 
-            // Assert
-            Assert.AreEqual(oldState.ToString(), result.ToString());
-
             // Reset
             var newCreateData = TestHelper.ProductService.CreateData();
             var newData = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(newCreateData.Id));
             newData = oldState;
+
+            // Assert
+            Assert.AreEqual(oldState.ToString(), result.ToString());
         }
         #endregion DeleteData
 
