@@ -270,6 +270,9 @@ namespace UnitTests.Pages.Product.AddRating
             var newData = TestHelper.ProductService.CreateProduct(data);
             var result = newData.Id != null;
 
+            // reset
+            TestHelper.ProductService.DeleteData(newData.Id);
+
             // Assert
             Assert.AreEqual(true, result);
         }
