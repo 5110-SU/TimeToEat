@@ -46,6 +46,9 @@ namespace UnitTests.Pages.Create
         #endregion OnGet
 
         #region OnPost
+        /// <summary>
+        /// Test the OnPost request to create a new product 
+        /// </summary>
         [Test]
         public void OnPost_Invalid_Input_Should_Return_Create_Page()
         {
