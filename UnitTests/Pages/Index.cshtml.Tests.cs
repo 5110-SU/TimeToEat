@@ -35,6 +35,9 @@ namespace UnitTests.Pages.Index
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// Tests OnGet method returns products 
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Return_Products()
         {
