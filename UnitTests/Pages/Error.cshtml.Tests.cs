@@ -16,8 +16,12 @@ namespace UnitTests.Pages.Error
     public class ErrorTests
     {
         #region TestSetup
+        // Error model page instance to test
         public static ErrorModel pageModel;
 
+        /// <summary>
+        /// SetUp ErrorModel for unit tests 
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -33,6 +37,9 @@ namespace UnitTests.Pages.Error
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// Tests OnGet method should return request id with valid activity
+        /// </summary>
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
