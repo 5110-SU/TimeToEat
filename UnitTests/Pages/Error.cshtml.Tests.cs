@@ -44,7 +44,6 @@ namespace UnitTests.Pages.Error
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
             // Arrange
-
             Activity activity = new Activity("activity");
             activity.Start();
 
@@ -59,6 +58,9 @@ namespace UnitTests.Pages.Error
             Assert.AreEqual(activity.Id, pageModel.RequestId);
         }
 
+        /// <summary>
+        /// Tests OnGet method returns trace identifier with invalid activity 
+        /// </summary>
         [Test]
         public void OnGet_InValid_Activity_Null_Should_Return_TraceIdentifier()
         {
