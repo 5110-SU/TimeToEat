@@ -30,6 +30,9 @@ namespace UnitTests.Pages.Product.AddRating
         #endregion TestSetup
 
         #region AddRating
+        /// <summary>
+        /// Test AddRating with null product ID
+        /// </summary>
         [Test]
         public void AddRating_InValid_Product_Null_Should_Return_False()
         {
@@ -42,6 +45,9 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Test AddRating with invalid product ID
+        /// </summary>
         [Test]
         public void AddRating_InValid_Product_Empty_Should_Return_False()
         {
@@ -54,6 +60,9 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Test AddRating with a rating of 5 and valid product ID
+        /// </summary>
         [Test]
         public void AddRating_Valid_Product_Rating_5_Should_Return_True()
         {
