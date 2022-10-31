@@ -104,6 +104,9 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Test AddRating with lower than 0 rating and valid product ID
+        /// </summary>
         [Test]
         public void AddRating_InValid_Product_Rating_Low_Should_Return_False()
         {
