@@ -120,6 +120,9 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Test AddRating with higher than 5 rating and valid product ID
+        /// </summary>
         [Test]
         public void AddRating_InValid_Product_Rating_High_Should_Return_False()
         {
