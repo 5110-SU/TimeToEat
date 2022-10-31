@@ -176,6 +176,10 @@ namespace UnitTests.Pages.Product.AddRating
             // Act
             ProductModel result = TestHelper.ProductService.UpdateData(data);
 
+            // Reset
+            ProductModel toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Steak House"));
+            toReset = oldState;
+
             // Assert
             Assert.AreEqual(data.Title, result.Title);
             Assert.AreEqual(data.Description, result.Description);
@@ -184,10 +188,6 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(data.Quantity, result.Quantity);
             Assert.AreEqual(data.Price, result.Price);
             Assert.AreEqual(data.CommentList, result.CommentList);
-
-            // Reset
-            ProductModel toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Steak House"));
-            toReset = oldState;
         }
         #endregion UpdateData
 
