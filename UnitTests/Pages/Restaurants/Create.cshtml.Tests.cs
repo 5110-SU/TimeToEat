@@ -47,7 +47,7 @@ namespace UnitTests.Pages.Create
 
         #region OnPost
         /// <summary>
-        /// Test the OnPost request to create a new product 
+        /// Test the Invalid OnPost request method to create a new product 
         /// </summary>
         [Test]
         public void OnPost_Invalid_Input_Should_Return_Create_Page()
@@ -63,6 +63,9 @@ namespace UnitTests.Pages.Create
             Assert.AreEqual(pageModel.ModelState.IsValid, false);
         }
 
+        /// <summary>
+        /// Tests OnPost method creates 
+        /// </summary>
         [Test]
         public void OnPost_Null_Image_Should_Return_Create_Page()
         {
