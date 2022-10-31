@@ -30,6 +30,7 @@ namespace UnitTests.Pages.Product.AddRating
         #endregion TestSetup
 
         #region AddRating
+
         /// <summary>
         /// Test AddRating with null product ID
         /// </summary>
