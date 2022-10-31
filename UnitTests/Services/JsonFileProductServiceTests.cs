@@ -125,14 +125,14 @@ namespace UnitTests.Pages.Product.AddRating
             bool result = TestHelper.ProductService.AddRating(testID, 5);
             ProductModel dataNewList = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
 
+            // Reset
+            ProductModel toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
+            toReset.Ratings = null;
+
             // Assert
             Assert.AreEqual(true, result);
             Assert.AreEqual(1, dataNewList.Ratings.Length);
             Assert.AreEqual(5, dataNewList.Ratings.Last());
-
-            // Reset
-            ProductModel toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
-            toReset.Ratings = null;
         }
         #endregion AddRating
 
