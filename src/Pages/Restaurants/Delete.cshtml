@@ -11,26 +11,7 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input asp-for="Product.Id" class="form-control" type="hidden" />
-            <div class="form-group">
-                <label asp-for="Product.Title" class="control-label">Name</label>
-                <input asp-for="Product.Title" class="form-control" />
-                <span asp-validation-for="Product.Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Product.Image" class="control-label">Photo URL</label>
-                <input asp-for="Product.Image" class="form-control" />
-                <span asp-validation-for="Product.Image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Product.Url" class="control-label">Website URL</label>
-                <input asp-for="Product.Url" class="form-control" />
-                <span asp-validation-for="Product.Url" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Product.Description" class="control-label">Description</label>
-                <input asp-for="Product.Description" class="form-control" />
-                <span asp-validation-for="Product.Description" class="text-danger"></span>
-            </div>
+            <input asp-for="Product.Title" class="form-control" type="hidden" />
             <h5 class="title" id="restaurauntTitle">@Model.Product.Title</h5>
             <img class="restauraunt-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title' style="max-height:1000px;max-width:900px;height:auto;width:auto;">
             <h5 class="restauraunt-description">@Model.Product.Description</h5>
