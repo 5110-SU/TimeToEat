@@ -9,10 +9,7 @@ using ContosoCrafts.WebSite.Services;
 namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary>
-    /// Duc Vo
-    /// Hong Yang
-    /// Sizhe Liu
-    /// Emily S. Lee
+    /// Index page
     /// </summary>
     public class IndexModel : PageModel
     {
