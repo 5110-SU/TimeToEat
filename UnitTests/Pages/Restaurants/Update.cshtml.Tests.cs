@@ -49,6 +49,9 @@ namespace UnitTests.Pages.Create
         #endregion OnGet
 
         #region OnPost
+        /// <summary>
+        /// Tests OnPost method returns to detail page with valid data 
+        /// </summary>
         [Test]
         public void OnPost_Valid_Should_Redirect_To_Detail_Page()
         {
