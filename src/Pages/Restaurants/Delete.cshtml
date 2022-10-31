@@ -1,4 +1,7 @@
-﻿@page
-@model ContosoCrafts.WebSite.Pages.Restaurants.DeleteModel
+﻿@page "{id}"
+@model DeleteModel
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
 @{
+	ViewData["Title"] = "Delete Page";
 }
