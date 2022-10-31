@@ -164,6 +164,9 @@ namespace UnitTests.Pages.Product.AddRating
         #endregion AddRating
 
         #region UpdateData
+        /// <summary>
+        /// Tests UpdateData with invalid product ID
+        /// </summary>
         [Test]
         public void UpdateData_Invalid_ProductID_Should_Return_Null()
         {
