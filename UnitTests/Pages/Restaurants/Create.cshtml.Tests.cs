@@ -52,21 +52,21 @@ namespace UnitTests.Pages.Create
         [Test]
         public void OnPost_Invalid_Input_Should_Return_Create_Page()
         {
-            // arrange
+            // Arrange
             pageModel.Product = new ProductModel();
             pageModel.ModelState.AddModelError("forcing an error", "forcing an error");
 
-            // act
+            // Act
             pageModel.OnPost();
 
-            // assert
+            // Assert
             Assert.AreEqual(pageModel.ModelState.IsValid, false);
         }
 
         [Test]
         public void OnPost_Null_Image_Should_Return_Create_Page()
         {
-            // arrange
+            // Arrange
             var defImg = "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-instagram-post-advertisement-design-template-5e3dde31601916fac13b611b18066f52_screen.jpg?ts=1622274831";
             var data = new ProductModel()
             {
@@ -78,21 +78,21 @@ namespace UnitTests.Pages.Create
             };
             pageModel.Product = data;
 
-            // act
+            // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
 
-            // assert
+            // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(defImg, TestHelper.ProductService.GetProduct(data.Id).Image);
 
-            // reset
+            // Reset
             TestHelper.ProductService.DeleteData(data.Id);
         }
 
         [Test]
         public void OnPost_Null_Url_Should_Return_Create_Page()
         {
-            // arrange
+            // Arrange
             var defurl = "https://time-to-eat.azurewebsites.net";
             var data = new ProductModel()
             {
@@ -104,21 +104,21 @@ namespace UnitTests.Pages.Create
             };
             pageModel.Product = data;
 
-            // act
+            // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
 
-            // assert
+            // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(defurl, TestHelper.ProductService.GetProduct(data.Id).Url);
 
-            // reset
+            // Reset
             TestHelper.ProductService.DeleteData(data.Id);
         }
 
         [Test]
         public void OnPost_Null_Description_Should_Return_Create_Page()
         {
-            // arrange
+            // Arrange
             var defDescription = "Seattle is a food lover’s dream! There are lots of great options so we’ve highlighted some of the best and most unique places to eat in Seattle, Washington.";
             var data = new ProductModel()
             {
@@ -130,14 +130,14 @@ namespace UnitTests.Pages.Create
             };
             pageModel.Product = data;
 
-            // act
+            // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
 
-            // assert
+            // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(defDescription, TestHelper.ProductService.GetProduct(data.Id).Description);
 
-            // reset
+            // Reset
             TestHelper.ProductService.DeleteData(data.Id);
         }
         #endregion OnPost
