@@ -17,6 +17,7 @@ namespace UnitTests.Pages.Home
     {
         #region TestSetup
 
+        // Home model page instace to test 
         public static HomeModel pageModel;
 
         // Setting up the environment/model 
