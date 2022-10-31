@@ -250,6 +250,7 @@ namespace UnitTests.Pages.Product.AddRating
             // Assert
             Assert.AreEqual(oldState.ToString(), result.ToString());
         }
+
         #endregion DeleteData
 
         #region GetProducts
