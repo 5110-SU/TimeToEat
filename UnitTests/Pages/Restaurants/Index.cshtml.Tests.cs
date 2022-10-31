@@ -11,8 +11,12 @@ namespace UnitTests.Pages.Restaurants
     {
         #region TestSetup
 
+        // Index model page instance 
         public static IndexModel pageModel;
 
+        /// <summary>
+        /// SetUp IndexModel for tests
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
