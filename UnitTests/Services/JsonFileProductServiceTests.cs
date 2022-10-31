@@ -165,6 +165,7 @@ namespace UnitTests.Pages.Product.AddRating
         #endregion AddRating
 
         #region UpdateData
+
         /// <summary>
         /// Tests UpdateData with invalid product ID
         /// </summary>
