@@ -251,6 +251,10 @@ namespace UnitTests.Pages.Product.AddRating
         #endregion DeleteData
 
         #region GetProducts
+
+        /// <summary>
+        /// Tests GetProducts
+        /// </summary>
         [Test]
         public void GetProducts_Should_Return_ListOfProduct()
         {
