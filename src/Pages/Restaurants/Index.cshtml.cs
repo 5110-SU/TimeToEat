@@ -6,6 +6,9 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Pages.Restaurants
 {
+    /// <summary>
+    /// The index model page to display all restauraunts in the database
+    /// </summary>
     public class IndexModel : PageModel
     {
         // Data middletier
