@@ -10,10 +10,16 @@ using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Components
 {
+    /// <summary>
+    /// Unit test for ProductList.razor
+    /// </summary>
     public class ProductListTests : BunitTestContext
     {
         #region TestSetup
 
+        /// <summary>
+        /// Initialize unit test 
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -21,6 +27,9 @@ namespace UnitTests.Components
 
         #endregion TestSetup
 
+        /// <summary>
+        /// Unit test on ProductList with default argument
+        /// </summary>
         [Test]
         public void ProductList_Default_Should_Return_Content()
         {
