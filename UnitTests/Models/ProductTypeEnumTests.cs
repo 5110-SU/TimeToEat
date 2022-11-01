@@ -29,5 +29,29 @@ namespace UnitTests.Models
         }
 
         #endregion TestSetup
+
+        #region DisplayName
+
+        [Test]
+        public void DisplayName_Valid_ProductTypeEnum_Should_Return_String()
+        {
+            // arrange
+            ProductTypeEnum data = new ProductTypeEnum()
+            {
+                Undefined = 0,  // Default value
+                Fastfood = 1,  // Fastfood Restaurant
+                Cafe = 5,  // Cafe Restaurant
+                BBQ = 130,  // BBQ Restaurant
+                FineDining = 55,  // Fine Dining Restaurant
+            };
+
+            // act
+            TestModel.DisplayName(data);
+
+            // assert
+            Assert.AreEqual();
+        }
+
+        #endregion DisplayName
     }
 }
