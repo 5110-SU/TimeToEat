@@ -48,6 +48,26 @@ namespace UnitTests.Models
             Assert.AreEqual(newId, TestModel.Id);
         }
 
-        # endregion TestID
+        #endregion TestID
+
+        #region TestComment
+
+        /// <summary>
+        /// unit test on Comment set and get
+        /// </summary>
+        [Test]
+        public void SetGetComment_Should_Return_Comment()
+        {
+            // arrange
+            var newComment = "test";
+
+            // act
+            TestModel.Comment = newComment;
+
+            // assert
+            Assert.AreEqual(newComment, TestModel.Comment);
+        }
+
+        #endregion TestComment
     }
 }
