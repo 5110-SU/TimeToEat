@@ -14,7 +14,7 @@ namespace UnitTests.Models
     {
         #region TestSetup
 
-        // The delete page model to test
+        // The ProductTypeEnum type test model to test
         public static ProductTypeEnum TestModel;
 
         /// <summary>
