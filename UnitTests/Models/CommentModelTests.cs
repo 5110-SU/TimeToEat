@@ -29,5 +29,25 @@ namespace UnitTests.Models
         }
 
         #endregion TestSetup
+
+        #region TestID
+
+        /// <summary>
+        /// unit test on Id set and get
+        /// </summary>
+        [Test]
+        public void SetGetId_Should_Return_Id()
+        {
+            // arrange
+            var newId = Guid.NewGuid().ToString();
+
+            // act
+            TestModel.Id = newId;
+
+            // assert
+            Assert.AreEqual(newId, TestModel.Id);
+        }
+
+        # endregion TestID
     }
 }
