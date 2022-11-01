@@ -78,7 +78,7 @@ namespace UnitTests.Models
             var expected = "Cafe";
 
             // act
-            var actual = TestModel.DisplayName();
+            var actual = ProductTypeEnumExtensions.DisplayName(productType);
 
             // assert
             Assert.AreEqual(actual, expected);
