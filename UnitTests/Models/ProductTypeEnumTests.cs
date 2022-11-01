@@ -67,6 +67,23 @@ namespace UnitTests.Models
             Assert.AreEqual(actual, expected);
         }
 
+        /// <summary>
+        /// Test DisplayName function with enum type Cafe
+        /// </summary>
+        [Test]
+        public void DisplayName_ProductType_Cafe_Should_Return_Cafe()
+        {
+            // arrange
+            var productType = ProductTypeEnum.Cafe;
+            var expected = "Cafe";
+
+            // act
+            var actual = TestModel.DisplayName();
+
+            // assert
+            Assert.AreEqual(actual, expected);
+        }
+
         #endregion DisplayName
     }
 }
