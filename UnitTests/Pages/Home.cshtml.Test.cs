@@ -22,7 +22,9 @@ namespace UnitTests.Pages.Home
         /// Home model page instace to test 
         public static HomeModel pageModel;
 
-        /// Setting up the environment/model 
+        /// <summary>
+        /// Setting up the environment/model
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -34,6 +36,7 @@ namespace UnitTests.Pages.Home
         #endregion TestSetup
 
         #region OnGet
+
         /// ModelState.IsValid should return true after OnGet is called 
         /// with valid 
         [Test]
@@ -47,6 +50,7 @@ namespace UnitTests.Pages.Home
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
         }
+
         #endregion OnGet
     }
 }
