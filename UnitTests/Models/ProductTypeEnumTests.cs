@@ -91,7 +91,7 @@ namespace UnitTests.Models
         public void DisplayName_ProductType_BBQ_Should_Return_BBQ()
         {
             // arrange
-            var productType = ProductTypeEnum.Cafe;
+            var productType = ProductTypeEnum.BBQ;
             var expected = "BBQ";
 
             // act
