@@ -14,19 +14,12 @@ namespace UnitTests.Models
     {
         #region TestSetup
 
-        // The ProductTypeEnum type test model to test
-        public static ProductTypeEnum TestModel;
-
         /// <summary>
         /// Setup the test environment for the TestModel
         /// </summary>
         [SetUp]
         public void TestInitialize()
         {
-            TestModel = new ProductTypeEnum()
-            {
-
-            };
         }
 
         #endregion TestSetup
