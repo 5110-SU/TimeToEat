@@ -101,6 +101,23 @@ namespace UnitTests.Models
             Assert.AreEqual(actual, expected);
         }
 
+        /// <summary>
+        /// Test DisplayName function with enum type FineDining
+        /// </summary>
+        [Test]
+        public void DisplayName_ProductType_FineDining_Should_Return_FineDining()
+        {
+            // arrange
+            var productType = ProductTypeEnum.FineDining;
+            var expected = "FineDining";
+
+            // act
+            var actual = TestModel.DisplayName();
+
+            // assert
+            Assert.AreEqual(actual, expected);
+        }
+
         #endregion DisplayName
     }
 }
