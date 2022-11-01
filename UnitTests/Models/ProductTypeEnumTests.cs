@@ -50,6 +50,23 @@ namespace UnitTests.Models
             Assert.AreEqual(actual, expected);
         }
 
+        /// <summary>
+        /// Test DisplayName function with enum type Fastfood
+        /// </summary>
+        [Test]
+        public void DisplayName_ProductType_Fastfood_Should_Return_Fastfood()
+        {
+            // arrange
+            var productType = ProductTypeEnum.Fastfood;
+            var expected = "Fastfood";
+
+            // act
+            var actual = TestModel.DisplayName();
+
+            // assert
+            Assert.AreEqual(actual, expected);
+        }
+
         #endregion DisplayName
     }
 }
