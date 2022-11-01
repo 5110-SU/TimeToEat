@@ -9,15 +9,25 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace ContosoCrafts.WebSite.Services
 {
-   public class JsonFileProductService
+    public class JsonFileProductService
     {
+        /// <summary>
+        /// Initiating the webhost environment for the application
+        /// </summary>
+        /// <param name="webHostEnvironment"></param>
         public JsonFileProductService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
         }
 
+        /// <summary>
+        /// Call the IWebHostEnvironment object
+        /// </summary>
         public IWebHostEnvironment WebHostEnvironment { get; }
 
+        /// <summary>
+        /// Get the file path and filename of product data for loading
+        /// </summary>
         private string JsonFileName
         {
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json"); }
@@ -25,7 +35,7 @@ namespace ContosoCrafts.WebSite.Services
 
         public IEnumerable<ProductModel> GetAllData()
         {
-            using(var jsonFileReader = File.OpenText(JsonFileName))
+            using (var jsonFileReader = File.OpenText(JsonFileName))
             {
                 return JsonSerializer.Deserialize<ProductModel[]>(jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions
@@ -106,7 +116,7 @@ namespace ContosoCrafts.WebSite.Services
             }
 
             // Check to see if the rating exist, if there are none, then create the array
-            if(data.Ratings == null)
+            if (data.Ratings == null)
             {
                 data.Ratings = new int[] { };
             }
@@ -208,11 +218,11 @@ namespace ContosoCrafts.WebSite.Services
             var data = dataSet.FirstOrDefault(m => m.Id.Equals(id));
 
             var newDataSet = GetAllData().Where(m => m.Id.Equals(id) == false);
-            
+
             SaveData(newDataSet);
 
             return data;
         }
-        
+
     }
 }
