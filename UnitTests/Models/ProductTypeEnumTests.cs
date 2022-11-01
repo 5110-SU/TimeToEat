@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Pages.Restaurants;
 using NUnit.Framework;
+using static NUnit.Framework.Internal.OSPlatform;
 
 namespace UnitTests.Models
 {
@@ -33,23 +34,17 @@ namespace UnitTests.Models
         #region DisplayName
 
         [Test]
-        public void DisplayName_Valid_ProductTypeEnum_Should_Return_String()
+        public void DisplayName_Valid_ProductType_Undefined_Should_Return_EmptyString()
         {
             // arrange
-            ProductTypeEnum data = new ProductTypeEnum()
-            {
-                Undefined = 0,  // Default value
-                Fastfood = 1,  // Fastfood Restaurant
-                Cafe = 5,  // Cafe Restaurant
-                BBQ = 130,  // BBQ Restaurant
-                FineDining = 55,  // Fine Dining Restaurant
-            };
+            var productType = ProductTypeEnum.Undefined;
+            var expected = "";
 
             // act
-            TestModel.DisplayName(data);
+            var actual = TestModel.DisplayName();
 
             // assert
-            Assert.AreEqual();
+            Assert.AreEqual(actual, expected);
         }
 
         #endregion DisplayName
