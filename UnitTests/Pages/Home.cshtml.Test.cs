@@ -37,8 +37,10 @@ namespace UnitTests.Pages.Home
 
         #region OnGet
 
+        /// <summary>
         /// ModelState.IsValid should return true after OnGet is called 
-        /// with valid 
+        /// with valid home page
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Return_Home_Page()
         {
