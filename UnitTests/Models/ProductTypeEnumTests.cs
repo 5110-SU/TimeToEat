@@ -33,6 +33,9 @@ namespace UnitTests.Models
 
         #region DisplayName
 
+        /// <summary>
+        /// Test DisplayName function with enum type undefined
+        /// </summary>
         [Test]
         public void DisplayName_Valid_ProductType_Undefined_Should_Return_EmptyString()
         {
