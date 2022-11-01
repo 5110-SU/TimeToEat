@@ -37,7 +37,7 @@ namespace UnitTests.Models
         /// Test DisplayName function with enum type undefined
         /// </summary>
         [Test]
-        public void DisplayName_Valid_ProductType_Undefined_Should_Return_EmptyString()
+        public void DisplayName_ProductType_Undefined_Should_Return_EmptyString()
         {
             // arrange
             var productType = ProductTypeEnum.Undefined;
