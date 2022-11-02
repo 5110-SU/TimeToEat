@@ -22,6 +22,7 @@ namespace ContosoCrafts.WebSite
             Configuration = configuration;
         }
 
+        // Get function for configuration service 
         public IConfiguration Configuration { get; }
 
         /// <summary>
