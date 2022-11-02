@@ -17,12 +17,13 @@ namespace ContosoCrafts.WebSite.Pages
         /// Creates a logger, ILogger<PrivacyModel>, 
         /// which uses a log category of the fully qualified name of the type PrivacyModel
         /// </summary>
-     
         public PrivacyModel(ILogger<PrivacyModel> logger)
         {
             _logger = logger;
         }
-
+        /// <summary>
+        /// When a user makes a GET request to a page, we invoke this method
+        /// </summary>
         public void OnGet()
         {
         }
