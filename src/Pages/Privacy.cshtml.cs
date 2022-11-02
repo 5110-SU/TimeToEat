@@ -20,6 +20,7 @@ namespace ContosoCrafts.WebSite.Pages
         {
             _logger = logger;
         }
+
         /// <summary>
         /// When a user makes a GET request to a page, we invoke this method
         /// </summary>
