@@ -44,6 +44,7 @@ namespace UnitTests.Pages.Create
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(null, pageModel.Product.Id);
         }
+
         #endregion OnGet
 
         #region OnPost
