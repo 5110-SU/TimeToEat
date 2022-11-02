@@ -28,6 +28,7 @@ namespace UnitTests.Pages.Restaurants
         #endregion TestSetup
 
         #region OnGet
+
         /// <summary>
         /// Tests OnGet method should retrieve all products
         /// </summary>
@@ -43,6 +44,7 @@ namespace UnitTests.Pages.Restaurants
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(data, pageModel.Products.Count());
         }
+
         #endregion OnGet
     }
 }
