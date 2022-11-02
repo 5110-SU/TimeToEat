@@ -8,12 +8,17 @@ using ContosoCrafts.WebSite.Pages;
 using NUnit.Framework;
 
 namespace UnitTests.Models
-{
+{   
+    /// <summary>
+    /// Unit test for Comment model Test
+    /// </summary>
     internal class CommentModelTests
     {
         #region TestSetup
 
+        /// <summary>
         /// Comment model instace to test 
+        /// </summary>
         public static CommentModel TestModel;
 
         /// <summary>
@@ -33,7 +38,7 @@ namespace UnitTests.Models
         #region TestID
 
         /// <summary>
-        /// unit test on Id set and get
+        /// Unit test on Id set and get
         /// </summary>
         [Test]
         public void SetGetId_Should_Return_Id()
