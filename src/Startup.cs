@@ -12,7 +12,11 @@ namespace ContosoCrafts.WebSite
     /// Startup page
     /// </summary>
     public class Startup
-    {
+    {   
+        /// <summary>
+        /// Startup method requests configuration service 
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
