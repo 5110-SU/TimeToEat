@@ -151,6 +151,7 @@ namespace UnitTests.Pages.Create
             // Reset
             TestHelper.ProductService.DeleteData(data.Id);
         }
+
         #endregion OnPost
     }
 }
