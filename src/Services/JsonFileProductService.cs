@@ -217,7 +217,7 @@ namespace ContosoCrafts.WebSite.Services
         /// <summary>
         /// Remove the item from the system
         /// </summary>
-        /// <returns></returns>
+        /// <returns>ProductModel</returns>
         public ProductModel DeleteData(string id)
         {
             // Get the current set, and append the new record to it
