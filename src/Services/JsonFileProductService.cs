@@ -36,6 +36,10 @@ namespace ContosoCrafts.WebSite.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json"); }
         }
 
+        /// <summary>
+        /// GetAllData function to get all product from the database
+        /// </summary>
+        /// <returns>IEnumerable<ProductModel></returns>
         public IEnumerable<ProductModel> GetAllData()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
