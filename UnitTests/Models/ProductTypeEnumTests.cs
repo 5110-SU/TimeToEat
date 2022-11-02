@@ -10,6 +10,9 @@ using static NUnit.Framework.Internal.OSPlatform;
 
 namespace UnitTests.Models
 {
+    /// <summary>
+    /// Unit test for product type enum 
+    /// </summary>
     internal class ProductTypeEnumTests
     {
         #region TestSetup
