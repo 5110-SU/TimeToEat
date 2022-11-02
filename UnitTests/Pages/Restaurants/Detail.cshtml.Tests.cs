@@ -62,6 +62,7 @@ namespace UnitTests.Pages.Restaurants
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(Product.Id, pageModel.Product.Id);
         }
+
         #endregion OnGet
     }
 }
