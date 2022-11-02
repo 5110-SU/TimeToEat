@@ -8,6 +8,9 @@ using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite
 {
+    /// <summary>
+    /// Startup page
+    /// </summary>
     public class Startup
     {
         public Startup(IConfiguration configuration)
