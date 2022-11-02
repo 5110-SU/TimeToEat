@@ -29,6 +29,7 @@ namespace UnitTests.Pages.Create
         #endregion TestSetup
 
         #region OnGet
+
         /// <summary>
         /// Tests OnGet method creates an empty product model with valid input 
         /// </summary>
