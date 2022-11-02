@@ -10,7 +10,6 @@ namespace ContosoCrafts.WebSite.Pages
     {
         // The following methods are simply implementations of 
         // C#http calls to our logger, productservice so that we can display to page for viewing
-
         private readonly ILogger<PrivacyModel> _logger;
 
         /// <summary>
