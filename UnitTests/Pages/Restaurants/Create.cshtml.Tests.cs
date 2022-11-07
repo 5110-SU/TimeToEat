@@ -37,6 +37,7 @@ namespace UnitTests.Pages.Create
         public void OnGet_Valid_Should_Create_Empty_Product_Model()
         {
             // Arrange
+
             // Act
             pageModel.OnGet();
 
