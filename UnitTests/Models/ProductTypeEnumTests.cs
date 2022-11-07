@@ -94,7 +94,7 @@ namespace UnitTests.Models
         /// Test DisplayName function with enum type FineDining
         /// </summary>
         [Test]
-        public void DisplayName_ProductType_FineDining_Should_Return_FineDining()
+        public void DisplayName_Valid_ProductType_FineDining_Should_Return_FineDining()
         {
             // Arrange
             var productType = ProductTypeEnum.FineDining;
