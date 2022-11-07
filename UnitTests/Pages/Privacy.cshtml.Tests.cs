@@ -1,9 +1,6 @@
 using Microsoft.Extensions.Logging;
-
 using NUnit.Framework;
-
 using Moq;
-
 using ContosoCrafts.WebSite.Pages;
 
 namespace UnitTests.Pages.Privacy
@@ -16,6 +13,7 @@ namespace UnitTests.Pages.Privacy
     public class PrivacyTests
     {
         #region TestSetup
+
         public static PrivacyModel pageModel;
 
         /// <summary>
@@ -35,10 +33,11 @@ namespace UnitTests.Pages.Privacy
 
         #endregion TestSetup
 
+        #region OnGet
+
         /// <summary>
         /// ModelState.IsValid should return true after OnGet() is called
         /// </summary>
-        #region OnGet
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
@@ -46,8 +45,6 @@ namespace UnitTests.Pages.Privacy
 
             // Act
             pageModel.OnGet();
-
-            // Reset
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
