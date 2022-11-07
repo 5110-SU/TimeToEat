@@ -31,6 +31,23 @@ namespace UnitTests.Pages.Create
 
         #region OnGet
 
+         /// <summary>
+        /// Tests the Valid OnGet method with product id 
+        /// </summary>
+        [Test]
+        public void OnGet_Valid_With_Non_Existing_ProductID_Should_Return_RedirectToPage_Index()
+        {
+            // Arrange
+            var expected = true;
+            // Act
+            var result = pageModel.OnGet("not-existing-product-id") as RedirectToPageResult;
+            var actual = result.PageName.Contains("Index");
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(expected, actual);
+        }
+
         /// <summary>
         /// Tests the Valid OnGet method with product id 
         /// </summary>
