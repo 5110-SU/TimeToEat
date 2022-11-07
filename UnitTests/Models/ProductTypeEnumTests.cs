@@ -28,14 +28,14 @@ namespace UnitTests.Models
         [Test]
         public void DisplayName_ProductType_Undefined_Should_Return_EmptyString()
         {
-            // arrange
+            // Arrange
             var productType = ProductTypeEnum.Undefined;
             var expected = "";
 
-            // act
+            // Act
             var actual = ProductTypeEnumExtensions.DisplayName(productType);
 
-            // assert
+            // Assert
             Assert.AreEqual(actual, expected);
         }
 
@@ -45,14 +45,14 @@ namespace UnitTests.Models
         [Test]
         public void DisplayName_ProductType_Fastfood_Should_Return_Fastfood()
         {
-            // arrange
+            // Arrange
             var productType = ProductTypeEnum.Fastfood;
             var expected = "Fastfood";
 
-            // act
+            // Act
             var actual = ProductTypeEnumExtensions.DisplayName(productType);
 
-            // assert
+            // Assert
             Assert.AreEqual(actual, expected);
         }
 
@@ -62,14 +62,14 @@ namespace UnitTests.Models
         [Test]
         public void DisplayName_ProductType_Cafe_Should_Return_Cafe()
         {
-            // arrange
+            // Arrange
             var productType = ProductTypeEnum.Cafe;
             var expected = "Cafe";
 
-            // act
+            // Act
             var actual = ProductTypeEnumExtensions.DisplayName(productType);
 
-            // assert
+            // Assert
             Assert.AreEqual(actual, expected);
         }
 
@@ -79,14 +79,14 @@ namespace UnitTests.Models
         [Test]
         public void DisplayName_ProductType_BBQ_Should_Return_BBQ()
         {
-            // arrange
+            // Arrange
             var productType = ProductTypeEnum.BBQ;
             var expected = "BBQ";
 
-            // act
+            // Act
             var actual = ProductTypeEnumExtensions.DisplayName(productType);
 
-            // assert
+            // Assert
             Assert.AreEqual(actual, expected);
         }
 
@@ -96,14 +96,14 @@ namespace UnitTests.Models
         [Test]
         public void DisplayName_ProductType_FineDining_Should_Return_FineDining()
         {
-            // arrange
+            // Arrange
             var productType = ProductTypeEnum.FineDining;
             var expected = "FineDining";
 
-            // act
+            // Act
             var actual = ProductTypeEnumExtensions.DisplayName(productType);
 
-            // assert
+            // Assert
             Assert.AreEqual(actual, expected);
         }
 
