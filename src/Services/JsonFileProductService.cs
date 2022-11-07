@@ -2,9 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-
 using ContosoCrafts.WebSite.Models;
-
 using Microsoft.AspNetCore.Hosting;
 
 namespace ContosoCrafts.WebSite.Services
@@ -82,7 +80,6 @@ namespace ContosoCrafts.WebSite.Services
         {
             return GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
-
 
         /// <summary>
         /// Add Rating
@@ -230,6 +227,5 @@ namespace ContosoCrafts.WebSite.Services
 
             return data;
         }
-
     }
 }
