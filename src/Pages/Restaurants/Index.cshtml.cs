@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ContosoCrafts.WebSite.Models;
@@ -14,7 +13,7 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
         // Data middletier
         public JsonFileProductService ProductService { get; }
 
-         // The data to show on Restaurants Index Page
+        // The data to show on Restaurants Index Page
         public IEnumerable<ProductModel> Products;
 
         /// <summary>
