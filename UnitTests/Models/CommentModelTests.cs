@@ -38,13 +38,13 @@ namespace UnitTests.Models
         [Test]
         public void SetGetId_Should_Return_Id()
         {
-            // arrange
+            // Arrange
             var newId = Guid.NewGuid().ToString();
 
-            // act
+            // Act
             TestModel.Id = newId;
 
-            // assert
+            // Assert
             Assert.AreEqual(newId, TestModel.Id);
         }
 
@@ -58,13 +58,13 @@ namespace UnitTests.Models
         [Test]
         public void SetGetComment_Should_Return_Comment()
         {
-            // arrange
+            // Arrange
             var newComment = "test";
 
-            // act
+            // Act
             TestModel.Comment = newComment;
 
-            // assert
+            // Assert
             Assert.AreEqual(newComment, TestModel.Comment);
         }
 
