@@ -77,7 +77,7 @@ namespace UnitTests.Models
         /// Test DisplayName function with enum type BBQ
         /// </summary>
         [Test]
-        public void DisplayName_ProductType_BBQ_Should_Return_BBQ()
+        public void DisplayName_Valid_ProductType_BBQ_Should_Return_BBQ()
         {
             // Arrange
             var productType = ProductTypeEnum.BBQ;
