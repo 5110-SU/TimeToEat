@@ -37,6 +37,7 @@ namespace UnitTests.Pages.Restaurants
         {
             // Arrange
             var data = TestHelper.ProductService.GetAllData().Count();
+
             // Act
             pageModel.OnGet();
       
