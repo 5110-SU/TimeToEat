@@ -27,12 +27,17 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
         }
         
         /// <summary>
-        /// REST Get request
+        /// REST Get request, Returns the index page if product not found
         /// </summary>
-        public void OnGet(string id)
+        public IActionResult OnGet(string id)
         {
             // Get the product from the data storage
             Product = ProductService.GetProduct(id);
+            if (Product == null)
+            {
+                return RedirectToPage("./Index");
+            }
+            return Page();
         }
 
         /// <summary>
