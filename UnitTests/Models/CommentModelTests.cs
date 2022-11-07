@@ -56,7 +56,7 @@ namespace UnitTests.Models
         /// unit test on Comment set and get
         /// </summary>
         [Test]
-        public void SetGetComment_Should_Return_Comment()
+        public void SetGetComment_Valid_Should_Return_Comment()
         {
             // Arrange
             var newComment = "test";
