@@ -146,13 +146,14 @@ namespace UnitTests.Pages.Create
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
+            var resultDes = TestHelper.ProductService.GetProduct(data.Id).Description;
 
             // Reset
             TestHelper.ProductService.DeleteData(data.Id);
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(defDescription, TestHelper.ProductService.GetProduct(data.Id).Description);
+            Assert.AreEqual(defDescription, resultDes);
         }
 
         #endregion OnPost
