@@ -4,6 +4,9 @@ using NUnit.Framework;
 
 namespace UnitTests.Pages.Restaurants
 {
+    /// <summary>
+    /// Unit tests for the DetailUserModel class.
+    /// </summary>
     internal class DetailUserTests
     {
         #region TestSetup
