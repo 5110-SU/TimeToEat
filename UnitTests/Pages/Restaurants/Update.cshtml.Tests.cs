@@ -4,7 +4,6 @@ using ContosoCrafts.WebSite.Models;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace UnitTests.Pages.Create
 {
     /// <summary>
@@ -31,6 +30,7 @@ namespace UnitTests.Pages.Create
         #endregion TestSetup
 
         #region OnGet
+
         /// <summary>
         /// Tests the Valid OnGet method with product id 
         /// </summary>
@@ -46,9 +46,11 @@ namespace UnitTests.Pages.Create
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual("Rhein Haus", pageModel.Product.Title);
         }
+
         #endregion OnGet
 
         #region OnPost
+
         /// <summary>
         /// Tests OnPost method returns to detail page with valid data 
         /// </summary>
@@ -104,6 +106,7 @@ namespace UnitTests.Pages.Create
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, result.PageName.Contains("Index"));
         }
+
         #endregion OnPost
     }
 }
