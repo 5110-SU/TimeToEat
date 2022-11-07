@@ -313,7 +313,7 @@ namespace UnitTests.Pages.Product.AddRating
         /// Tests CreateProduct
         /// </summary>
         [Test]
-        public void CreateProduct_Save_ProductModelObject_Should_Return_True()
+        public void CreateProduct_Valid_Save_ProductModelObject_Should_Return_True()
         {
             // Arrange
             var data = new ProductModel();
