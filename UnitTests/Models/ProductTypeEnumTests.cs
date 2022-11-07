@@ -43,7 +43,7 @@ namespace UnitTests.Models
         /// Test DisplayName function with enum type Fastfood
         /// </summary>
         [Test]
-        public void DisplayName_ProductType_Fastfood_Should_Return_Fastfood()
+        public void DisplayName_Valid_ProductType_Fastfood_Should_Return_Fastfood()
         {
             // Arrange
             var productType = ProductTypeEnum.Fastfood;
