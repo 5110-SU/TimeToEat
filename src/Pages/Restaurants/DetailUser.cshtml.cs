@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ContosoCrafts.WebSite.Pages.Restaurants
 {
+    /// <summary>
+    /// The Detail User page model for the restaurants.
+    /// </summary>
     public class DetailUserModel : PageModel
     {
         // Data middletier
