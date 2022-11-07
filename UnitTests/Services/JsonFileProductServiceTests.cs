@@ -252,7 +252,7 @@ namespace UnitTests.Pages.Product.AddRating
         /// Tests GetProducts
         /// </summary>
         [Test]
-        public void GetProducts_Should_Return_ListOfProduct()
+        public void GetProducts_Valid_Should_Return_ListOfProduct()
         {
             // Arrange
             var listOfProducts = TestHelper.ProductService.GetProducts();
