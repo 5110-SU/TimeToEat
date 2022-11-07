@@ -33,7 +33,7 @@ namespace UnitTests.Pages.Restaurants
         /// Tests OnGet method should retrieve all products
         /// </summary>
         [Test]
-        public void OnGet_Should_Retrieve_All_Products()
+        public void OnGet_Valid_Should_Retrieve_All_Products()
         {
             // Arrange
             var data = TestHelper.ProductService.GetAllData().Count();
