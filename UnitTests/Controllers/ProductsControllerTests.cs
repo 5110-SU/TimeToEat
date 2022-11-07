@@ -10,6 +10,7 @@ namespace UnitTests.Controllers
     class ProductsControllerTests
     {
         #region TestSetup
+
         // controller instance to test
         public static ProductsController controller;
 
@@ -22,6 +23,7 @@ namespace UnitTests.Controllers
             // Create a new controller instance
             controller = new ProductsController(TestHelper.ProductService);
         }
+
         #endregion TestSetup
 
         #region Get
