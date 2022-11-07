@@ -87,13 +87,14 @@ namespace UnitTests.Pages.Create
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
+            var resultImage = TestHelper.ProductService.GetProduct(data.Id).Image;
 
             // Reset
             TestHelper.ProductService.DeleteData(data.Id);
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(defImg, TestHelper.ProductService.GetProduct(data.Id).Image);
+            Assert.AreEqual(defImg, resultImage);
         }
 
         /// <summary>
