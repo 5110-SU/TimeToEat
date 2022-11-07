@@ -116,13 +116,14 @@ namespace UnitTests.Pages.Create
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
+            var resultUrl = TestHelper.ProductService.GetProduct(data.Id).Url;
 
             // Reset
             TestHelper.ProductService.DeleteData(data.Id);
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(defurl, TestHelper.ProductService.GetProduct(data.Id).Url);
+            Assert.AreEqual(defurl, resultUrl);
         }
 
         /// <summary>
