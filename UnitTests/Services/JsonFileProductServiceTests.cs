@@ -229,7 +229,7 @@ namespace UnitTests.Pages.Product.AddRating
         [Test]
         public void DeleteData_Valid_ProductID_Should_Return_ProductModelObject()
         {
-            // Arrangeed
+            // Arrange
             var oldState = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Steak House"));
 
             // Act
