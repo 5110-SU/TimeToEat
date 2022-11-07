@@ -99,7 +99,7 @@ namespace UnitTests.Pages.Create
         /// Tests OnPost method will return create page if URL is null 
         /// </summary>
         [Test]
-        public void OnPost_Null_Url_Should_Return_Create_Page()
+        public void OnPost_Invalid_Null_Url_Should_Return_Create_Page()
         {
             // Arrange
             var defurl = "https://time-to-eat.azurewebsites.net";
