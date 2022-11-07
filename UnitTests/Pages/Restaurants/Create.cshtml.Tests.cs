@@ -128,7 +128,7 @@ namespace UnitTests.Pages.Create
         /// Tests OnPost method will return create page if description is null
         /// </summary>
         [Test]
-        public void OnPost_Null_Description_Should_Return_Create_Page()
+        public void OnPost_Invalid_Null_Description_Should_Return_Create_Page()
         {
             // Arrange
             var defDescription = "Seattle is a food lover’s dream! There are lots of great options so we’ve highlighted some of the best and most unique places to eat in Seattle, Washington.";
