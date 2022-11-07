@@ -1,6 +1,5 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
-
 using NUnit.Framework;
 
 namespace UnitTests.Pages.Startup
@@ -27,9 +26,11 @@ namespace UnitTests.Pages.Startup
         {
             public Startup(IConfiguration config) : base(config) { }
         }
+
         #endregion TestSetup
 
         #region ConfigureServices
+
         /// <summary>
         /// Test Startup confirgure service
         /// </summary>
@@ -39,9 +40,11 @@ namespace UnitTests.Pages.Startup
             var webHost = Microsoft.AspNetCore.WebHost.CreateDefaultBuilder().UseStartup<Startup>().Build();
             Assert.IsNotNull(webHost);
         }
+
         #endregion ConfigureServices
 
         #region Configure
+
         /// <summary>
         /// Test Startup configure
         /// </summary>
