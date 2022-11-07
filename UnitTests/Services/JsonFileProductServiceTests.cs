@@ -1,11 +1,7 @@
 using System.Linq;
-using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
 using ContosoCrafts.WebSite.Models;
 using NUnit.Framework.Internal;
-using System.Collections.Generic;
-using System.Reflection.Metadata;
-using System;
 
 namespace UnitTests.Pages.Product.AddRating
 {
