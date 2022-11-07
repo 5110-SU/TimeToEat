@@ -14,6 +14,22 @@
                 <div class="row">
                     <div class="col-md-4">
                         <img src="@Model.Product.Image" class="img-fluid" />
+                        <table class="table table-striped">
+                            <thead class="thead">
+                                <th>Day</th><th>Hours</th>
+                            </thead>
+                            <tbody>
+                                @foreach (var day in new string[] { 
+                                    "Monday", "Tuesday", "Wednesday", 
+                                    "Thursday", "Friday", "Saturday", "Sunday" })
+                                {
+                                    <tr>
+                                        <td>@day</td>
+                                        <td>9:00 AM - 5:00 PM</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
                     </div>
                     <div class="col-md-8">
                         <h3>@Model.Product.Title</h3>
