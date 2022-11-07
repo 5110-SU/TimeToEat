@@ -36,7 +36,7 @@ namespace UnitTests.Models
         /// Unit test on Id set and get
         /// </summary>
         [Test]
-        public void SetGetId_Should_Return_Id()
+        public void SetGetId_Valid_Should_Return_Id()
         {
             // Arrange
             var newId = Guid.NewGuid().ToString();
