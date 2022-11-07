@@ -322,7 +322,7 @@ namespace UnitTests.Pages.Product.AddRating
             var newData = TestHelper.ProductService.CreateProduct(data);
             var result = newData.Id != null;
 
-            // reset
+            // Reset
             TestHelper.ProductService.DeleteData(newData.Id);
 
             // Assert
