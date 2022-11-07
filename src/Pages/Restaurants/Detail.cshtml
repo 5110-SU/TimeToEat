@@ -34,9 +34,22 @@
                     <div class="col-md-8">
                         <h3>@Model.Product.Title</h3>
                         <p>@Model.Product.Description</p>
+                        <div class="embed-responsive embed-responsive-16by9 mb-5">
+                            @{
+                                var apikey = "AIzaSyCUkutN1VIQIdgTfs-xbzw1sxL5woLls3Y";
+                                var location = Model.Product.Title + ",Seattle+Washington";
+                            }
+                            <iframe 
+                            class="embed-responsive-item"
+                            frameborder="0"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps/embed/v1/place?key=@apikey&q=@location"
+                            allowfullscreen>
+                            </iframe>
+                        </div>
                         <a href="@Model.Product.Url" target="_blank" class="btn btn-info">Visit Website</a>
                         <a href="/Restaurants/Update/@Model.Product.Id" class="btn btn-primary">Update</a>
-                        <a href="/Restaurants/Delete/@Model.Product.Id" class="btn btn-primary">Delete</a>
+                        <a href="/Restaurants/Delete/@Model.Product.Id" class="btn btn-danger">Delete</a>
                     </div>
                 </div>
             }
