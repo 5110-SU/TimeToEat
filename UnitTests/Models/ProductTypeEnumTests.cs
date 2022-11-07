@@ -60,7 +60,7 @@ namespace UnitTests.Models
         /// Test DisplayName function with enum type Cafe
         /// </summary>
         [Test]
-        public void DisplayName_ProductType_Cafe_Should_Return_Cafe()
+        public void DisplayName_Valid_ProductType_Cafe_Should_Return_Cafe()
         {
             // Arrange
             var productType = ProductTypeEnum.Cafe;
