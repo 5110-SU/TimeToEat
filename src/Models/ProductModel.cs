@@ -30,7 +30,17 @@ namespace ContosoCrafts.WebSite.Models
 
         // Product Description
         public string Description { get; set; }
-        
+
+        // Product Address
+        [Required(ErrorMessage = "Address is required")]
+        [RegularExpression(@"^[#.0-9a-zA-Z\s,-]+$",
+           ErrorMessage = "Please Enter a valid address!")]
+        [StringLength(80)]
+        public string Address { get; set; }
+
+        // Product Hours
+        public string[] Hours { get; set; }
+
         // Product Ratings
         public int[] Ratings { get; set; }
 
