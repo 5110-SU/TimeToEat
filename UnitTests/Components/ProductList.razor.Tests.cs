@@ -26,7 +26,7 @@ namespace UnitTests.Components
         /// Unit test on ProductList with default argument
         /// </summary>
         [Test]
-        public void ProductList_Default_Should_Return_Content()
+        public void ProductList_Valid_Default_Should_Return_Content()
         {
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
