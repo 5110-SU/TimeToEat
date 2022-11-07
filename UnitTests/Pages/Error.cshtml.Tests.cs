@@ -1,11 +1,7 @@
 using System.Diagnostics;
-
 using Microsoft.Extensions.Logging;
-
 using NUnit.Framework;
-
 using Moq;
-
 using ContosoCrafts.WebSite.Pages;
 
 namespace UnitTests.Pages.Error
@@ -16,6 +12,7 @@ namespace UnitTests.Pages.Error
     public class ErrorTests
     {
         #region TestSetup
+
         // Error model page instance to test
         public static ErrorModel pageModel;
 
@@ -37,6 +34,7 @@ namespace UnitTests.Pages.Error
         #endregion TestSetup
 
         #region OnGet
+
         /// <summary>
         /// Tests OnGet method should return request id with valid activity
         /// </summary>
@@ -69,13 +67,12 @@ namespace UnitTests.Pages.Error
             // Act
             pageModel.OnGet();
 
-            // Reset
-
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual("trace", pageModel.RequestId);
             Assert.AreEqual(true, pageModel.ShowRequestId);
         }
+
         #endregion OnGet
     }
 }
