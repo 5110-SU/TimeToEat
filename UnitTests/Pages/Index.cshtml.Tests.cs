@@ -1,11 +1,7 @@
 using System.Linq;
-
 using Microsoft.Extensions.Logging;
-
 using Moq;
-
 using NUnit.Framework;
-
 using ContosoCrafts.WebSite.Pages;
 
 namespace UnitTests.Pages.Index
@@ -16,6 +12,7 @@ namespace UnitTests.Pages.Index
     public class IndexTests
     {
         #region TestSetup
+
         // Index model page instance to test 
         public static IndexModel pageModel;
 
@@ -35,6 +32,7 @@ namespace UnitTests.Pages.Index
         #endregion TestSetup
 
         #region OnGet
+
         /// <summary>
         /// Tests OnGet method returns products 
         /// </summary>
@@ -50,6 +48,7 @@ namespace UnitTests.Pages.Index
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(true, pageModel.Products.ToList().Any());
         }
+
         #endregion OnGet
     }
 }
