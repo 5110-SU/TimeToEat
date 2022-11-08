@@ -200,6 +200,24 @@ ul {
     height: 65px;
 }
 
+#utensils-image {
+    content: url(../data/Utensils.png);
+    max-height: 100px;
+    max-width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 100;
+}
+
+.animation_rotate {
+    animation: rotation 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
 
 /*----  Open Page Card  ----*/
 
