@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -227,5 +228,40 @@ namespace ContosoCrafts.WebSite.Services
 
             return data;
         }
+
+        /// <summary>
+        /// Filter all restaurant that have the given time within business hours
+        /// </summary>
+        /// <param name="time">The time to filter on</param>
+        /// <returns>List of restaurants that are open at the given time</returns>
+        public IEnumerable<ProductModel> GetProductsByTime(int time)
+        {
+            var products = GetAllData();
+            DateTime thisDay = DateTime.Today;
+            var dayOfWeek = thisDay.DayOfWeek.ToString();
+            var dayIndexes = new Dictionary<string, int>
+            {
+                {"Monday", 0},
+                {"Tuesday", 1},
+                {"Wednesday", 2},
+                {"Thursday", 3},
+                {"Friday", 4},
+                {"Saturday", 5},
+                {"Sunday", 6}
+            };
+            var dayIndex = dayIndexes[dayOfWeek];
+            var result = new List<ProductModel>();
+            foreach (var product in products)
+            {
+                var hours = product.Hours[dayIndex].Split(',');
+                var open = int.Parse(hours[0]);
+                var close = int.Parse(hours[1]);
+                if (time >= open && time < close)
+                {
+                    result.Add(product);
+                }
+            }
+            return result;
+        }        
     }
 }
