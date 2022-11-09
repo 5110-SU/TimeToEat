@@ -66,9 +66,12 @@ namespace ContosoCrafts.WebSite.Services
         public ProductModel CreateProduct(ProductModel product)
         {
             product.Id = System.Guid.NewGuid().ToString();
+
             var products = GetAllData();
             products = products.Append(product);
+
             SaveData(products);
+
             return product;
         }
 
@@ -103,6 +106,7 @@ namespace ContosoCrafts.WebSite.Services
 
             // Look up the product, if it does not exist, return
             var data = products.FirstOrDefault(x => x.Id.Equals(productId));
+
             if (data == null)
             {
                 return false;
@@ -147,6 +151,7 @@ namespace ContosoCrafts.WebSite.Services
         {
             var products = GetAllData();
             var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
+
             if (productData == null)
             {
                 return null;
@@ -157,10 +162,8 @@ namespace ContosoCrafts.WebSite.Services
             productData.Description = data.Description.Trim();
             productData.Url = data.Url;
             productData.Image = data.Image;
-
             productData.Quantity = data.Quantity;
             productData.Price = data.Price;
-
             productData.CommentList = data.CommentList;
 
             SaveData(products);
@@ -220,6 +223,7 @@ namespace ContosoCrafts.WebSite.Services
         {
             // Get the current set, and append the new record to it
             var dataSet = GetAllData();
+
             var data = dataSet.FirstOrDefault(m => m.Id.Equals(id));
 
             var newDataSet = GetAllData().Where(m => m.Id.Equals(id) == false);
@@ -237,8 +241,11 @@ namespace ContosoCrafts.WebSite.Services
         public IEnumerable<ProductModel> GetProductsByTime(int time)
         {
             var products = GetAllData();
+
             DateTime thisDay = DateTime.Today;
+
             var dayOfWeek = thisDay.DayOfWeek.ToString();
+
             var dayIndexes = new Dictionary<string, int>
             {
                 {"Monday", 0},
@@ -249,8 +256,11 @@ namespace ContosoCrafts.WebSite.Services
                 {"Saturday", 5},
                 {"Sunday", 6}
             };
+
             var dayIndex = dayIndexes[dayOfWeek];
+
             var result = new List<ProductModel>();
+
             foreach (var product in products)
             {
                 var hours = product.Hours[dayIndex].Split(',');
