@@ -241,10 +241,12 @@ namespace ContosoCrafts.WebSite.Services
         public IEnumerable<ProductModel> GetProductsByTime(int time=0)
         {
             var products = GetAllData();
+
             if (time == 0)
             {
                 return products;
             }
+
             DateTime thisDay = DateTime.Today;
 
             var dayOfWeek = thisDay.DayOfWeek.ToString();
@@ -271,13 +273,16 @@ namespace ContosoCrafts.WebSite.Services
                 }
 
                 var hours = product.Hours[dayIndex];
+
                 if (hours == null)
                 {
                     continue;
                 }
 
                 var open = hours[0];
+
                 var close = hours[1];
+
                 if (open > close)
                 {
                     close += 24;
