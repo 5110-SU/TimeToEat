@@ -65,16 +65,21 @@ namespace UnitTests.Pages.Product.AddRating
 
             // Get the First data item
             var testID = "mockproduct";
+
             var data = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
+
             var countOriginal = data.Ratings.Length;
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, 5);
+
             var dataNewList = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
 
             // Reset
             var toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
+
             var ratings = toReset.Ratings.ToList();
+
             ratings.RemoveAt(toReset.Ratings.Length - 1);
             toReset.Ratings = ratings.ToArray();
 
@@ -109,6 +114,7 @@ namespace UnitTests.Pages.Product.AddRating
 
             // Act
             ProductModel data = TestHelper.ProductService.GetAllData().First();
+
             bool result = TestHelper.ProductService.AddRating(data.Id, -8);
 
             // Assert
@@ -125,6 +131,7 @@ namespace UnitTests.Pages.Product.AddRating
 
             // Act
             ProductModel data = TestHelper.ProductService.GetAllData().First();
+
             bool result = TestHelper.ProductService.AddRating(data.Id, 8);
 
             // Assert
@@ -141,14 +148,17 @@ namespace UnitTests.Pages.Product.AddRating
 
             // Get the object state before changes applied
             string testID = "Vietnamese";
+
             ProductModel data = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
 
             // Act
             bool result = TestHelper.ProductService.AddRating(testID, 5);
+
             ProductModel dataNewList = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
 
             // Reset
             ProductModel toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
+
             toReset.Ratings = null;
 
             // Assert
@@ -238,6 +248,7 @@ namespace UnitTests.Pages.Product.AddRating
 
             // Reset
             var newCreateData = TestHelper.ProductService.CreateData();
+
             var newData = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(newCreateData.Id));
             newData = oldState;
 
@@ -257,10 +268,12 @@ namespace UnitTests.Pages.Product.AddRating
         {
             // Arrange
             var listOfProducts = TestHelper.ProductService.GetProducts();
+
             var listOfProductsArray = listOfProducts.ToArray();
 
             // Act
             var result = TestHelper.ProductService.GetProducts();
+
             var resultArray = result.ToArray();
 
             // Assert
@@ -321,6 +334,7 @@ namespace UnitTests.Pages.Product.AddRating
 
             // Act
             var newData = TestHelper.ProductService.CreateProduct(data);
+
             var result = newData.Id != null;
 
             // Reset
@@ -342,9 +356,11 @@ namespace UnitTests.Pages.Product.AddRating
         {
             // Arrange
             var data = TestHelper.ProductService.GetAllData();
+
             var expected = data.Count();
             // Act
             var products = TestHelper.ProductService.GetProductsByTime();
+
             var actual = products.Count();
 
             // Assert
@@ -362,10 +378,12 @@ namespace UnitTests.Pages.Product.AddRating
             {
                 Hours = null,
             });
+
             var id = data.Id;
 
             // Act
             var products = TestHelper.ProductService.GetProductsByTime(1);
+
             var actual = products.FirstOrDefault(x => x.Id == id);
 
             // Assert
@@ -379,13 +397,17 @@ namespace UnitTests.Pages.Product.AddRating
         public void GetProductsByTime_Valid_With_Day_Null_Hour_Products_Should_Return_List_Of_Products_Without_Day_Null_Hours_Products()
         {
             // Arrange
-            var product = new ProductModel(); 
-            product.Hours = new List<int[]>() {null, null, null, null, null, null, null};
+            var product = new ProductModel();
+
+            product.Hours = new List<int[]>() { null, null, null, null, null, null, null };
+
             var data = TestHelper.ProductService.CreateProduct(product);
+
             var id = data.Id;
 
             // Act
             var products = TestHelper.ProductService.GetProductsByTime(1);
+
             var actual = products.FirstOrDefault(x => x.Id == id);
 
             // Assert
@@ -400,15 +422,19 @@ namespace UnitTests.Pages.Product.AddRating
         {
             // Arrange
             var product = new ProductModel();
-            product.Hours = new List<int[]>() { 
-                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 }, 
-                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 }, 
+
+            product.Hours = new List<int[]>() {
+                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 },
+                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 },
                 new int[] { 21, 2 } };
+
             var data = TestHelper.ProductService.CreateProduct(product);
+
             var id = data.Id;
 
             // Act
             var products = TestHelper.ProductService.GetProductsByTime(22);
+
             var actual = products.FirstOrDefault(x => x.Id == id);
 
             // Assert
@@ -422,15 +448,19 @@ namespace UnitTests.Pages.Product.AddRating
         {
             // Arrange
             var product = new ProductModel();
-            product.Hours = new List<int[]>() { 
-                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 }, 
-                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 }, 
+
+            product.Hours = new List<int[]>() {
+                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 },
+                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 },
                 new int[] { 21, 2 } };
+
             var data = TestHelper.ProductService.CreateProduct(product);
+
             var id = data.Id;
 
             // Act
             var products = TestHelper.ProductService.GetProductsByTime(2);
+
             var actual = products.FirstOrDefault(x => x.Id == id);
 
             // Assert
