@@ -8,13 +8,34 @@
     "Description": "Best Vietnamese Restaurant. A taste of Vietnam & handcrafted cocktails",
     "Address": "550 12th Avenue Seattle, WA 98122",
     "Hours": [
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM"
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ]
     ],
     "Ratings": null,
     "ProductType": 0,
@@ -31,13 +52,34 @@
     "Description": "Serving up a global cuisine inspired by years of living, traveling and cooking abroad.",
     "Address": "300 E Pike St #1200, Seattle, WA 98122",
     "Hours": [
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM"
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ]
     ],
     "Ratings": null,
     "ProductType": 1,
@@ -54,13 +96,34 @@
     "Description": "Upscale burger joint offering all-natural burgers & craft cocktails amid cowboy-themed decor.",
     "Address": "1401 Broadway, Seattle, WA 98122",
     "Hours": [
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM"
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ]
     ],
     "Ratings": null,
     "ProductType": 1,
@@ -77,13 +140,34 @@
     "Description": "MEXICAN KITCHEN & AGAVE BAR, Interpreting classic Mexicandishes with Northwest ingredients and attitude.",
     "Address": " 1420 12th Ave, Seattle, WA 98122",
     "Hours": [
-      "4:00 \u2013 12:00 AM",
-      "4:00 \u2013 12:00 AM",
-      "4:00 \u2013 12:00 AM",
-      "4:00 \u2013 12:00 AM",
-      "4:00 \u2013 12:00 AM",
-      "11:30 \u2013 12:00 AM",
-      "11:30 \u2013 12:00 AM"
+      [
+        16,
+        24
+      ],
+      [
+        16,
+        24
+      ],
+      [
+        16,
+        24
+      ],
+      [
+        16,
+        24
+      ],
+      [
+        16,
+        24
+      ],
+      [
+        12,
+        24
+      ],
+      [
+        12,
+        24
+      ]
     ],
     "Ratings": null,
     "ProductType": 1,
@@ -100,13 +184,34 @@
     "Description": "Stylish Japanese restaurant for sushi & upscale cocktails in a serene space with a Kyoto courtyard",
     "Address": "1522 12th Ave, Seattle, WA 98122",
     "Hours": [
-      "4:00 \u2013 11:00 PM",
-      "4:00 \u2013 11:00 PM",
-      "4:00 \u2013 11:00 PM",
-      "4:00 \u2013 11:00 PM",
-      "4:00 \u2013 12:00 AM",
-      "4:00 \u2013 12:00 AM",
-      "4:00 \u2013 11:00 PM"
+      [
+        16,
+        23
+      ],
+      [
+        16,
+        23
+      ],
+      [
+        16,
+        23
+      ],
+      [
+        16,
+        23
+      ],
+      [
+        16,
+        24
+      ],
+      [
+        16,
+        24
+      ],
+      [
+        16,
+        23
+      ]
     ],
     "Ratings": null,
     "ProductType": 55,
@@ -120,16 +225,31 @@
     "img": "https://static.wixstatic.com/media/89d115_dc7db80b0b5444408f4fc5dbc14ec7ab~mv2.jpg/v1/fill/w_1309,h_873,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/89d115_dc7db80b0b5444408f4fc5dbc14ec7ab~mv2.jpg",
     "Url": "https://www.meetkoreanbbq.com/",
     "Title": "Meet Korean BBQ",
-    "Description": "Traditional Korean barbecue (고기구이, Gogi-gu-i) restaurant focused on providing excellent service and taking a modern approach serving creative dishes while pairing meat with unique sauces and seasonal banchan",
+    "Description": "Traditional Korean barbecue (\uACE0\uAE30\uAD6C\uC774, Gogi-gu-i) restaurant focused on providing excellent service and taking a modern approach serving creative dishes while pairing meat with unique sauces and seasonal banchan",
     "Address": "500 E Pike St, Seattle, WA 98122",
     "Hours": [
-      "Closed",
-      "Closed",
-      "5:00 \u2013 10:00 PM",
-      "5:00 \u2013 10:00 PM",
-      "5:00 \u2013 10:00 PM",
-      "5:00 \u2013 10:00 PM",
-      "5:00 \u2013 10:00 PM"
+      null,
+      null,
+      [
+        17,
+        22
+      ],
+      [
+        17,
+        22
+      ],
+      [
+        17,
+        22
+      ],
+      [
+        17,
+        22
+      ],
+      [
+        17,
+        22
+      ]
     ],
     "Ratings": null,
     "ProductType": 55,
@@ -146,13 +266,34 @@
     "Description": "A tiny, rustic Italian trattoria with communal seating, a hyper-focus on handmade pasta and the traditional cuisine of the Piedmont region of Northern Italy.",
     "Address": "1531 14th Ave, Seattle, WA 98122",
     "Hours": [
-      "5:00 \u2013 10:00 PM",
-      "5:00 \u2013 10:00 PM",
-      "5:00 \u2013 10:00 PM",
-      "5:00 \u2013 10:00 PM",
-      "5:00 \u2013 10:00 PM",
-      "5:00 \u2013 10:00 PM",
-      "5:00 \u2013 10:00 PM"
+      [
+        17,
+        22
+      ],
+      [
+        17,
+        22
+      ],
+      [
+        17,
+        22
+      ],
+      [
+        17,
+        22
+      ],
+      [
+        17,
+        22
+      ],
+      [
+        17,
+        22
+      ],
+      [
+        17,
+        22
+      ]
     ],
     "Ratings": null,
     "ProductType": 130,
@@ -169,13 +310,34 @@
     "Description": "Industrial-chic warehouse dishing up traditional Japanese ramen with a choice of broth & toppings",
     "Address": "1510 Belmont Ave, Seattle, WA 98122",
     "Hours": [
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM",
-      "10:00 \u2013 12:00 AM"
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        10,
+        24
+      ]
     ],
     "Ratings": null,
     "ProductType": 1,
@@ -192,15 +354,36 @@
     "Description": "Colorful Mediterranean cafe with an extensive menu of favorites like gyros, kebabs & baklava",
     "Address": "2355 10th Ave E #2355, Seattle, WA 98102",
     "Hours": [
-      "10:00 \u2013 9:00 PM",
-      "10:00 \u2013 9:00 PM",
-      "10:00 \u2013 9:00 PM",
-      "10:00 \u2013 9:00 PM",
-      "10:00 \u2013 9:00 PM",
-      "10:00 \u2013 9:00 PM",
-      "11:00 \u2013 9:00 PM"
+      [
+        10,
+        21
+      ],
+      [
+        10,
+        21
+      ],
+      [
+        10,
+        21
+      ],
+      [
+        10,
+        21
+      ],
+      [
+        10,
+        21
+      ],
+      [
+        10,
+        21
+      ],
+      [
+        11,
+        21
+      ]
     ],
-    "Ratings":null,
+    "Ratings": null,
     "ProductType": 55,
     "Quantity": null,
     "Price": 0,
@@ -212,16 +395,37 @@
     "img": "https://eventective-media.azureedge.net/2007315_lg.jpg",
     "Url": "https://www.rheinhausseattle.com/",
     "Title": "Rhein Haus",
-    "Description": "Authentic Bavarian fare—house-made sausages and pretzels—are accompanied by 24 drafts featuring both European and Northwestern beers.",
+    "Description": "Authentic Bavarian fare\u2014house-made sausages and pretzels\u2014are accompanied by 24 drafts featuring both European and Northwestern beers.",
     "Address": "912 12th Ave, Seattle, WA 98122",
     "Hours": [
-      "4:00 \u2013  2:00 AM",
-      "4:00 \u2013  2:00 AM",
-      "4:00 \u2013  2:00 AM",
-      "4:00 \u2013  2:00 AM",
-      "4:00 \u2013  2:00 AM",
-      "12:00 \u2013 2:00 AM",
-      "10:00 \u2013 2:00 AM"
+      [
+        16,
+        2
+      ],
+      [
+        16,
+        2
+      ],
+      [
+        16,
+        2
+      ],
+      [
+        16,
+        2
+      ],
+      [
+        16,
+        2
+      ],
+      [
+        12,
+        2
+      ],
+      [
+        10,
+        2
+      ]
     ],
     "Ratings": null,
     "ProductType": 1,
@@ -235,16 +439,37 @@
     "img": "https://goop-img.com/wp-content/uploads/2017/03/jade-garden.jpeg",
     "Url": "https://seattle.eater.com/venue/71541/jade-garden-restaurant",
     "Title": "Jade Garden",
-    "Description": "Popular, lively spot for dim sum at budget prices in a no-frills Chinese spot that's open late",
+    "Description": "Popular, lively spot for dim sum at budget prices in a no-frills Chinese spot that\u0027s open late",
     "Address": "424 7th Ave S, Seattle, WA 98104",
     "Hours": [
-      "9:00 \u2013 7:30 AM",
-      "9:00 \u2013 7:30 AM",
-      "9:00 \u2013 7:30 AM",
-      "9:00 \u2013 7:30 AM",
-      "9:00 \u2013 9:00 AM",
-      "9:00 \u2013 9:00 AM",
-      "9:00 \u2013 9:00 AM"
+      [
+        9,
+        19
+      ],
+      [
+        9,
+        19
+      ],
+      [
+        9,
+        19
+      ],
+      [
+        9,
+        19
+      ],
+      [
+        9,
+        21
+      ],
+      [
+        9,
+        21
+      ],
+      [
+        9,
+        21
+      ]
     ],
     "Ratings": null,
     "ProductType": 1,
@@ -261,13 +486,34 @@
     "Description": "A memorabilia-packed dining room sets the tone for hip takes on street eats from around the globe",
     "Address": "1519 14th Ave, Seattle, WA 98122",
     "Hours": [
-      "11:00 \u2013 10:00 PM",
-      "11:00 \u2013 10:00 PM",
-      "11:00 \u2013 10:00 PM",
-      "11:00 \u2013 10:00 PM",
-      "11:00 \u2013 11:00 PM",
-      "10:00 \u2013 11:00 PM",
-      "10:00 \u2013 10:00 PM"
+      [
+        11,
+        22
+      ],
+      [
+        11,
+        22
+      ],
+      [
+        11,
+        22
+      ],
+      [
+        11,
+        22
+      ],
+      [
+        11,
+        23
+      ],
+      [
+        10,
+        23
+      ],
+      [
+        10,
+        22
+      ]
     ],
     "Ratings": null,
     "ProductType": 0,
@@ -284,13 +530,34 @@
     "Description": "A memorabilia-packed dining room sets the tone for hip takes on street eats from around the globe",
     "Address": "1519 14th Ave, Seattle, WA 98122",
     "Hours": [
-      "11:00 \u2013 10:00 PM",
-      "11:00 \u2013 10:00 PM",
-      "11:00 \u2013 10:00 PM",
-      "11:00 \u2013 10:00 PM",
-      "11:00 \u2013 11:00 PM",
-      "10:00 \u2013 11:00 PM",
-      "10:00 \u2013 10:00 PM"
+      [
+        11,
+        22
+      ],
+      [
+        11,
+        22
+      ],
+      [
+        11,
+        22
+      ],
+      [
+        11,
+        22
+      ],
+      [
+        11,
+        23
+      ],
+      [
+        10,
+        23
+      ],
+      [
+        10,
+        22
+      ]
     ],
     "Ratings": null,
     "ProductType": 0,
@@ -307,13 +574,34 @@
     "Description": "Generous, NYC-style pizza slices, cocktails & beer in a laid-back space with a retro, dive-bar vibe",
     "Address": "1009 E Pike St, Seattle, WA 98122",
     "Hours": [
-      "11:00 \u2013 12:00 AM",
-      "11:00 \u2013 12:00 AM",
-      "11:00 \u2013 12:00 AM",
-      "11:00 \u2013 12:00 AM",
-      "11:00 \u2013 12:00 AM",
-      "12:00 \u2013 3:00 AM",
-      "12:00 \u2013 12:00 AM"
+      [
+        11,
+        24
+      ],
+      [
+        11,
+        24
+      ],
+      [
+        11,
+        24
+      ],
+      [
+        11,
+        24
+      ],
+      [
+        11,
+        24
+      ],
+      [
+        12,
+        3
+      ],
+      [
+        12,
+        24
+      ]
     ],
     "Ratings": null,
     "ProductType": 0,
@@ -324,19 +612,37 @@
   {
     "Id": "Steak House",
     "Maker": "@jenlooper",
-    "img": "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/305660126_465815792225117_221290921290484696_n.jpg?stp=dst-jpg_p640x640\u0026_nc_cat=109\u0026ccb=1-7\u0026_nc_sid=e3f864\u0026_nc_ohc=gvSdl3veOFAAX8pgggP\u0026_nc_ht=scontent-sea1-1.xx\u0026oh=00_AT82s8VcGj0q3NXiQWSAR2M92JL3Y2J5rfePaxDu5B2fTw\u0026oe=63488ACB",
+    "img": "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/305660126_465815792225117_221290921290484696_n.jpg?stp=dst-jpg_p640x640&_nc_cat=109&ccb=1-7&_nc_sid=e3f864&_nc_ohc=gvSdl3veOFAAX8pgggP&_nc_ht=scontent-sea1-1.xx&oh=00_AT82s8VcGj0q3NXiQWSAR2M92JL3Y2J5rfePaxDu5B2fTw&oe=63488ACB",
     "Url": "https://thebutcherstable.com/",
     "Title": "The Butcher\u0027s Table",
-    "Description": "Featuring Mishima Reserve American Wagyu Beef, The Butcher’s Table is a modern steakhouse serving up an unparalleled culinary experience",
+    "Description": "Featuring Mishima Reserve American Wagyu Beef, The Butcher\u2019s Table is a modern steakhouse serving up an unparalleled culinary experience",
     "Address": "2121 Westlake Ave, Seattle, WA 98121",
     "Hours": [
-      "4:00 \u2013 9:00 PM",
-      "4:00 \u2013 9:00 PM",
-      "4:00 \u2013 9:00 PM",
-      "4:00 \u2013 9:00 PM",
-      "4:00 \u2013 10:00 PM",
-      "4:00 \u2013 10:00 PM",
-      "Closed"
+      [
+        4,
+        21
+      ],
+      [
+        4,
+        21
+      ],
+      [
+        4,
+        21
+      ],
+      [
+        4,
+        21
+      ],
+      [
+        4,
+        22
+      ],
+      [
+        4,
+        22
+      ],
+      null
     ],
     "Ratings": null,
     "ProductType": 55,
@@ -347,19 +653,19 @@
   {
     "Id": "mockproduct",
     "Maker": "@jenlooper",
-    "img": "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/305660126_465815792225117_221290921290484696_n.jpg?stp=dst-jpg_p640x640\u0026_nc_cat=109\u0026ccb=1-7\u0026_nc_sid=e3f864\u0026_nc_ohc=gvSdl3veOFAAX8pgggP\u0026_nc_ht=scontent-sea1-1.xx\u0026oh=00_AT82s8VcGj0q3NXiQWSAR2M92JL3Y2J5rfePaxDu5B2fTw\u0026oe=63488ACB",
+    "img": "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/305660126_465815792225117_221290921290484696_n.jpg?stp=dst-jpg_p640x640&_nc_cat=109&ccb=1-7&_nc_sid=e3f864&_nc_ohc=gvSdl3veOFAAX8pgggP&_nc_ht=scontent-sea1-1.xx&oh=00_AT82s8VcGj0q3NXiQWSAR2M92JL3Y2J5rfePaxDu5B2fTw&oe=63488ACB",
     "Url": "https://thebutcherstable.com/",
     "Title": "The Butcher\u0027s Table",
     "Description": "Featuring Mishima Reserve American Wagyu Beef, The Butcher’s Table is a modern steakhouse serving up an unparalleled culinary experience",
     "Address": "2121 Westlake Ave, Seattle, WA 98121",
     "Hours": [
-      "4:00 \u2013 9:00 PM",
-      "4:00 \u2013 9:00 PM",
-      "4:00 \u2013 9:00 PM",
-      "4:00 \u2013 9:00 PM",
-      "4:00 \u2013 10:00 PM",
-      "4:00 \u2013 10:00 PM",
-      "Closed"
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
     ],
     "Ratings": [
       1,
