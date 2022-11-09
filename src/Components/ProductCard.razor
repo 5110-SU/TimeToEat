@@ -1,0 +1,26 @@
+@using ContosoCrafts.WebSite.Models
+@using ContosoCrafts.WebSite.Services
+@using Microsoft.AspNetCore.Components.Web
+@inject JsonFileProductService ProductService
+
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="card-flyer">
+            <div class="text-box">
+                <div class="image-box">
+                    <img src="@Product.Image" alt="@Product.Title" />
+                </div>
+                <div class="text-container">
+                    <h6>@Product.Title</h6>
+                    <p>@Product.Description</p>
+                    <a href="/Restaurants/DetailUser/@Product.Id">
+                        <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+</div>
+
+@code {
+    [Parameter]
+    public ProductModel Product { get; set; }
+}
