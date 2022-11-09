@@ -30,6 +30,7 @@ namespace UnitTests.Models
         {
             // Arrange
             var productType = ProductTypeEnum.Undefined;
+
             var expected = "";
 
             // Act
@@ -47,6 +48,7 @@ namespace UnitTests.Models
         {
             // Arrange
             var productType = ProductTypeEnum.Fastfood;
+
             var expected = "Fastfood";
 
             // Act
@@ -64,6 +66,7 @@ namespace UnitTests.Models
         {
             // Arrange
             var productType = ProductTypeEnum.Cafe;
+
             var expected = "Cafe";
 
             // Act
@@ -81,6 +84,7 @@ namespace UnitTests.Models
         {
             // Arrange
             var productType = ProductTypeEnum.BBQ;
+
             var expected = "BBQ";
 
             // Act
@@ -98,6 +102,7 @@ namespace UnitTests.Models
         {
             // Arrange
             var productType = ProductTypeEnum.FineDining;
+
             var expected = "FineDining";
 
             // Act
