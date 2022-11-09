@@ -109,6 +109,31 @@ namespace UnitTests.Pages.Restaurants
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
         }
+        
+        /// <summary>
+        /// Test the Days attribute of the ReadModel class
+        /// </summary>
+        [Test]
+        public void GetDate_Valid_Should_Return_List_Of_Days()
+        {
+            // Arrange
+            var days = new List<string> { 
+                "Monday", "Tuesday", "Wednesday", 
+                "Thursday", "Friday", "Saturday", "Sunday" };
+            var product = TestHelper.ProductService.GetProducts().First();
+
+            // Act
+            pageModel.OnGet(product.Id);
+            var result = pageModel.Days;
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            foreach(var day in days)
+            {
+                Assert.AreEqual(true, result.Contains(day));
+            }
+            
+        }
 
         #endregion OnGet
     }
