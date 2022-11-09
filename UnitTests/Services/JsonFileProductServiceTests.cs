@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using ContosoCrafts.WebSite.Models;
@@ -330,5 +331,112 @@ namespace UnitTests.Pages.Product.AddRating
         }
 
         #endregion CreateProduct
+
+        #region GetProductsByTime
+
+        /// <summary>
+        /// Tests GetProductsByTime with default time
+        /// </summary>
+        [Test]
+        public void GetProductsByTime_Valid_Default_Return_All_Products()
+        {
+            // Arrange
+            var data = TestHelper.ProductService.GetAllData();
+            var expected = data.Count();
+            // Act
+            var products = TestHelper.ProductService.GetProductsByTime();
+            var actual = products.Count();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Tests GetProductsByTime exclude products with null hours
+        /// </summary>
+        [Test]
+        public void GetProductsByTime_Valid_With_Null_Hours_Products_Should_Return_List_Of_Products_Without_Null_Hours_Products()
+        {
+            // Arrange
+            var data = TestHelper.ProductService.CreateProduct(new ProductModel()
+            {
+                Hours = null,
+            });
+            var id = data.Id;
+
+            // Act
+            var products = TestHelper.ProductService.GetProductsByTime(1);
+            var actual = products.FirstOrDefault(x => x.Id == id);
+
+            // Assert
+            Assert.AreEqual(null, actual);
+        }
+
+        /// <summary>
+        /// Tests GetProductsByTime exclude products current day of the week that have null hours
+        /// </summary>
+        [Test]
+        public void GetProductsByTime_Valid_With_Day_Null_Hour_Products_Should_Return_List_Of_Products_Without_Day_Null_Hours_Products()
+        {
+            // Arrange
+            var product = new ProductModel(); 
+            product.Hours = new List<int[]>() {null, null, null, null, null, null, null};
+            var data = TestHelper.ProductService.CreateProduct(product);
+            var id = data.Id;
+
+            // Act
+            var products = TestHelper.ProductService.GetProductsByTime(1);
+            var actual = products.FirstOrDefault(x => x.Id == id);
+
+            // Assert
+            Assert.AreEqual(null, actual);
+        }
+
+        /// <summary>
+        /// Tests GetProductsByTime include products open after midnight with time within business hours
+        /// </summary>
+        [Test]
+        public void GetProductsByTime_Valid_With_Open_After_Midnight_Should_Return_List_Of_Products_Open()
+        {
+            // Arrange
+            var product = new ProductModel();
+            product.Hours = new List<int[]>() { 
+                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 }, 
+                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 }, 
+                new int[] { 21, 2 } };
+            var data = TestHelper.ProductService.CreateProduct(product);
+            var id = data.Id;
+
+            // Act
+            var products = TestHelper.ProductService.GetProductsByTime(22);
+            var actual = products.FirstOrDefault(x => x.Id == id);
+
+            // Assert
+            Assert.AreEqual(product.Id, actual.Id);
+        }
+
+        /// <summary>
+        /// Tests GetProductsByTime exclude products open after midnight with time after close
+        [Test]
+        public void GetProductsByTime_Valid_With_Open_After_Midnight_And_Time_After_Midnight_After_Close_Should_Return_List_Of_Products_Open()
+        {
+            // Arrange
+            var product = new ProductModel();
+            product.Hours = new List<int[]>() { 
+                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 }, 
+                new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 }, 
+                new int[] { 21, 2 } };
+            var data = TestHelper.ProductService.CreateProduct(product);
+            var id = data.Id;
+
+            // Act
+            var products = TestHelper.ProductService.GetProductsByTime(2);
+            var actual = products.FirstOrDefault(x => x.Id == id);
+
+            // Assert
+            Assert.AreEqual(null, actual);
+        }
+
+        #endregion GetProductsByTime
     }
 }
