@@ -1,4 +1,5 @@
-﻿using ContosoCrafts.WebSite.Pages.Restaurants;
+﻿using ContosoCrafts.WebSite.Models;
+using ContosoCrafts.WebSite.Pages.Restaurants;
 using NUnit.Framework;
 using System.Linq;
 
@@ -61,6 +62,29 @@ namespace UnitTests.Pages.Restaurants
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(Product.Id, pageModel.Product.Id);
+        }
+
+
+        /// <summary>
+        /// Test the OnGet Http request method product has null hours
+        /// </summary>
+        [Test]
+        public void OnGet_Valid_With_Product_Hours_Null_Should_Return_Same_Page()
+        {
+            // Arrange
+            var product = TestHelper.ProductService.CreateProduct(
+                new ProductModel()
+                {
+                    Title = "Test Product",
+                    Hours = null
+                }
+            );
+            
+            // Act
+            pageModel.OnGet(product.Id);
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
         }
 
         #endregion OnGet
