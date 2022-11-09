@@ -200,7 +200,7 @@ ul {
     height: 65px;
 }
 
-.utensils-image {
+#utensils-image {
     content: url(../data/Utensils.png);
     max-height: 80px;
     max-width: 80px;
