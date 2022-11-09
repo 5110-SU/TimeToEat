@@ -75,6 +75,7 @@ namespace UnitTests.Pages.Create
         {
             // Arrange
             var defImg = "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-instagram-post-advertisement-design-template-5e3dde31601916fac13b611b18066f52_screen.jpg?ts=1622274831";
+            
             var data = new ProductModel()
             {
                 Id = "fortest",
@@ -87,6 +88,7 @@ namespace UnitTests.Pages.Create
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
+            
             var resultImage = TestHelper.ProductService.GetProduct(data.Id).Image;
 
             // Reset
@@ -105,6 +107,7 @@ namespace UnitTests.Pages.Create
         {
             // Arrange
             var defurl = "https://time-to-eat.azurewebsites.net";
+            
             var data = new ProductModel()
             {
                 Id = "fortest",
@@ -117,6 +120,7 @@ namespace UnitTests.Pages.Create
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
+            
             var resultUrl = TestHelper.ProductService.GetProduct(data.Id).Url;
 
             // Reset
@@ -135,6 +139,7 @@ namespace UnitTests.Pages.Create
         {
             // Arrange
             var defDescription = "Seattle is a food lover’s dream! There are lots of great options so we’ve highlighted some of the best and most unique places to eat in Seattle, Washington.";
+            
             var data = new ProductModel()
             {
                 Id = "fortest",
@@ -147,6 +152,7 @@ namespace UnitTests.Pages.Create
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
+            
             var resultDes = TestHelper.ProductService.GetProduct(data.Id).Description;
 
             // Reset
