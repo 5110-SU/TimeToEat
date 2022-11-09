@@ -37,10 +37,12 @@ namespace UnitTests.Pages.Restaurants
         {
             // Arrange
             var data = TestHelper.ProductService.GetProducts().Last();
+
             var expected = data.Id;
 
             // Act
             pageModel.OnGet(data.Id);
+
             var actual = pageModel.Product.Id;
 
             // Assert
