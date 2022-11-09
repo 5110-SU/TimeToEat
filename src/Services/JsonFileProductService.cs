@@ -238,10 +238,13 @@ namespace ContosoCrafts.WebSite.Services
         /// </summary>
         /// <param name="time">The time to filter on</param>
         /// <returns>List of restaurants that are open at the given time</returns>
-        public IEnumerable<ProductModel> GetProductsByTime(int time)
+        public IEnumerable<ProductModel> GetProductsByTime(int time=0)
         {
             var products = GetAllData();
-
+            if (time == 0)
+            {
+                return products;
+            }
             DateTime thisDay = DateTime.Today;
 
             var dayOfWeek = thisDay.DayOfWeek.ToString();
@@ -263,16 +266,39 @@ namespace ContosoCrafts.WebSite.Services
 
             foreach (var product in products)
             {
-                var hours = product.Hours[dayIndex].Split(',');
-
-                var open = int.Parse(hours[0]);
-
-                var close = int.Parse(hours[1]);
-
-                if (time >= open && time < close)
-                {
-                    result.Add(product);
+                if (product.Hours == null) {
+                    continue;
                 }
+
+                var hours = product.Hours[dayIndex];
+                if (hours == null)
+                {
+                    continue;
+                }
+
+                var open = hours[0];
+                var close = hours[1];
+                if (open > close)
+                {
+                    close += 24;
+                    if (time < open)
+                    {
+                        time += 24;
+                    }
+                }
+                
+                if (time < open)
+                {
+                    continue;
+                }
+
+                if (time >= close)
+                {
+                    continue;
+                }
+               
+                result.Add(product);
+                
             }
             return result;
         }        
