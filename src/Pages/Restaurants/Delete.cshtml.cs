@@ -47,6 +47,7 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
             }
 
             ProductService.DeleteData(Product.Id);
+
             // Redirect user to the deleted restaurant detail page
             return RedirectToPage("./Index");
         }
