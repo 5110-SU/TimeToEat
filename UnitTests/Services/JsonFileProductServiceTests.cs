@@ -63,7 +63,7 @@ namespace UnitTests.Pages.Product.AddRating
             // Arrange
 
             // Get the First data item
-            var testID = "Steak House";
+            var testID = "mockproduct";
             var data = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
             var countOriginal = data.Ratings.Length;
 
