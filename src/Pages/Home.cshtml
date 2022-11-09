@@ -1,30 +1,23 @@
 ﻿@page
+@using ContosoCrafts.WebSite.Components
 @using ContosoCrafts.WebSite.Services
 @inject JsonFileProductService ProductService
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
+
+<script src="_framework/blazor.server.js"></script>
+
 <div id="cards_wrapper">
     <div class="row">
     @foreach (var product in ProductService.GetAllData())
     {
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="card-flyer">
-                    <div class="text-box">
-                        <div class="image-box">
-                            <img src="@product.Image" alt="@product.Title" />
-                        </div>
-                        <div class="text-container">
-                            <h6>@product.Title</h6>
-                            <p>@product.Description</p>
-                            <a href="/Restaurants/DetailUser/@product.Id">
-                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-        </div>
+        <component 
+        type="typeof(ProductCard)" 
+        render-mode="ServerPrerendered" 
+        param-Product="@product"
+        />
     }
     </div>
 </div>
