@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ContosoCrafts.WebSite.Services;
 using ContosoCrafts.WebSite.Models;
@@ -63,6 +64,13 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
             if (Product.Description == null)
             {
                 Product.Description = "Seattle is a food lover’s dream! There are lots of great options so we’ve highlighted some of the best and most unique places to eat in Seattle, Washington.";
+            }
+
+            // Assign default value for product hours if not set
+            Product.Hours = new List<int[]>();
+            for (int i = 0; i < 7; i++)
+            {
+                Product.Hours.Add(new int[2] {0, 24});
             }
 
              // Insert Product into database
