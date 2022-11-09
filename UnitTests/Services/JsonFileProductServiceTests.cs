@@ -358,6 +358,7 @@ namespace UnitTests.Pages.Product.AddRating
             var data = TestHelper.ProductService.GetAllData();
 
             var expected = data.Count();
+
             // Act
             var products = TestHelper.ProductService.GetProductsByTime();
 
