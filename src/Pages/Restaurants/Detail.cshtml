@@ -19,14 +19,15 @@
                                 <th>Day</th><th>Hours</th>
                             </thead>
                             <tbody>
-                                @foreach (var day in new string[] { 
-                                    "Monday", "Tuesday", "Wednesday", 
-                                    "Thursday", "Friday", "Saturday", "Sunday" })
-                                {
-                                    <tr>
-                                        <td>@day</td>
-                                        <td>9:00 AM - 5:00 PM</td>
-                                    </tr>
+                                @{
+                                    var hours = Model.Hours;
+                                    for (int i = 0; i < hours.Count; i++)
+                                    {
+                                        <tr>
+                                            <td>@Model.Days[i]</td>
+                                            <td>@hours[i]</td>
+                                        </tr>
+                                    }
                                 }
                             </tbody>
                         </table>
