@@ -150,6 +150,7 @@ namespace ContosoCrafts.WebSite.Services
         public ProductModel UpdateData(ProductModel data)
         {
             var products = GetAllData();
+
             var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
 
             if (productData == null)
@@ -176,7 +177,6 @@ namespace ContosoCrafts.WebSite.Services
         /// </summary>
         private void SaveData(IEnumerable<ProductModel> products)
         {
-
             using (var outputStream = File.Create(JsonFileName))
             {
                 JsonSerializer.Serialize<IEnumerable<ProductModel>>(
@@ -264,8 +264,11 @@ namespace ContosoCrafts.WebSite.Services
             foreach (var product in products)
             {
                 var hours = product.Hours[dayIndex].Split(',');
+
                 var open = int.Parse(hours[0]);
+
                 var close = int.Parse(hours[1]);
+
                 if (time >= open && time < close)
                 {
                     result.Add(product);
