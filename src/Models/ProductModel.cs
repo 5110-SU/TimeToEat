@@ -35,7 +35,7 @@ namespace ContosoCrafts.WebSite.Models
         public string Address { get; set; }
 
         // Product Hours
-        public string[] Hours { get; set; }
+        public List<int[]> Hours { get; set; }
 
         // Product Ratings
         public int[] Ratings { get; set; }
