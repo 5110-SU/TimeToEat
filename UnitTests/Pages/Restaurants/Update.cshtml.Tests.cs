@@ -39,8 +39,10 @@ namespace UnitTests.Pages.Create
         {
             // Arrange
             var expected = true;
+
             // Act
             var result = pageModel.OnGet("not-existing-product-id") as RedirectToPageResult;
+
             var actual = result.PageName.Contains("Index");
 
             // Assert
