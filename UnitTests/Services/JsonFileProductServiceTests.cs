@@ -62,31 +62,22 @@ namespace UnitTests.Pages.Product.AddRating
         public void AddRating_Valid_Product_Rating_5_Should_Return_True()
         {
             // Arrange
+            var data = new ProductModel();
 
-            // Get the First data item
-            var testID = "mockproduct";
-
-            var data = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
-
-            var countOriginal = data.Ratings.Length;
+            var newData = TestHelper.ProductService.CreateProduct(data);
 
             // Act
-            var result = TestHelper.ProductService.AddRating(data.Id, 5);
+            var result =  TestHelper.ProductService.AddRating(newData.Id, 5);
 
-            var dataNewList = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
+            var newProduct = TestHelper.ProductService.GetProduct(newData.Id);
 
             // Reset
-            var toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
-
-            var ratings = toReset.Ratings.ToList();
-
-            ratings.RemoveAt(toReset.Ratings.Length - 1);
-            toReset.Ratings = ratings.ToArray();
+            TestHelper.ProductService.DeleteData(newData.Id);
 
             // Assert
             Assert.AreEqual(true, result);
-            Assert.AreEqual(countOriginal + 1, dataNewList.Ratings.Length);
-            Assert.AreEqual(5, dataNewList.Ratings.Last());
+            Assert.AreEqual(1, newProduct.Ratings.Length);
+            Assert.AreEqual(5, newProduct.Ratings.Last());
         }
 
         /// <summary>
