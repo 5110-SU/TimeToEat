@@ -142,6 +142,51 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
+        /// Add comment to a product in the databse
+        /// </summary>
+        /// <returns></returns>
+        public bool AddComment(string productId, string userComment)
+        {
+            // If the ProductID is invalid, return false
+            if (string.IsNullOrEmpty(productId)) 
+            { 
+                return false;
+            }
+
+            var products = GetAllData();
+
+            // Look up the product, if it does not exist, return
+            var data = products.FirstOrDefault(x => x.Id.Equals(productId));
+
+            // If the product does not exist in the database, return false
+            if (data == null)
+            {
+                return false;
+            }
+
+            if (userComment == null)
+            {
+                return false;
+            }
+
+            if (userComment == "")
+            {
+                return false;
+            }
+
+            // Add the Comment to the Array
+            var commentObject = new CommentModel();
+            commentObject.Comment = userComment;
+            var comments = data.CommentList;
+            comments.Add(commentObject);
+
+            // Save the data back to the data store
+            SaveData(products);
+
+            return true;
+        }
+
+        /// <summary>
         /// Find the data record
         /// Update the fields
         /// Save to the data store
