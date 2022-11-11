@@ -441,18 +441,31 @@ namespace UnitTests.Pages.Product.AddRating
             // Arrange
             var product = new ProductModel();
 
+            var product2 = new ProductModel();
+            // Create a product that close at 2am
             product.Hours = new List<int[]>() {
                 new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 },
                 new int[] { 21, 2 }, new int[] { 21, 2 }, new int[] { 21, 2 },
-                new int[] { 21, 2 } };
+                new int[] { 21, 2 } 
+            };
+            // Create a product that still open at 2am
+            product2.Hours = new List<int[]>()
+            {
+                new int[] { 21, 3 }, new int[] { 21, 3 }, new int[] { 21 , 3 },
+                new int[] { 21, 3 }, new int[] { 21, 3 }, new int[] { 21 , 3 },
+                new int[] { 21, 3 }
+            };
 
             var data = TestHelper.ProductService.CreateProduct(product);
+
+            TestHelper.ProductService.CreateProduct(product2);
 
             var id = data.Id;
 
             // Act
             var products = TestHelper.ProductService.GetProductsByTime(2);
-
+            // Only product that sill open at 2 am will be returned
+            // so the product created that closed at 1 will not be in the list
             var actual = products.FirstOrDefault(x => x.Id == id);
 
             // Assert
