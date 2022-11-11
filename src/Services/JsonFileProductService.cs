@@ -177,6 +177,7 @@ namespace ContosoCrafts.WebSite.Services
             // Add the Comment to the Array
             var commentObject = new CommentModel();
             commentObject.Comment = userComment;
+
             var comments = data.CommentList;
             comments.Add(commentObject);
 
