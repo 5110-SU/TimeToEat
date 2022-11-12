@@ -8,6 +8,11 @@
 }
 
 <div class="container">
+    <div>
+        <div class="returnButton">
+            <a class= "return" asp-page="/Home"> <img class="returnButton"/> </a>
+        </div>
+    </div>
     <a class="btn btn-primary mb-3" href="/Restaurants/Create" role="button">CREATE</a>
     <ul class="list-group">
         @foreach (var product in Model.Products)
