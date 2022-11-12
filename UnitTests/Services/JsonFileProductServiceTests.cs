@@ -339,6 +339,9 @@ namespace UnitTests.Pages.Product.AddRating
 
         #region addComment
 
+        /// <summary>
+        /// Unit test for addComment with null product ID
+        /// </summary>
         public void addComment_Invalid_Null_ProductID_Should_Return_False()
         {
             // Arrange
@@ -350,6 +353,8 @@ namespace UnitTests.Pages.Product.AddRating
             // Assert
             Assert.AreEqual(false, result);
         }
+
+
 
         #endregion addComment
 
