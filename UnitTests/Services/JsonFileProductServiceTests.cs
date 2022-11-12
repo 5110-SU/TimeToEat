@@ -337,6 +337,22 @@ namespace UnitTests.Pages.Product.AddRating
 
         #endregion CreateProduct
 
+        #region addComment
+
+        public void addComment_Invalid_Null_ProductID_Should_Return_False()
+        {
+            // Arrange
+            string badID = null;
+
+            // Act
+            var result = TestHelper.ProductService.AddComment(badID, "hey jude");
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        #endregion addComment
+
         #region GetProductsByTime
 
         /// <summary>
