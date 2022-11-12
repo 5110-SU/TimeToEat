@@ -229,6 +229,15 @@ ul {
     }
 }
 
+.return_button {
+    content: url(../data/returnButton.png);
+    max-height: 35px;
+    max-width: 35px;
+    display: inline-block;
+    transition: transform .2s;
+}
+
+
 /*----  Open Page Card  ----*/
 
 #cards_wrapper {
