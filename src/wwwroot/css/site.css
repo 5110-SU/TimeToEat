@@ -229,7 +229,11 @@ ul {
     }
 }
 
-.return_button {
+.index.return_icon {
+    padding-bottom: 5px;
+}
+
+.return_icon {
     content: url(../data/returnButton.png);
     max-height: 35px;
     max-width: 35px;
@@ -237,6 +241,9 @@ ul {
     transition: transform .2s;
 }
 
+.return {
+    margin-right: 50px;
+}
 
 /*----  Open Page Card  ----*/
 
