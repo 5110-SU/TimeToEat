@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var routeUrl = Url.RouteUrl(ViewContext.RouteData.Values);
+    var qsPath = ViewContext.HttpContext.Request.QueryString.Value;
+    var returnUrl = $"{routeUrl}{qsPath}";
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -15,51 +20,50 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-navbar border-bottom box-shadow mb-3">
+        @{
+            if (returnUrl == "/")
+            {
+                <a class="d-flex justify-content-center bg-white" asp-page="/Index">
+                    <img id="logo-image-home" src="data/Logo.png" alt="Logo" />
+                </a>
+            }
+        }
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-navbar box-shadow mb-5justify-content-center">
             <div class="container">
+            @if (returnUrl != "/")
+            {
                 <a class="navbar-brand" id="font-size" asp-area="" asp-page="/Index">
                     <img id="logo-image" src="~/data/Logo.png" alt="Logo" />
                     Time to Eat
                 </a>
+            }
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Home">Open Now</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Restaurants/Index">Index</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/SignUp">Sign Up</a>
-                        </li>
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
+                        <li class="nav-item pr-3"><a class="nav-link text-dark" asp-page="/Home"><h4>OPEN NOW</h4></a></li>
+                        <li class="nav-item pr-3"><a class="nav-link text-dark" asp-page="/Privacy"><h4>PRIVACY</h4></a></li>
+                        <li class="nav-item pr-3"><a class="nav-link text-dark" asp-page="/Restaurants/Index"><h4>INDEX</h4></a></li>
                     </ul>
                 </div>
-            </div>
-             <input type="text" placeholder="Search restaurant..">
+            </div>  
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main role="main" class="pb-3">
+        <div class="container">
+                @RenderBody()
+        </div>
+    </main>
 
     <footer class="border-top footer text-muted bg-footer">
         <div class="container">
-            &copy; 2022 - TimeToEat.WebSite - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2022 - Time To Eat - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
@@ -70,3 +74,4 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
