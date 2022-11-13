@@ -355,7 +355,18 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        [Test]
+        public void addComment_Invalid_Null_Product_Should_Return_False()
+        {
+            // Arrange
+            string badID = "bogus";
 
+            // Act
+            var result = TestHelper.ProductService.AddComment(badID, "hey jude");
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
 
         #endregion addComment
 
