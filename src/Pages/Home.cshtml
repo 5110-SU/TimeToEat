@@ -23,7 +23,7 @@
 			@foreach (var product in ProductService.GetProductsByTime(now.Hour + 1))
             {
                 <div class="col-5">
-				    <a href="#" class="card card-block" style="background-image: url(@product.Image);">
+				    <a href="/Restaurants/DetailUser/@product.Id" class="card card-block" style="background-image: url(@product.Image);">
                         <div class="card-block-content">
                             <h5>@product.Title</h5>
                             <p>@GetTodayBusinessHours(product.Hours)</p>
