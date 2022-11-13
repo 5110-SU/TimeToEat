@@ -355,6 +355,9 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Unit test for addComment with product that does not exist
+        /// </summary>
         [Test]
         public void addComment_Invalid_Null_Product_Should_Return_False()
         {
