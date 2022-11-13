@@ -371,6 +371,24 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Unit test for addComment with null comment
+        /// </summary>
+        [Test]
+        public void addComment_Invalid_Null_Comment_Should_Return_False()
+        {
+            // Arrange
+            var data = new ProductModel();
+
+            var newData = TestHelper.ProductService.CreateProduct(data);
+
+            // Act
+            var result = TestHelper.ProductService.AddComment(newData.Id, null);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
         #endregion addComment
 
         #region GetProductsByTime
