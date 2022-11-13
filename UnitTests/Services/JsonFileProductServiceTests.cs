@@ -403,6 +403,9 @@ namespace UnitTests.Pages.Product.AddRating
             // Act
             var result = TestHelper.ProductService.AddComment(newData.Id, "");
 
+            // Reset
+            TestHelper.ProductService.DeleteData(newData.Id);
+
             // Assert
             Assert.AreEqual(false, result);
         }
