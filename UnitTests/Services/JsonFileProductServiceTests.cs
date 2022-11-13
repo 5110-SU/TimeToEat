@@ -407,6 +407,33 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Unit test for addComment with valid comment
+        /// </summary>
+        [Test]
+        public void addComment_Valid_Comment_Should_Return_True()
+        {
+            // Arrange
+            var data = new ProductModel();
+
+            var newData = TestHelper.ProductService.CreateProduct(data);
+
+            // Act
+            var result = TestHelper.ProductService.AddComment(newData.Id, "hey jude, dont make it bad");
+
+            var comment = TestHelper.ProductService.GetProduct(newData.Id).CommentList.Last().Comment;
+
+            var commentLen = TestHelper.ProductService.GetProduct(newData.Id).CommentList.Count;
+
+            // Reset
+            TestHelper.ProductService.DeleteData(newData.Id);
+
+            // Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(1, commentLen);
+            Assert.AreEqual("hey jude, dont make it bad", comment);
+        }
+
         #endregion addComment
 
         #region GetProductsByTime
