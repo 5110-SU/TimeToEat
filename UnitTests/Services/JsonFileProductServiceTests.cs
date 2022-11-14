@@ -343,7 +343,7 @@ namespace UnitTests.Pages.Product.AddRating
         /// Unit test for addComment with null product ID
         /// </summary>
         [Test]
-        public void addComment_Invalid_Null_ProductID_Should_Return_False()
+        public void AddComment_Invalid_Null_ProductID_Should_Return_False()
         {
             // Arrange
             string badID = null;
