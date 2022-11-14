@@ -337,7 +337,7 @@ namespace UnitTests.Pages.Product.AddRating
 
         #endregion CreateProduct
 
-        #region addComment
+        #region AddComment
 
         /// <summary>
         /// Unit test for addComment with null product ID
@@ -437,7 +437,7 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual("hey jude, dont make it bad", comment);
         }
 
-        #endregion addComment
+        #endregion AddComment
 
         #region GetProductsByTime
 
