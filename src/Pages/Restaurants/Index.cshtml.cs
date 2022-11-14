@@ -36,7 +36,7 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
         /// <param name="id"></param>
         public void OnGet()
         {
-            Products = ProductService.GetProducts();
+            Products = ProductService.Search(SearchTerm);
         }
     }
 }
