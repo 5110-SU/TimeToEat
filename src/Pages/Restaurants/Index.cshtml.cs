@@ -17,6 +17,10 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
         // The data to show on Restaurants Index Page
         public IEnumerable<ProductModel> Products;
 
+        // Definition for SearchTerm 
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
+
         /// <summary>
         /// Default Construtor
         /// </summary>
