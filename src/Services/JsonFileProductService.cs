@@ -75,6 +75,11 @@ namespace ContosoCrafts.WebSite.Services
             return product;
         }
 
+        /// <summary>
+        /// Searches for a product 
+        /// </summary>
+        /// <param name="searchTerm"></param>
+        /// <returns></returns>
         public IEnumerable<ProductModel> Search(string searchTerm)
         {
             var products = GetAllData();
