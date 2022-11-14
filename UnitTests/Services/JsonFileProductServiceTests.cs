@@ -414,7 +414,7 @@ namespace UnitTests.Pages.Product.AddRating
         /// Unit test for addComment with valid comment
         /// </summary>
         [Test]
-        public void addComment_Valid_Comment_Should_Return_True()
+        public void AddComment_Valid_Comment_Should_Return_True()
         {
             // Arrange
             var data = new ProductModel();
