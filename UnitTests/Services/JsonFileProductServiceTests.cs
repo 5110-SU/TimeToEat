@@ -393,7 +393,7 @@ namespace UnitTests.Pages.Product.AddRating
         /// Unit test for addComment with empty comment
         /// </summary>
         [Test]
-        public void addComment_Invalid_Empty_Comment_Should_Return_False()
+        public void AddComment_Invalid_Empty_Comment_Should_Return_False()
         {
             // Arrange
             var data = new ProductModel();
