@@ -91,7 +91,7 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
-        /// Retrive a single product in the data storage
+        /// Retrieve a single product in the data storage
         /// </summary>
         /// <param name="id">The id of the product to retrive</param>
         /// <returns>The product with the given id or null if not found</returns>
