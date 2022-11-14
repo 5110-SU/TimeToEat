@@ -359,7 +359,7 @@ namespace UnitTests.Pages.Product.AddRating
         /// Unit test for addComment with product that does not exist
         /// </summary>
         [Test]
-        public void addComment_Invalid_Null_Product_Should_Return_False()
+        public void AddComment_Invalid_Null_Product_Should_Return_False()
         {
             // Arrange
             string badID = "bogus";
