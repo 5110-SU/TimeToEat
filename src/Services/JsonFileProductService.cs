@@ -75,6 +75,16 @@ namespace ContosoCrafts.WebSite.Services
             return product;
         }
 
+        public IEnumerable<ProductModel> Search(string searchTerm)
+        {
+            var products = GetAllData();
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                return products;
+            }
+            return products.Where(p => p.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
+        }
+
         /// <summary>
         /// Retrive a single product in the data storage
         /// </summary>
