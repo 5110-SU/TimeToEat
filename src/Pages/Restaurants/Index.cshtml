@@ -16,12 +16,6 @@
 </div>
 
 <div class="container">
-    <div>
-        <div class="index">
-            <a class="return" asp-page="/Home"><img class="index return_icon" /></a>
-            <input id="searchbar" type="text" name="search" placeholder="Search .." onkeyup="Search_Item()">
-        </div>
-    </div>
     <a class="btn btn-primary mb-3" href="/Restaurants/Create" role="button">CREATE</a>
     <ul class="list-group">
         @foreach (var product in Model.Products)
