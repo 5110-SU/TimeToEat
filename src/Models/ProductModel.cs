@@ -18,12 +18,13 @@ namespace ContosoCrafts.WebSite.Models
 
         // Product Image Url
         [JsonPropertyName("img")]
+        [Required(ErrorMessage = "Image Url is required")]
         public string Image { get; set; }
 
         // Product Website Url
         [JsonPropertyName("Url")]
-        [Required(ErrorMessage = "Url input is required")]
-        [Url(ErrorMessage = "Please Enter a valid URL!")]
+        [Required(ErrorMessage = "Url is required")]
+        [Url(ErrorMessage = "Please Enter a Valid URL!")]
         public string Url { get; set; }
         
         // Product Name
