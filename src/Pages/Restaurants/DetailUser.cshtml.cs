@@ -1,5 +1,6 @@
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ContosoCrafts.WebSite.Pages.Restaurants
@@ -14,6 +15,10 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
 
         // The data to show
         public ProductModel Product;
+
+        // Definition for SearchTerm 
+        [BindProperty(SupportsGet = true)]
+        public string Comment { get; set; } = "";
 
         /// <summary>
         /// Default Construtor
