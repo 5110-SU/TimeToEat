@@ -33,9 +33,17 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
         /// REST Get request
         /// </summary>
         /// <param name="id"></param>
-        public void OnGet(string id)
+        public IActionResult OnGet(string id)
         {
+            // Add comment if user comment is not empty
+            if (Comment != "")
+            {
+                ProductService.AddComment(id, Comment);
+                return RedirectToPage("/Restaurants/DetailUser", new { id = id });
+            }
+
             Product = ProductService.GetProduct(id);
+            return Page();
         }
     }
 }
