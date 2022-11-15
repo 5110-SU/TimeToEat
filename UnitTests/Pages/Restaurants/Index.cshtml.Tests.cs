@@ -46,6 +46,22 @@ namespace UnitTests.Pages.Restaurants
             Assert.AreEqual(data, pageModel.Products.Count());
         }
 
+        /// <summary>
+        /// Tests search term should retrieve searched product
+        /// </summary>
+        [Test]
+        public void OnGet_Valid_SearchTerm_Should_Retrieve_Searched_Product()
+        {
+            // Arrange
+            pageModel.SearchTerm = "test search";
+
+            // Act
+            pageModel.OnGet();
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+        }
+
         #endregion OnGet
     }
 }
