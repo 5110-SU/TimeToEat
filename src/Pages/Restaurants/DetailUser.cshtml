@@ -46,14 +46,18 @@
                             </iframe>
                         </div>
                         <a href="@Model.Product.Url" target="_blank" class="btn btn-info">Visit Website</a>
-                        @{
-                            if (Model.Product.CommentList != null)
+                    @{
+                        var commentArr = Model.Product.CommentList.ToArray();
+                        if (commentArr.Length != 0)
                             {
-                                var commentArr = Model.Product.CommentList.ToArray();
-                                for (int i = commentArr.Length - 1; i > commentArr.Length - 5; i--)
+                                for (int i = commentArr.Length - 1; i > commentArr.Length - 4; i--)
                                 {
                                     <p>
-                                        comment sample @i
+                                        @commentArr[i].Comment;
+                                        if (i == 0)
+                                        {
+                                            break;
+                                        }
                                     </p>
                                 }
                             }
