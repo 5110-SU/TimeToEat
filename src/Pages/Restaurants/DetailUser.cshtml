@@ -46,10 +46,10 @@
                             </iframe>
                         </div>
                         <a href="@Model.Product.Url" target="_blank" class="btn btn-info">Visit Website</a>
-                    @{
-                        var commentArr = Model.Product.CommentList.ToArray();
+                        @{
+                            var commentArr = Model.Product.CommentList.ToArray();
 
-                        if (commentArr.Length != 0)
+                            if (commentArr.Length != 0)
                             {
                                 for (int i = commentArr.Length - 1; i > commentArr.Length - 4; i--)
                                 {
