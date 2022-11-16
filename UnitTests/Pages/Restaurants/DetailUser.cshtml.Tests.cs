@@ -63,6 +63,28 @@ namespace UnitTests.Pages.Restaurants
             Assert.AreEqual(Product.Id, pageModel.Product.Id);
         }
 
+        /// <summary>
+        /// Test the OnGet function with user comment
+        /// </summary>
+        [Test]
+        public void OnGet_Valid_Comment_Should_Add_Comment()
+        {
+            // Arrange
+            var comment = "testing";
+
+            var data = TestHelper.ProductService.GetAllData().First();
+
+            pageModel.Comment = comment;
+
+            // Act
+            pageModel.OnGet(data.Id);
+            var result = TestHelper.ProductService.GetProduct(data.Id);
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(comment, result.CommentList.Last().Comment);
+        }
+
         #endregion OnGet
     }
 }
