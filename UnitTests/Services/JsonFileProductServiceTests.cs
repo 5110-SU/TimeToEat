@@ -577,6 +577,7 @@ namespace UnitTests.Pages.Product.AddRating
         #endregion GetProductsByTime
 
         #region Search
+
         /// <summary>
         /// Tests Search with search term string
         /// </summary>
@@ -585,21 +586,30 @@ namespace UnitTests.Pages.Product.AddRating
         {
             // Arrange
             var title = "test-product-name";
+
             var title2 = "";
+
             var data = TestHelper.ProductService.CreateProduct(
                 new ProductModel()
                 {
                     Title = title,
                 }
             );
+
             // Act
             var products = TestHelper.ProductService.Search(title);
+
             var products2 = TestHelper.ProductService.Search(title2);
+
             var actual = products.FirstOrDefault(p => p.Title == data.Title);
+
             var actual2 = products2.FirstOrDefault(p => p.Title == data.Title);
+
+            // Assert
             Assert.AreEqual(data.Id, actual.Id);
             Assert.AreEqual(data.Id, actual2.Id);
         }
+
         #endregion Search
     }
 }
