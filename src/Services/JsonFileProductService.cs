@@ -87,7 +87,7 @@ namespace ContosoCrafts.WebSite.Services
             {
                 return products;
             }
-            return products.Where(p => p.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
+            return products.Where(p => p.Title != null && p.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>
