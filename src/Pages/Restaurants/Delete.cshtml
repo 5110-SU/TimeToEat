@@ -16,7 +16,8 @@
             <input asp-for="Product.Image" class="form-control" type="hidden" />
             <input asp-for="Product.Description" class="form-control" type="hidden" />
             <h5 class="title" id="restaurauntTitle">@Model.Product.Title</h5>
-            <img class="restauraunt-img" id="restaurauntImage" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
+            <img class="restauraunt-img" id="restaurauntImage" src='@Model.Product.Image' alt='Image for @Model.Product.Title'
+                onerror="this.src='https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-instagram-post-advertisement-design-template-5e3dde31601916fac13b611b18066f52_screen.jpg?ts=1622274831';this.onerror='';">
             <h5 class="restauraunt-description">@Model.Product.Description</h5>
             <h5>Are you sure you want to permanantly remove this restauraunt from the database?</h5>
             <button class="btn btn-primary" type="submit">Confirm Delete</button>
