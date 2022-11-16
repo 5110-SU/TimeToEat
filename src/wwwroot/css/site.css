@@ -275,6 +275,7 @@ ul {
 }
 #cards_wrapper .card-flyer {
     border-radius: 5px;
+    width: 100%;
 }
 #cards_wrapper .card-flyer .image-box {
     background: #ffffff;
