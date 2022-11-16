@@ -83,6 +83,7 @@ namespace ContosoCrafts.WebSite.Services
         public IEnumerable<ProductModel> Search(string searchTerm)
         {
             var products = GetAllData();
+
             if (string.IsNullOrEmpty(searchTerm))
             {
                 return products;
