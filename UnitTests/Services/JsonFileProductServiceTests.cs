@@ -481,7 +481,7 @@ namespace UnitTests.Pages.Product.AddRating
         /// Unit test for delete comment with comment that does not exist in the restaurant
         /// </summary>
         [Test]
-        public void DeleteComment_Invalid_Null_CommentModel_Should_Return_False()
+        public void DeleteComment_Invalid_Bogus_CommentId_Should_Return_False()
         {
             // Arrange
             var data = new ProductModel();
