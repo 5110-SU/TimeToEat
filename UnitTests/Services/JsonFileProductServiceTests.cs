@@ -441,6 +441,9 @@ namespace UnitTests.Pages.Product.AddRating
 
         #region DeleteComment
 
+        /// <summary>
+        /// Unit test for delete comment with null product ID
+        /// </summary>
         [Test]
         public void DeleteComment_Invalid_Null_ProductID_Should_Return_False()
         {
