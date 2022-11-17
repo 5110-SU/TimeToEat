@@ -468,10 +468,10 @@ namespace UnitTests.Pages.Product.AddRating
             // Arrange
             string badID = "bogus";
 
-            CommentModel toBeDelete = new CommentModel();
+            string commentId = "sss";
 
             // Act
-            var result = TestHelper.ProductService.DeleteComment(badID, toBeDelete);
+            var result = TestHelper.ProductService.DeleteComment(badID, commentId);
 
             // Assert
             Assert.AreEqual(false, result);
