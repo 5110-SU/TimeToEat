@@ -459,6 +459,24 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Unit test for delete comment with product that does not exist
+        /// </summary>
+        [Test]
+        public void DeleteComment_Invalid_Null_Product_Should_Return_False()
+        {
+            // Arrange
+            string badID = "bogus";
+
+            CommentModel toBeDelete = new CommentModel();
+
+            // Act
+            var result = TestHelper.ProductService.DeleteComment(badID, toBeDelete);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
         #endregion DeleteComment
 
         #region GetProductsByTime
