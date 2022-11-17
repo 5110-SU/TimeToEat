@@ -477,6 +477,28 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Unit test for delete comment with comment that does not exist in the restaurant
+        /// </summary>
+        [Test]
+        public void DeleteComment_Invalid_Null_CommentModel_Should_Return_False()
+        {
+            // Arrange
+            var data = new ProductModel();
+
+            TestHelper.ProductService.CreateProduct(data);
+
+            var newProduct = TestHelper.ProductService.GetProduct(data.Id);
+
+            var toBeDelete = new CommentModel();
+
+            // Act
+            var result = TestHelper.ProductService.DeleteComment(newProduct.Id, toBeDelete);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
         #endregion DeleteComment
 
         #region GetProductsByTime
