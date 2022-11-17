@@ -490,10 +490,8 @@ namespace UnitTests.Pages.Product.AddRating
 
             var newProduct = TestHelper.ProductService.GetProduct(data.Id);
 
-            var toBeDelete = new CommentModel();
-
             // Act
-            var result = TestHelper.ProductService.DeleteComment(newProduct.Id, toBeDelete);
+            var result = TestHelper.ProductService.DeleteComment(newProduct.Id, "bogus");
 
             // Assert
             Assert.AreEqual(false, result);
