@@ -499,6 +499,33 @@ namespace UnitTests.Pages.Product.AddRating
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Unit test for delete comment with valid product id and valid comment id
+        /// </summary>
+        [Test]
+        public void DeleteComment_Valid_Good_CommentId_Should_Return_True()
+        {
+            // Arrange
+            var data = new ProductModel();
+
+            TestHelper.ProductService.CreateProduct(data);
+
+            var newProduct = TestHelper.ProductService.GetProduct(data.Id);
+
+            TestHelper.ProductService.AddComment(newProduct.Id, "testing");
+            TestHelper.ProductService.AddComment(newProduct.Id, "testing");
+
+            newProduct = TestHelper.ProductService.GetProduct(newProduct.Id);
+
+            var commentId = newProduct.CommentList.Last().Id;
+
+            // Act
+            var result = TestHelper.ProductService.DeleteComment(newProduct.Id, commentId);
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
         #endregion DeleteComment
 
         #region GetProductsByTime
