@@ -490,6 +490,8 @@ namespace UnitTests.Pages.Product.AddRating
 
             var newProduct = TestHelper.ProductService.GetProduct(data.Id);
 
+            TestHelper.ProductService.AddComment(newProduct.Id, "testing");
+
             // Act
             var result = TestHelper.ProductService.DeleteComment(newProduct.Id, "bogus");
 
