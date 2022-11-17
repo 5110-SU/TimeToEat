@@ -439,6 +439,11 @@ namespace UnitTests.Pages.Product.AddRating
 
         #endregion AddComment
 
+        #region DeleteComment
+
+
+        #endregion DeleteComment
+
         #region GetProductsByTime
 
         /// <summary>
