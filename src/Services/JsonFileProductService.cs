@@ -159,8 +159,10 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
-        /// Add comment to a product in the databse
+        /// Add comment to a restaurant
         /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="userComment"></param>
         /// <returns></returns>
         public bool AddComment(string productId, string userComment)
         {
