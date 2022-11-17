@@ -211,7 +211,7 @@ namespace ContosoCrafts.WebSite.Services
         /// <param name="productId"></param>
         /// <param name="toBeDelete"></param>
         /// <returns>bool</returns>
-        public bool DeleteComment(string productId, CommentModel toBeDelete)
+        public bool DeleteComment(string productId, string commentId)
         {
             // If the ProductID is invalid, return false
             if (string.IsNullOrEmpty(productId))
@@ -230,13 +230,25 @@ namespace ContosoCrafts.WebSite.Services
                 return false;
             }
 
-            // If object commentList does not contain CommentModel toBeDelete, return false
-            if (!data.CommentList.Contains(toBeDelete))
-            {
-                return false;
-            }
+            // If commentList does not contain commentId, return false
+            var commentArr = data.CommentList.ToArray();
 
-            data.CommentList.Remove(toBeDelete);
+            for (int i = 0; i < commentArr.Length; i++)
+            {
+                if (commentId == commentArr[i].Id)
+                {
+                    var toBeDelete = commentArr[i];
+
+                    data.CommentList.Remove(toBeDelete);
+
+                    break;
+                }
+
+                if (i == commentArr.Length - 1)
+                {
+                    return false;
+                }
+            }
 
             // Save the data back to the data store
             SaveData(products);
