@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text.Json;
 using ContosoCrafts.WebSite.Models;
 using Microsoft.AspNetCore.Hosting;
@@ -196,6 +197,45 @@ namespace ContosoCrafts.WebSite.Services
 
             var comments = data.CommentList;
             comments.Add(commentObject);
+
+            // Save the data back to the data store
+            SaveData(products);
+
+            return true;
+        }
+
+        /// <summary>
+        /// Delete a comment from a restaurant
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="toBeDelete"></param>
+        /// <returns>bool</returns>
+        public bool DeleteComment(string productId, CommentModel toBeDelete)
+        {
+            // If the ProductID is invalid, return false
+            if (string.IsNullOrEmpty(productId))
+            {
+                return false;
+            }
+
+            var products = GetAllData();
+
+            // Look up the product, if it does not exist, return
+            var data = products.FirstOrDefault(x => x.Id.Equals(productId));
+
+            // If the product does not exist in the database, return false
+            if (data == null)
+            {
+                return false;
+            }
+
+            // If object commentList does not contain CommentModel toBeDelete, return false
+            if (!data.CommentList.Contains(toBeDelete))
+            {
+                return false;
+            }
+
+            data.CommentList.Remove(toBeDelete);
 
             // Save the data back to the data store
             SaveData(products);
