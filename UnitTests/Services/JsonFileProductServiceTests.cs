@@ -441,6 +441,20 @@ namespace UnitTests.Pages.Product.AddRating
 
         #region DeleteComment
 
+        [Test]
+        public void DeleteComment_Invalid_Null_ProductID_Should_Return_False()
+        {
+            // Arrange
+            string badID = null;
+
+            CommentModel toBeDelete = new CommentModel();
+
+            // Act
+            var result = TestHelper.ProductService.DeleteComment(badID, toBeDelete);
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
 
         #endregion DeleteComment
 
