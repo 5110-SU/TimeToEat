@@ -21,6 +21,7 @@
             </div>
             @if (Product != null) 
             {
+                SelectProduct(Product.Id);
                 <div class="modal-footer">
                         @if (voteCount == 0)
                         {
@@ -51,7 +52,7 @@
     [Parameter]
     public ProductModel Product { get; set; }
 
-    //ProductModel selectedProduct;
+    //ProductModel select a product;
     string selectedProductId;
 
     void SelectProduct(string productId)
