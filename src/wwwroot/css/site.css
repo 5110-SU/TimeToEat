@@ -333,8 +333,8 @@ ul {
     padding-bottom: 0px; 
     letter-spacing: 1px;
     color: #000000;
-    min-height: 120px;
-    max-height: 120px;
+    min-height: 95px;
+    max-height: 95px;
 }
 // max-height: 100px;
 #cards_wrapper .card-flyer .text-box h6 {
