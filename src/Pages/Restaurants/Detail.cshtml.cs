@@ -86,7 +86,8 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
                         {
                             openHours += (time - 12).ToString() + ":00 PM";
                         }
-                        else
+
+                        if (time <= 12)
                         {
                             openHours += time.ToString() + ":00 AM";
                         }
