@@ -63,14 +63,17 @@
         }
 
         Comment.Comment = editedComment;
+
         var product = ProductService.GetProducts().FirstOrDefault(p => 
             {
                 var comment = p.CommentList.FirstOrDefault(c => c.Id.Equals(Comment.Id));
+
                 if ( comment != null)
                 {
                     comment.Comment = editedComment;
                     return true;
                 }
+
                 return false;
             }
         );
