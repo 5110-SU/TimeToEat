@@ -135,6 +135,24 @@ namespace UnitTests.Pages.Restaurants
             
         }
 
+        /// <summary>
+        /// Test the OnGet Http request method with valid comment
+        /// </summary>
+        [Test]
+        public void OnGet_Valid_Comment_Should_Add_Comment()
+        {
+            // Arrange
+            var Comment = "Test Comment";
+            var product = TestHelper.ProductService.GetProducts().First();
+            pageModel.Comment = Comment;
+            // Act
+            pageModel.OnGet(product.Id);
+            var result = TestHelper.ProductService.GetProduct(product.Id);
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(result.CommentList.Last().Comment, Comment);
+        }
+
         #endregion OnGet
     }
 }
