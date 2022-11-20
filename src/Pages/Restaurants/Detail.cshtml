@@ -1,10 +1,12 @@
 ﻿@page "{id}"
 @using ContosoCrafts.WebSite.Services
+@using ContosoCrafts.WebSite.Components
 @inject JsonFileProductService ProductService
 @model ReadModel
 @{
     ViewData["Title"] = "Restaurant Detail";
 }
+<script src="_framework/blazor.server.js"></script>
 <div class="container">
         <div class="mt-5 content">
             @if (Model.Product != null)
@@ -50,7 +52,27 @@
                         <a href="@Model.Product.Url" target="_blank" class="btn btn-info">Visit Website</a>
                         <a href="/Restaurants/Update/@Model.Product.Id" class="btn btn-primary">Update</a>
                         <a href="/Restaurants/Delete/@Model.Product.Id" class="btn btn-danger">Delete</a>
-                        <a class="btn btn-info">Manage Comments</a>
+
+                        <div class="jumbotron jumbotron-fluid bg-white">
+                            <h1>Comment</h1>
+                            <p class="lead">Tell us your experience at @Model.Product.Title.</p>
+                            <hr class="my-4">
+                            @{
+                                foreach(var comment in Model.Product.CommentList)
+                                {
+                                    <component 
+                                        type="typeof(CommentText)" 
+                                        render-mode="ServerPrerendered" 
+                                        param-Comment="@comment"
+                                    />
+                                }
+                            }
+                            <form method="get">
+                                <textarea asp-for="Comment" class="form-control my-3 mr-2" rows="3" value="@Model.Comment"></textarea>
+                                <button class="btn btn-outline-success my-3 my-sm-0" type="submit">Add Comment</button>
+                            </form>
+                        </div>
+
                     </div>
                 </div>
             }
