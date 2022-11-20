@@ -31,20 +31,20 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .card-columns .card-img {
-  height: 330px;
-  vertical-align: bottom;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  opacity: .8;
+    height: 330px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    opacity: .8;
 }
 
 .modal .card-img {
-  height: 500px;
-  vertical-align: bottom;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+    height: 500px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .card-columns .card:hover {
@@ -54,7 +54,6 @@ for details on configuring this project to bundle and minify static web assets. 
 .card-footer {
     background: #fbfafd;
 }
-
 
 a.navbar-brand {
     white-space: normal;
@@ -134,6 +133,7 @@ body.index {
 
 body {
   /* Margin bottom by footer height */
+
   margin-bottom: 60px;
 }
 p {
