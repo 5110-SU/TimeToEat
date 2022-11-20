@@ -22,17 +22,18 @@
             <button class="btn btn-sm btn-outline-success ml-1" @onclick="SaveComment">Save</button>
             <button class="btn btn-sm btn-outline-primary ml-1" @onclick="FinishEdit">Cancel</button>  
         }
+
         @if (deleteMode) 
         {
             <button class="btn btn-sm btn-danger ml-1" @onclick="ConfirmDelete">Confirm</button>
             <button class="btn btn-sm btn-outline-primary ml-1" @onclick="FinishEdit">Cancel</button>   
         }    
+
         @if (!deleteMode && !editMode)
         {
             <button class="btn btn-sm btn-outline-primary ml-1" @onclick="EditComment">Edit</button>
             <button class="btn btn-sm btn-outline-danger ml-1" @onclick="DeleteComment">Delete</button>
         }
-
     </div>
 </div>
 
