@@ -17,6 +17,10 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
         // The data to show
         public ProductModel Product;
 
+        // Definition for SearchTerm 
+        [BindProperty(SupportsGet = true)]
+        public string Comment { get; set; } = "";
+
         // The business hours to be displayed
         public List<string> Hours { get; set; }
 
@@ -42,6 +46,15 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
         /// <param name="id"></param>
         public IActionResult OnGet(string id)
         {
+
+            // Add comment if user comment is not empty
+            if (Comment != "")
+            {
+                ProductService.AddComment(id, Comment);
+                return RedirectToPage("/Restaurants/Detail", new { id = id });
+            }
+
+
             Product = ProductService.GetProduct(id);
             if (Product == null)
             {
