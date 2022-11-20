@@ -71,15 +71,21 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
                 if (hour == null) 
                 {
                     Hours.Add("Closed");
-                } 
-                else 
-                {   
+                    continue;
+                }
+
+                if (hour != null)
+                {
                     int idx = 0;
                     string openHours = "";
-                    foreach (var time in hour) {
-                        if (time > 12) {
+                    foreach (var time in hour)
+                    {
+                        if (time > 12)
+                        {
                             openHours += (time - 12).ToString() + ":00 PM";
-                        } else {
+                        }
+                        else
+                        {
                             openHours += time.ToString() + ":00 AM";
                         }
                         idx++;
