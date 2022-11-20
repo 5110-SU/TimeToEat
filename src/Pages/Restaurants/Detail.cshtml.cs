@@ -54,8 +54,8 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
                 return RedirectToPage("/Restaurants/Detail", new { id = id });
             }
 
-
             Product = ProductService.GetProduct(id);
+
             if (Product == null)
             {
                 return RedirectToPage("/Restaurants/Index");
