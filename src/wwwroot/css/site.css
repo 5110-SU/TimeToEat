@@ -31,20 +31,20 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .card-columns .card-img {
-    height: 330px;
-    vertical-align: bottom;
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-    opacity: .8;
+  height: 330px;
+  vertical-align: bottom;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  opacity: .8;
 }
 
 .modal .card-img {
-    height: 500px;
-    vertical-align: bottom;
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+  height: 500px;
+  vertical-align: bottom;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .card-columns .card:hover {
@@ -54,6 +54,7 @@ for details on configuring this project to bundle and minify static web assets. 
 .card-footer {
     background: #fbfafd;
 }
+
 
 a.navbar-brand {
     white-space: normal;
@@ -133,7 +134,6 @@ body.index {
 
 body {
   /* Margin bottom by footer height */
-
   margin-bottom: 60px;
 }
 p {
@@ -306,6 +306,7 @@ ul {
 #cards_wrapper .card-flyer .text-box .text-container {
     padding: 30px 18px;
 }
+
 #cards_wrapper .card-flyer {
     background: #FFFFFF;
     margin-top: 50px;
@@ -332,11 +333,13 @@ ul {
     padding-bottom: 0px; 
     letter-spacing: 1px;
     color: #000000;
-    min-height: 100px;
+    min-height: 120px;
+    max-height: 120px;
 }
+// max-height: 100px;
 #cards_wrapper .card-flyer .text-box h6 {
     margin-top: 0px;
-    margin-bottom: 4px; 
+    margin-bottom: 4px;
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
