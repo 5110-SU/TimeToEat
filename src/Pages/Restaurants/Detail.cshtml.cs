@@ -77,7 +77,9 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
                 if (hour != null)
                 {
                     int idx = 0;
+
                     string openHours = "";
+
                     foreach (var time in hour)
                     {
                         if (time > 12)
@@ -88,12 +90,15 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
                         {
                             openHours += time.ToString() + ":00 AM";
                         }
+
                         idx++;
+
                         if (idx < hour.Length)
                         {
                             openHours += " - ";
                         }
                     }
+
                     Hours.Add(openHours);
                 }
             }
