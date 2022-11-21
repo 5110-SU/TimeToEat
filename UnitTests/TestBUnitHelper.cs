@@ -8,7 +8,9 @@ namespace UnitTests
     /// </summary>
     public abstract class BunitTestContext : TestContextWrapper
     {
-        // The Setup sets the context
+        /// <summary>
+        /// Test set up
+        /// </summary>
         [SetUp]
         public void Setup() => TestContext = new Bunit.TestContext();
 
