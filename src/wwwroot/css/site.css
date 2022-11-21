@@ -89,10 +89,22 @@ a {
 }
 .btn-primary:hover {
     color: #fff;
-    background-color: #e9a8a6;
+    background-color: #fff;
     border-color: #e9a8a6;
 }
 
+/* Update button */
+.btn-update {
+    color: #fff;
+    background-color: #252152;
+    border-color: #252152;
+}
+
+.btn-update:hover {
+    color: #fff;
+    background-color: #252152;
+    border-color: #252152;
+}
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
