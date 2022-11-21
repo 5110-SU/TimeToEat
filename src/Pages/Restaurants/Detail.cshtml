@@ -1,5 +1,6 @@
 ﻿@page "{id}"
 @using ContosoCrafts.WebSite.Services
+@using ContosoCrafts.WebSite.Components
 @inject JsonFileProductService ProductService
 @model ReadModel
 @{
@@ -57,11 +58,11 @@
                             <p class="lead">Tell us your experience at @Model.Product.Title.</p>
                             <hr class="my-4">
                             @{
-                                foreach(var comment in Model.Product.CommentList)
+                                foreach (var comment in Model.Product.CommentList)
                                 {
-                                    <div class="alert alert-secondary d-flex justify-content-between">
-                                        <span class="d-flex">@comment.Comment</span>
-                                    </div>
+                                    <component type="typeof(CommentText)"
+                                    render-mode="ServerPrerendered"
+                                    param-Comment="@comment" />
                                 }
                             }
                             <form method="get">
