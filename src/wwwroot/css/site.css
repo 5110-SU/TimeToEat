@@ -69,6 +69,19 @@ a {
    color: #0366d6;
 }
 
+/* Search and Comment buttons */
+.btn-outline-success {
+    color: #17a2b8;
+    border-color: #17a2b8;
+    background-color: #fff;
+}
+
+.btn-outline-success:hover {
+    color: fff;
+    border-color: #17a2b8;
+    background-color: #17a2b8;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #252152;
