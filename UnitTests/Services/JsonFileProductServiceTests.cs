@@ -102,10 +102,9 @@ namespace UnitTests.Pages.Product.AddRating
         public void AddRating_InValid_Product_Rating_Low_Should_Return_False()
         {
             // Arrange
-
-            // Act
             ProductModel data = TestHelper.ProductService.GetAllData().First();
 
+            // Act
             bool result = TestHelper.ProductService.AddRating(data.Id, -8);
 
             // Assert
