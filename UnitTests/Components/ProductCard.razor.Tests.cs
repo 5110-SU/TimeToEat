@@ -77,16 +77,7 @@ namespace UnitTests.Components
             var id = product.Id;
 
             // pre-render the component
-            var page = RenderComponent<ProductList>();
-
-            // find all the buttons
-            var buttons = page.FindAll("Button");
-
-            // get the last button (the one for the product just created)
-            var button = buttons.Last();
-
-            // Act
-            button.Click();
+            var page = RenderComponent<ProductCard>(parameter => parameter.Add(p => p.Product, product));
 
             // Get the Cards returned
             var result = page.Markup;
@@ -126,22 +117,13 @@ namespace UnitTests.Components
             var id = product.Id;
 
             // pre-render the component
-            var page = RenderComponent<ProductList>();
-
-            // find all the buttons
-            var buttons = page.FindAll("Button");
-
-            // get the last button (the one for the product just created)
-            var button = buttons.Last();
-
-            // Click More Info
-            button.Click();
+            var page = RenderComponent<ProductCard>(parameter => parameter.Add(p => p.Product,product));
 
             // Find all the stars
             var staredButtons = page.FindAll("span");
 
             // Get the pre vote count
-            var preVoteCountSpan = staredButtons[1];
+            var preVoteCountSpan = staredButtons[0];
 
             // Get the vote count, the list should have 7 elements, element 2 is the string for the count
             var preVoteCountString = preVoteCountSpan.OuterHtml;
@@ -159,7 +141,7 @@ namespace UnitTests.Components
             staredButtons = page.FindAll("span");
 
             // Get the post vote count
-            var postVoteCountSpan = staredButtons[1];
+            var postVoteCountSpan = staredButtons[0];
 
             // Get the vote count, the list should have 7 elements, element 2 is the string for the count
             var postVoteCountString = postVoteCountSpan.OuterHtml;
@@ -209,22 +191,13 @@ namespace UnitTests.Components
             var id = product.Id;
 
             // pre-render the component
-            var page = RenderComponent<ProductList>();
-
-            // find all the buttons
-            var buttons = page.FindAll("Button");
-
-            // get the last button (the one for the product just created)
-            var button = buttons.Last();
-
-            // Click More Info
-            button.Click();
+            var page = RenderComponent<ProductCard>(parameter => parameter.Add(p => p.Product, product));
 
             // Find all the stars
             var staredButtons = page.FindAll("span");
 
             // Get the pre vote count
-            var preVoteCountSpan = staredButtons[1];
+            var preVoteCountSpan = staredButtons[0];
 
             // Get the vote count, the list should have 7 elements, element 2 is the string for the count
             var preVoteCountString = preVoteCountSpan.OuterHtml;
@@ -242,7 +215,7 @@ namespace UnitTests.Components
             staredButtons = page.FindAll("span");
 
             // Get the post vote count
-            var postVoteCountSpan = staredButtons[1];
+            var postVoteCountSpan = staredButtons[0];
 
             // Get the vote count, the list should have 7 elements, element 2 is the string for the count
             var postVoteCountString = postVoteCountSpan.OuterHtml;
