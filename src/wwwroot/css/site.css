@@ -72,14 +72,14 @@ a {
 /* Search button */
 .btn-comment {
     color: #fff;
-    border-color: #dc3545;
-    background-color: #dc3545;
+    border-color: #e9a8a6;
+    background-color: #e9a8a6;
 }
 
 .btn-comment:hover {
     color: #fff;
-    border-color: #dc3545;
-    background-color: #dc3545;
+    border-color: #e9a8a6;
+    background-color: #e9a8a6;
 }
 
 .btn-search {
