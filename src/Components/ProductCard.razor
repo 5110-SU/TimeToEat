@@ -4,52 +4,51 @@
 @inject JsonFileProductService ProductService
 
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-        <div class="card-flyer">
-            <div class="text-box">
-                <div class="image-box">
-                    <img src="@Product.Image" alt="@Product.Title" 
-                        onerror="this.src='https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-instagram-post-advertisement-design-template-5e3dde31601916fac13b611b18066f52_screen.jpg?ts=1622274831';this.onerror='';"
-                    />
-                </div>
-                <div class="text-container d-flex flex-column">
-                    <h6>@Product.Title</h6>
-                    <p>@Product.Description</p>
-                    <a href="/Restaurants/DetailUser/@Product.Id">
-                        <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                    </a>
-                </div>
+    <div class="card-flyer">
+        <div class="text-box">
+            <div class="image-box">
+                <img src="@Product.Image" alt="@Product.Title"
+                     onerror="this.src='https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-instagram-post-advertisement-design-template-5e3dde31601916fac13b611b18066f52_screen.jpg?ts=1622274831';this.onerror='';" />
             </div>
-            @if (Product != null) 
-            {
-                SelectProduct(Product.Id);
-                <div class="modal-footer">
-                        @if (voteCount == 0)
-                        {
-                            <span>Be the first to vote!</span>
-                        }
-
-                        @if (voteCount > 0)
-                        {
-                            <span>@voteCount @voteLabel</span>
-                        }
-
-                        @for (int i = 1; i < 6; i++)
-                        {
-                            var currentStar = i;
-
-                            if (i <= currentRating)
-                            {
-                                <span class="fa fa-star checked" @onclick="(e => SubmitRating(currentStar))"></span>
-                            }
-
-                            if (i > currentRating)
-                            {
-                                <span class="fa fa-star" @onclick="(e => SubmitRating(currentStar))"></span>
-                            }
-                        }
-                </div>
-            }
+            <div class="text-container d-flex flex-column">
+                <h6>@Product.Title</h6>
+                <p>@Product.Description</p>
+                <a href="/Restaurants/DetailUser/@Product.Id">
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
+        @if (Product != null)
+        {
+            SelectProduct(Product.Id);
+            <div class="modal-footer">
+                @if (voteCount == 0)
+                {
+                    <span>Be the first to vote!</span>
+                }
+
+                @if (voteCount > 0)
+                {
+                    <span>@voteCount @voteLabel</span>
+                }
+
+                @for (int i = 1; i < 6; i++)
+                {
+                    var currentStar = i;
+
+                    if (i <= currentRating)
+                    {
+                        <span class="fa fa-star checked" @onclick="(e => SubmitRating(currentStar))"></span>
+                    }
+
+                    if (i > currentRating)
+                    {
+                        <span class="fa fa-star" @onclick="(e => SubmitRating(currentStar))"></span>
+                    }
+                }
+            </div>
+        }
+    </div>
 </div>
 
 @code {
@@ -59,6 +58,7 @@
     //ProductModel select a product;
     string selectedProductId;
 
+    /// Function that selects a product utilizing a productId
     void SelectProduct(string productId)
     {
         selectedProductId = productId;
@@ -66,20 +66,27 @@
         GetCurrentRating();
     }
 
+    // intialize the current rating to 0
     int currentRating = 0;
 
+    // initialize the number of votes to 0
     int voteCount = 0;
 
     string voteLabel;
 
+    /// Function to get a rating
     void GetCurrentRating()
     {
+        // Check if the current product have any ratings, if not,
+        // we want to update of current rating and number of votes
         if (Product.Ratings == null)
         {
             currentRating = 0;
             voteCount = 0;
         }
 
+        // Check if the current product have any ratings, if it does
+        // we want to update number of votes and rating
         if (Product.Ratings != null)
         {
             voteCount = Product.Ratings.Count();
@@ -90,6 +97,7 @@
         System.Console.WriteLine($"Current rating for {Product.Id}: {currentRating}");
     }
 
+    /// Function that submits the rating
     void SubmitRating(int rating)
     {
         System.Console.WriteLine($"Rating received for {Product.Id}: {rating}");
