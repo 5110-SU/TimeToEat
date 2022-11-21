@@ -58,7 +58,7 @@ namespace UnitTests.Components
         /// Unit test on ProductList with product that has existing 1 rating
         /// </summary>
         [Test]
-        public void ProductList_Valid_ID_With_Ratings_One_Vote_Count_Should_Return_Content()
+        public void ProductCard_Valid_ID_With_Ratings_One_Vote_Count_Should_Return_Content()
         {
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
