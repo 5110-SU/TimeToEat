@@ -70,16 +70,28 @@ a {
 }
 
 /* Search button */
-.btn-search {
+.btn-comment {
     color: #fff;
     border-color: #dc3545;
     background-color: #dc3545;
 }
 
-.btn-search:hover {
+.btn-comment:hover {
     color: #fff;
     border-color: #dc3545;
     background-color: #dc3545;
+}
+
+.btn-search {
+    color: #fff;
+    border-color: #17a2b8;
+    background-color: #17a2b8;
+}
+
+.btn-search:hover {
+    color: #fff;
+    border-color: #17a2b8;
+    background-color: #17a2b8;
 }
 
 .btn-primary {
