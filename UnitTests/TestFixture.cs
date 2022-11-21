@@ -50,6 +50,9 @@ namespace UnitTests
             }
         }
 
+        /// <summary>
+        /// Run after any test function
+        /// </summary>
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
