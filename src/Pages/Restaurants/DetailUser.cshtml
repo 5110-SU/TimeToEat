@@ -1,5 +1,6 @@
 ﻿@page "{id}"
 @using ContosoCrafts.WebSite.Services
+@using ContosoCrafts.WebSite.Components
 @inject JsonFileProductService ProductService
 @model DetailUserModel
 @{
@@ -47,24 +48,16 @@
                             </iframe>
                         </div>
                         <a href="@Model.Product.Url" target="_blank" class="btn btn-info">Visit Website</a>
+                    <div class="jumbotron jumbotron-fluid bg-white">
+                        <h1>Comment</h1>
+                        <p class="lead">Tell us your experience at @Model.Product.Title.</p>
+                        <hr class="my-4">
                         @{
-                            var commentArr = Model.Product.CommentList.ToArray();
-
-                            if (commentArr.Length != 0)
+                            foreach (var comment in Model.Product.CommentList)
                             {
-                                for (int i = commentArr.Length - 1; i > commentArr.Length - 4; i--)
-                                {
-                                    <p>
-                                        "
-                                        @commentArr[i].Comment
-                                        "
-                                    </p>
-
-                                    if (i == 0)
-                                    {
-                                        break;
-                                    }
-                                }
+                                <component type="typeof(CommentText)"
+                               render-mode="ServerPrerendered"
+                               param-Comment="@comment" />
                             }
                         }
                         <form method="get">
@@ -73,6 +66,7 @@
                         </form>
                     </div>
                 </div>
+            </div>
             }
             else
             {
