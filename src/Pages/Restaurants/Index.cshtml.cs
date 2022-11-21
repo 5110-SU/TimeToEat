@@ -27,6 +27,7 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
         /// <param name="productService"></param>
         public IndexModel(JsonFileProductService productService)
         {
+            // Product services from JsonFileProductService 
             ProductService = productService;
         }
 
@@ -36,6 +37,7 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
         /// <param name="id"></param>
         public void OnGet()
         {
+            // Products returned from performing search operation 
             Products = ProductService.Search(SearchTerm);
         }
     }
