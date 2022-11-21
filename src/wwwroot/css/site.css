@@ -76,6 +76,12 @@ a {
     background-color: #dc3545;
 }
 
+.btn-search:hover {
+    color: #fff;
+    border-color: #dc3545;
+    background-color: #dc3545;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #252152;
