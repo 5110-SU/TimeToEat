@@ -169,7 +169,7 @@ namespace UnitTests.Components
         /// Then check again the state of the count and star check status
         /// </summary>
         [Test]
-        public void ProductList_Valid_ID_Click_Existing_stared_Should_Increment_Count_And_Check_Star()
+        public void ProductCard_Valid_ID_Click_Existing_stared_Should_Increment_Count_And_Check_Star()
         {
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
