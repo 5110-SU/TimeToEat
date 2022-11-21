@@ -222,9 +222,7 @@ namespace UnitTests.Components
 
             // Assert
             Assert.AreEqual(true, preVoteCountString.Contains(preTitle));
-
             Assert.AreEqual(true, postVoteCountString.Contains(postTitle));
-
             Assert.AreEqual(false, postVoteCountString.Equals(preVoteCountString));
         }
 
