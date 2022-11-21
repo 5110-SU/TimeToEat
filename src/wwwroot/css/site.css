@@ -185,6 +185,7 @@ ul {
       0 0 20px #ffd062, 0 0 30px #925a00, 0 0 80px #925a00, 0 0 80px #925a00; */
     text-transform: uppercase;
     letter-spacing: 10px;
+    overflow: hidden;
 }
 
 #home-title2 {
@@ -198,6 +199,7 @@ ul {
     animation: blink 8s infinite;
     text-decoration: none;
     transition: 0.2s ease-in-out;
+    overflow: hidden;
 }
  
 #home-title2:hover {
