@@ -3,6 +3,9 @@ using NUnit.Framework;
 
 namespace UnitTests
 {
+    /// <summary>
+    /// Baseline for running tests with a certain state of a set of objects
+    /// </summary>
     [SetUpFixture]
     public class TestFixture
     {
