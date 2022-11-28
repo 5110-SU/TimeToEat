@@ -13,14 +13,10 @@ namespace UnitTests
 {
     /// <summary>
     /// Helper to hold the web start settings
-    ///
-    /// HttpClient
-    /// 
-    /// Action Contect
-    /// 
-    /// The View Data and Teamp Data
-    /// 
-    /// The Product Service
+    ///     -  HttpClient
+    ///     -  Action Contect
+    ///     -  The View Data and Teamp Data
+    ///     -  The Product Service
     /// </summary>
     public static class TestHelper
     {
