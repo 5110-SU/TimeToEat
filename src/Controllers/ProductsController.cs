@@ -21,7 +21,9 @@ namespace ContosoCrafts.WebSite.Controllers
             ProductService = productService;
         }
 
-        // Data middle tier 
+        /// <summary>
+        /// This method is for getting the JsonFileProductService
+        /// </summary>
         public JsonFileProductService ProductService { get; }
         
         /// <summary>
