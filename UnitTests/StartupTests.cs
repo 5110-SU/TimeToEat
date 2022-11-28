@@ -32,7 +32,8 @@ namespace UnitTests.Pages.Startup
         #region ConfigureServices
 
         /// <summary>
-        /// Test Startup confirgure service
+        /// Test Startup configure services
+        /// WebHost should not be null
         /// </summary>
         [Test]
         public void Startup_ConfigureServices_Valid_Defaut_Should_Pass()
@@ -47,6 +48,7 @@ namespace UnitTests.Pages.Startup
 
         /// <summary>
         /// Test Startup configure
+        /// /// WebHost should not be null
         /// </summary>
         [Test]
         public void Startup_Configure_Valid_Defaut_Should_Pass()
