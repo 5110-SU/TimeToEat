@@ -52,11 +52,21 @@
                         <p class="lead">Tell us your experience at @Model.Product.Title.</p>
                         <hr class="my-4">
                         @{
-                            foreach(var comment in Model.Product.CommentList)
+                            var commentArr = Model.Product.CommentList.ToArray();
+
+                            if (commentArr.Length > 0)
                             {
-                                <div class="alert alert-secondary d-flex justify-content-between">
-                                    <span class="d-flex">@comment.Comment</span>
-                                </div>
+                                for (int i = commentArr.Length - 1; i >= commentArr.Length - 5; i--)
+                                {
+                                    <div class="alert alert-secondary d-flex justify-content-between">
+                                        <span class="d-flex">@commentArr[i].Comment</span>
+                                    </div>
+
+                                    if (i == 0)
+                                    {
+                                        break;
+                                    }
+                                }
                             }
                         }
                         <form method="get">
