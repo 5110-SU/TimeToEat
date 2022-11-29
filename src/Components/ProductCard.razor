@@ -52,6 +52,7 @@
 </div>
 
 @code {
+    // The product to display in the card.
     [Parameter]
     public ProductModel Product { get; set; }
 
@@ -69,12 +70,13 @@
         GetCurrentRating();
     }
 
-    // intialize the current rating to 0
+    // Intialize the current rating to 0
     int currentRating = 0;
 
-    // initialize the number of votes to 0
+    // Initialize the number of votes to 0
     int voteCount = 0;
 
+    // Label for the number of votes sinular or plural
     string voteLabel;
 
     /// <summary>
