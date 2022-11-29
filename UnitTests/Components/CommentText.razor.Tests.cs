@@ -68,7 +68,9 @@ namespace UnitTests.Components
 
             // Create a test Comment
             var comment = new CommentModel();
+
             comment.Comment = text;
+
             var product = new ProductModel()
             {
                 Title = "test-title-comment-test",
@@ -88,6 +90,7 @@ namespace UnitTests.Components
             // find all the buttons: Edit, Delete
             // get the last button (the one for the product just created)
             var buttons = page.FindAll("Button");
+
             var editButton = buttons.First();
 
             // Click Edit
@@ -95,6 +98,7 @@ namespace UnitTests.Components
 
             // get Save Button
             buttons = page.FindAll("Button");
+
             var saveButton = buttons.First();
 
             // Click Save without modifying comment content
@@ -113,6 +117,7 @@ namespace UnitTests.Components
 
             // get cancelButton
             buttons = page.FindAll("Button");
+
             var cancelButton = buttons.Last();
 
             // Click Cancel
@@ -130,7 +135,9 @@ namespace UnitTests.Components
 
             // change comment text
             var modifiedText = text + "-modified";
+
             var commentInput = page.Find("input");
+
             commentInput.Change(modifiedText);
 
             // get saveButton
@@ -153,7 +160,6 @@ namespace UnitTests.Components
 
             // Click Delete
             deleteButton.Click();
-
             buttons = page.FindAll("Button");
             var confirmButton = buttons.First();
             
