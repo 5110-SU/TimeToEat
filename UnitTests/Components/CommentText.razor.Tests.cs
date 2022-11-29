@@ -137,7 +137,7 @@ namespace UnitTests.Components
             buttons = page.FindAll("Button");
             saveButton = buttons.First();
 
-            //Act
+            // Act
 
             // save edited comment and go back to main ui with Edit and Delete
             saveButton.Click();
