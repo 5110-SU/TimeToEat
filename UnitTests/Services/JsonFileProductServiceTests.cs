@@ -4,7 +4,7 @@ using NUnit.Framework;
 using ContosoCrafts.WebSite.Models;
 using NUnit.Framework.Internal;
 
-namespace UnitTests.Pages.Product.AddRating
+namespace UnitTests.Services
 {
     /// <summary>
     /// Unit tests for JsonFileProductService
