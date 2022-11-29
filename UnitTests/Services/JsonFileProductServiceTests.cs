@@ -135,20 +135,16 @@ namespace UnitTests.Services
         {
             // Arrange
 
-            // Get the object state before changes applied
-            string testID = "Vietnamese";
+            var product = new ProductModel() { Ratings = new int[] {  } };
 
-            ProductModel data = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
-
+            var testId = TestHelper.ProductService.CreateProduct(product).Id;
+            
             // Act
-            bool result = TestHelper.ProductService.AddRating(testID, 5);
+            // Add a rating for empty ratings test product
+            bool result = TestHelper.ProductService.AddRating(testId, 5);
 
-            ProductModel dataNewList = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
-
-            // Reset
-            ProductModel toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(testID));
-
-            toReset.Ratings = null;
+            // Get the test product
+            var dataNewList = TestHelper.ProductService.GetProduct(testId);
 
             // Assert
             Assert.AreEqual(true, result);
@@ -190,33 +186,30 @@ namespace UnitTests.Services
         public void UpdateData_Valid_ProductID_Should_Return_ProductModelObject()
         {
             // Arrange
-            ProductModel data = new ProductModel()
+            ProductModel data = TestHelper.ProductService.CreateProduct(new ProductModel()
             {
-                Id = "Vietnamese",
-                Title = "Enter Title",
-                Description = "Enter Description",
-                Url = "Enter URL",
-                Image = "",
-            };
+                Title = "test-Title",
+                Description = "test-Description",
+                Url = "test-URL",
+                Image = "test-Image",
+            });
 
-            // remember old object state for database reset
-            ProductModel oldState = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Vietnamese"));
+            // remember old object state
+            ProductModel oldState = TestHelper.ProductService.GetProduct(data.Id);
+            oldState.Title = oldState.Title + "updated";
+            oldState.Description = oldState.Description + "updated";
+            oldState.Url = oldState.Url + "updated";
+            oldState.Image = oldState.Image + "updated";
 
             // Act
-            ProductModel result = TestHelper.ProductService.UpdateData(data);
+            ProductModel result = TestHelper.ProductService.UpdateData(oldState);
 
-            // Reset
-            ProductModel toReset = TestHelper.ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals("Steak House"));
-            toReset = oldState;
 
             // Assert
-            Assert.AreEqual(data.Title, result.Title);
-            Assert.AreEqual(data.Description, result.Description);
-            Assert.AreEqual(data.Url, result.Url);
-            Assert.AreEqual(data.Image, result.Image);
-            Assert.AreEqual(data.Quantity, result.Quantity);
-            Assert.AreEqual(data.Price, result.Price);
-            Assert.AreEqual(data.CommentList, result.CommentList);
+            Assert.AreEqual(data.Title + "updated", result.Title);
+            Assert.AreEqual(data.Description + "updated", result.Description);
+            Assert.AreEqual(data.Url + "updated", result.Url);
+            Assert.AreEqual(data.Image + "updated", result.Image);
         }
 
         #endregion UpdateData
