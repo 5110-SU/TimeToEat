@@ -46,6 +46,8 @@ namespace UnitTests.Components
             var page = RenderComponent<CommentText>(
                 parameters => parameters.Add(p => p.Comment, comment));
 
+            // Act
+
             // Get the Cards retrned
             var result = page.Markup;
 
