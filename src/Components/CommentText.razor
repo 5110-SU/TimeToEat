@@ -93,7 +93,7 @@
             {
                 var comment = p.CommentList.FirstOrDefault(c => c.Id.Equals(Comment.Id));
 
-                if ( comment != null)
+                if (comment != null)
                 {
                     p.CommentList = p.CommentList.Where(c => !c.Id.Equals(Comment.Id)).ToList();
                     return true;
