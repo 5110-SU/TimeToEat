@@ -32,9 +32,9 @@ namespace ContosoCrafts.WebSite.Models
         [StringLength (maximumLength: 33, MinimumLength = 2, ErrorMessage = "Provide more than {2} and less than {1} charactors")]
         public string Title { get; set; }
 
+        // Product Description
         [Required(ErrorMessage = "Description is required")]
         [StringLength(maximumLength: 250, MinimumLength = 2, ErrorMessage = "Provide more than {2} and less than {1} charactors")]
-        // Product Description
         public string Description { get; set; }
 
         // Product Address
