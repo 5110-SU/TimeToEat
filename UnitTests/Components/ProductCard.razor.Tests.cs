@@ -45,6 +45,8 @@ namespace UnitTests.Components
                 new ProductModel() 
                 { Title = title, Description = description });
             
+            // Act
+
             // pre-render the component
             var page = RenderComponent<ProductCard>(parameters => parameters.Add(p => p.Product, product));
 
@@ -54,6 +56,7 @@ namespace UnitTests.Components
             // Assert
             Assert.AreEqual(true, result.Contains(title));
         }
+
         /// <summary>
         /// Unit test on ProductList with product that has existing 1 rating
         /// </summary>
@@ -76,6 +79,8 @@ namespace UnitTests.Components
             // get the product id
             var id = product.Id;
 
+            //Act
+            
             // pre-render the component
             var page = RenderComponent<ProductCard>(parameter => parameter.Add(p => p.Product, product));
 
