@@ -14,7 +14,9 @@ namespace UnitTests
         [SetUp]
         public void Setup() => TestContext = new Bunit.TestContext();
 
+        /// <summary>
         // When done displose removes it, to free up system resources
+        /// </summary>
         [TearDown]
         public void TearDown() => TestContext.Dispose();
     }
