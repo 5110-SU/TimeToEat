@@ -7,8 +7,6 @@ namespace UnitTests.Pages.Privacy
 {
     /// <summary>
     /// Unit testing Privacy class
-    /// Testing methods:
-    ///     - OnGet()
     /// </summary>
     public class PrivacyTests
     {
