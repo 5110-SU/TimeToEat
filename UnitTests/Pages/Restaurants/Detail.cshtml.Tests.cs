@@ -22,6 +22,7 @@ namespace UnitTests.Pages.Restaurants
         [SetUp]
         public void TestInitialize()
         {
+            // Page model 
             pageModel = new ReadModel(TestHelper.ProductService)
             {
             };
@@ -73,8 +74,7 @@ namespace UnitTests.Pages.Restaurants
         public void OnGet_Valid_With_Product_Hours_Null_Should_Return_Same_Page()
         {
             // Arrange
-            var product = TestHelper.ProductService.CreateProduct(
-                new ProductModel()
+            var product = TestHelper.ProductService.CreateProduct( new ProductModel()
                 {
                     Title = "Test Product",
                     Hours = null
