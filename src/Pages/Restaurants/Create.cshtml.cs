@@ -46,6 +46,7 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
             try
             {
                 var request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "HEAD";
                 var response = (HttpWebResponse)request.GetResponse();
                 return response.StatusCode != HttpStatusCode.OK;
             }
@@ -65,26 +66,25 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
             if (IsGarbageUrl(Product.Image))
             {
                 ModelState.AddModelError("Product.Image", "Image URL not valid.");
-                return Page();
             }
 
             // Validate if website url is garbage
             if (IsGarbageUrl(Product.Url))
             {
                 ModelState.AddModelError("Product.Url", "URL not an valid.");
-                return Page();
             }
            
-            // Assign default value for product hours if not set
-            Product.Hours = new List<int[]>();
-            for (int i = 0; i < 7; i++)
-            {
-                Product.Hours.Add(new int[2] {0, 24});
-            }
             
             // Proceed to create a new product if all the validation is passed
             if (ModelState.IsValid)
             {
+                // Assign default value for product hours if not set
+                Product.Hours = new List<int[]>();
+                for (int i = 0; i < 7; i++)
+                {
+                    Product.Hours.Add(new int[2] {0, 24});
+                }
+                
                 // Insert Product into database
                 ProductModel product = ProductService.CreateProduct(Product);
                 
