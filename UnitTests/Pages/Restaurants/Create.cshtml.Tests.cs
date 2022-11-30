@@ -15,6 +15,12 @@ namespace UnitTests.Pages.Create
         // Create Model Page instance to test
         public static CreateModel pageModel;
 
+        // default invalid url
+        public static string garbageUrl = "https://garbage-image-test.jpg";
+
+        // default valid url
+        public static string validUrl = "https://www.contentviewspro.com/wp-content/uploads/2017/07/default_image.png";
+
         /// <summary>
         /// SetUp CreateModel for the tests
         /// </summary>
@@ -68,101 +74,73 @@ namespace UnitTests.Pages.Create
         }
 
         /// <summary>
-        /// Tests OnPost method returns to create page when an image is null 
+        /// Tests OnPost method returns to create page when an image is garbage 
         /// </summary>
         [Test]
-        public void OnPost_Invalid_Null_Image_Should_Return_Create_Page()
+        public void OnPost_Invalid_Garbage_Image_Should_Return_Create_Page()
         {
             // Arrange
-            var defImg = "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-instagram-post-advertisement-design-template-5e3dde31601916fac13b611b18066f52_screen.jpg?ts=1622274831";
-            
             var data = new ProductModel()
             {
-                Id = "fortest",
                 Title = "Enter Title",
                 Description = "Enter Description",
-                Url = "Enter URL",
-                Image = null,
+                Url = validUrl,
+                Image = garbageUrl,
             };
             pageModel.Product = data;
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
             
-            var resultImage = TestHelper.ProductService.GetProduct(data.Id).Image;
-
-            // Reset
-            TestHelper.ProductService.DeleteData(data.Id);
-
             // Assert
-            Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(defImg, resultImage);
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
         }
 
         /// <summary>
-        /// Tests OnPost method will return create page if URL is null 
+        /// Tests OnPost method will return create page if URL is garbage 
         /// </summary>
         [Test]
-        public void OnPost_Invalid_Null_Url_Should_Return_Create_Page()
+        public void OnPost_Invalid_Garbage_Url_Should_Return_Create_Page()
         {
             // Arrange
-            var defurl = "https://time-to-eat.azurewebsites.net";
-            
             var data = new ProductModel()
             {
-                Id = "fortest",
                 Title = "Enter Title",
                 Description = "Enter Description",
-                Url = null,
-                Image = "",
+                Url = garbageUrl,
+                Image = validUrl,
             };
             pageModel.Product = data;
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
-            
-            var resultUrl = TestHelper.ProductService.GetProduct(data.Id).Url;
-
-            // Reset
-            TestHelper.ProductService.DeleteData(data.Id);
 
             // Assert
-            Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(defurl, resultUrl);
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
         }
 
         /// <summary>
-        /// Tests OnPost method will return create page if description is null
+        /// Tests OnPost method will return detail all validation passed
         /// </summary>
         [Test]
-        public void OnPost_Invalid_Null_Description_Should_Return_Create_Page()
+        public void OnPost_Valid_Should_Create_Product_Return_Detail_Page()
         {
             // Arrange
-            var defDescription = "Seattle is a food lover’s dream! There are lots of great options so we’ve highlighted some of the best and most unique places to eat in Seattle, Washington.";
-            
             var data = new ProductModel()
             {
-                Id = "fortest",
                 Title = "Enter Title",
-                Description = null,
-                Url = "Enter URL",
-                Image = "",
+                Description = "Enter Description",
+                Url = validUrl,
+                Image = validUrl,
             };
             pageModel.Product = data;
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
             
-            var resultDes = TestHelper.ProductService.GetProduct(data.Id).Description;
-
-            // Reset
-            TestHelper.ProductService.DeleteData(data.Id);
-
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(defDescription, resultDes);
         }
-
         #endregion OnPost
     }
 }
