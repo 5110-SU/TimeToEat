@@ -22,8 +22,10 @@ namespace UnitTests.Pages.Index
         [SetUp]
         public void TestInitialize()
         {
+            // MockLoggerDirect 
             var MockLoggerDirect = Mock.Of<ILogger<IndexModel>>();
 
+            // Page model 
             pageModel = new IndexModel(MockLoggerDirect, TestHelper.ProductService)
             {
             };
