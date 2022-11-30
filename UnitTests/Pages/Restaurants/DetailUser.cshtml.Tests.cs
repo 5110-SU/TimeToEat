@@ -20,6 +20,7 @@ namespace UnitTests.Pages.Restaurants
         [SetUp]
         public void TestInitialize()
         {
+            // Page model 
             pageModel = new DetailUserModel(TestHelper.ProductService)
             {
             };
