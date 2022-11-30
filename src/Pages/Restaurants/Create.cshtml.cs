@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ContosoCrafts.WebSite.Services;
 using ContosoCrafts.WebSite.Models;
+using System.Net;
 
 namespace ContosoCrafts.WebSite.Pages.Restaurants
 {
@@ -37,47 +38,61 @@ namespace ContosoCrafts.WebSite.Pages.Restaurants
         }
 
         /// <summary>
+        /// Validate if input url is garbage
+        /// </summary>
+        /// <param name="url"></param>
+        public bool IsGarbageUrl(string url)
+        {
+            try
+            {
+                var request = (HttpWebRequest)WebRequest.Create(url);
+                var response = (HttpWebResponse)request.GetResponse();
+                return response.StatusCode != HttpStatusCode.OK;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+      
+        /// <summary>
         /// REST Post request to create a new product
         /// </summary>
         /// <returns>Detail Page</returns>
         public IActionResult OnPost()
         {
-            // Return to the page if the input data is not valid
-            if (!ModelState.IsValid)
+             // Validate if image url is garbage
+            if (IsGarbageUrl(Product.Image))
             {
+                ModelState.AddModelError("Product.Image", "Image URL not valid.");
                 return Page();
             }
-            
-            // Assign default value for product image if not set
-            if (Product.Image == null)
-            {
-                Product.Image = "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-instagram-post-advertisement-design-template-5e3dde31601916fac13b611b18066f52_screen.jpg?ts=1622274831";
-            }
 
-            // Assign default value for product url if not set
-            if (Product.Url == null)
+            // Validate if website url is garbage
+            if (IsGarbageUrl(Product.Url))
             {
-                Product.Url = "https://time-to-eat.azurewebsites.net";
+                ModelState.AddModelError("Product.Url", "URL not an valid.");
+                return Page();
             }
-
-            // Assign default value for product description if not set
-            if (Product.Description == null)
-            {
-                Product.Description = "Seattle is a food lover’s dream! There are lots of great options so we’ve highlighted some of the best and most unique places to eat in Seattle, Washington.";
-            }
-
+           
             // Assign default value for product hours if not set
             Product.Hours = new List<int[]>();
             for (int i = 0; i < 7; i++)
             {
                 Product.Hours.Add(new int[2] {0, 24});
             }
-
-             // Insert Product into database
-            ProductModel product = ProductService.CreateProduct(Product);
             
-            // Redirect user to the newly created restaurant detail page
-            return RedirectToPage("./Detail", new {id = product.Id});
+            // Proceed to create a new product if all the validation is passed
+            if (ModelState.IsValid)
+            {
+                // Insert Product into database
+                ProductModel product = ProductService.CreateProduct(Product);
+                
+                // Redirect user to the newly created restaurant detail page
+                return RedirectToPage("./Detail", new {id = product.Id});
+            }
+            
+            return Page();
         }
     }
 }
