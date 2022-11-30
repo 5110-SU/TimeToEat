@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary>
-    /// Unit test for Home model page
+    /// Home model page
     /// </summary>
     public class HomeModel : PageModel
     {
