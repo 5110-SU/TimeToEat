@@ -27,6 +27,7 @@ namespace UnitTests.Pages.Create
         [SetUp]
         public void TestInitialize()
         {
+            // Page model 
             pageModel = new CreateModel(TestHelper.ProductService)
             {
             };
@@ -141,6 +142,7 @@ namespace UnitTests.Pages.Create
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
         }
+
         #endregion OnPost
     }
 }
