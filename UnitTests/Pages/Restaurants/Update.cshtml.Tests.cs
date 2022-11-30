@@ -22,6 +22,7 @@ namespace UnitTests.Pages.Create
         [SetUp]
         public void TestInitialize()
         {
+            // Page model 
             pageModel = new UpdateModel(TestHelper.ProductService)
             {
             };
@@ -31,7 +32,7 @@ namespace UnitTests.Pages.Create
 
         #region OnGet
 
-         /// <summary>
+        /// <summary>
         /// Tests the Valid OnGet method with product id 
         /// </summary>
         [Test]
