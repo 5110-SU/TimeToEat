@@ -22,8 +22,10 @@ namespace UnitTests.Pages.Error
         [SetUp]
         public void TestInitialize()
         {
+            // MockLoggerDirect
             var MockLoggerDirect = Mock.Of<ILogger<ErrorModel>>();
 
+            // Page model
             pageModel = new ErrorModel(MockLoggerDirect)
             {
                 PageContext = TestHelper.PageContext,
