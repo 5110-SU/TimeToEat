@@ -95,8 +95,7 @@ namespace UnitTests.Pages.Restaurants
         public void OnGet_Valid_With_Product_That_Has_Weekday_Hour_Should_Return_Same_Page()
         {
             // Arrange
-            var product = TestHelper.ProductService.CreateProduct(
-                new ProductModel()
+            var product = TestHelper.ProductService.CreateProduct(new ProductModel()
                 {
                     Title = "Test Product",
                     Hours = new List<int[]>() { null, null, null, null, null, null, null }
